@@ -1,0 +1,77 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- wrist -->
+  <xacro:macro name="hsr_beetle_wrist" params="name parent *origin">
+    <joint name="${name}_flex_joint" type="revolute">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <axis xyz="0.0 -1.0 0.0" />
+      <limit effort="100.0" velocity="1.5" lower="-1.92" upper="1.22" />
+      <parent link="${parent}" />
+      <child link="${name}_flex_link" />
+    </joint>
+
+    <link name="${name}_flex_link">
+      <inertial>
+        <mass value="0.681225"/>
+        <origin xyz="0.000131 -0.003929 0.00217"/>
+        <inertia ixx="0.000074353558" ixy="0.000000494515" ixz="0.000000022937"
+                 iyy="0.000038432887" iyz="-0.00000255576" izz="0.000064680918"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://tmc_hsrb_description/meshes/beetle/visual/wrist_flex.dae" />
+        </geometry>
+        <material name="body_sub" />
+      </visual>
+      <visual>
+        <origin xyz="0.0 0.0 0.04" rpy="0.0 0.0 0.0"/>
+        <geometry>
+          <cylinder radius="0.017" length="0.02" />
+        </geometry>
+        <material name="body_sub" />
+      </visual>
+
+      <collision>
+        <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+        <geometry>
+          <cylinder radius="0.017" length="0.04" />
+        </geometry>
+        <material name="body_sub" />
+      </collision>
+    </link>
+
+    <joint name="${name}_roll_joint" type="revolute">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <axis xyz="0.0 0.0 1.0" />
+      <limit effort="100.0" velocity="1.5" lower="-3.84" upper="2.09" />
+      <parent link="${name}_flex_link" />
+      <child link="${name}_roll_link" />
+    </joint>
+
+    <link name="${name}_roll_link">
+      <inertial>
+        <mass value="0.761692"/>
+        <origin xyz="-0.001416 -0.001547 0.081689"/>
+        <inertia ixx="0.000805633819" ixy="-0.000014431758" ixz="0.000028204659"
+                 iyy="0.000768077165" iyz="0.000022460226" izz="0.000453406611"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://tmc_hsrb_description/meshes/beetle/visual/wrist_roll.dae" />
+        </geometry>
+        <material name="body_main" />
+      </visual>
+
+      <collision>
+        <geometry>
+          <mesh filename="package://tmc_hsrb_description/meshes/beetle/collision/wrist_roll.stl" />
+        </geometry>
+        <material name="body_main" />
+      </collision>
+    </link>
+
+    <xacro:force_sensor prefix="${name}" parent="${name}_roll_link">
+      <origin xyz="0.0 0.0 0.0735" rpy="${pi} 0.0 0.0"/>
+    </xacro:force_sensor>
+  </xacro:macro>
+</robot>

@@ -1,0 +1,58 @@
+<robot name="hsr_beetle"
+       xmlns:xacro="http://www.ros.org/wiki.xacro">
+
+  <!-- include xacro-->
+  <xacro:include filename="$(find tmc_hsrb_description)/urdf/beetle/common.xacro" />
+  <xacro:include filename="$(find tmc_hsrb_description)/urdf/beetle/materials.urdf.xacro" />
+  <xacro:include filename="$(find tmc_hsrb_description)/urdf/beetle/sensors.urdf.xacro" />
+  <xacro:include filename="$(find tmc_hsrb_description)/urdf/beetle/base.urdf.xacro" />
+  <xacro:include filename="$(find tmc_hsrb_description)/urdf/beetle/torso.urdf.xacro" />
+  <xacro:include filename="$(find tmc_hsrb_description)/urdf/beetle/head.urdf.xacro" />
+  <xacro:include filename="$(find tmc_hsrb_description)/urdf/beetle/arm.urdf.xacro" />
+  <xacro:include filename="$(find tmc_hsrb_description)/urdf/beetle/wrist.urdf.xacro" />
+  <xacro:include filename="$(find tmc_hsrb_description)/urdf/beetle/hand.urdf.xacro" />
+
+
+  <!-- constant -->
+  <property name="palm_to_proximal_x" value="-0.01675" />
+  <property name="palm_to_proximal_y" value="-0.0245" />
+  <property name="palm_to_proximal_z" value="-0.0175" />
+  <property name="robot_name" value= "hsr_beetle/"/>
+
+  <!-- create robot -->
+  <xacro:hsr_beetle_base name="${robot_name}base" />
+
+  <xacro:hsr_beetle_torso name="${robot_name}torso" parent="${robot_name}base_body_link" robot="${robot_name}">
+    <origin xyz="0.0 0.0 0.752" rpy="0.0 0.0 0.0"/>
+  </xacro:hsr_beetle_torso>
+
+  <xacro:hsr_beetle_head name="${robot_name}head" parent="${robot_name}torso_lift_link">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </xacro:hsr_beetle_head>
+
+  <xacro:hsr_beetle_arm name="${robot_name}arm" parent="${robot_name}base_body_link">
+    <origin xyz="0.0 0.0 0.340" rpy="0.0 0.0 0.0"/>
+  </xacro:hsr_beetle_arm>
+
+  <xacro:hsr_beetle_wrist name="${robot_name}wrist" parent="${robot_name}arm_roll_link">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+  </xacro:hsr_beetle_wrist>
+
+  <xacro:hsr_beetle_gripper_base name="${robot_name}gripper" parent="${robot_name}wrist_roll_link">
+    <origin xyz="0.012 0.0 0.1405" rpy="0.0 0.0 ${pi}"/>
+  </xacro:hsr_beetle_gripper_base>
+
+  <xacro:hsr_beetle_finger_with_vacuum name="${robot_name}left" parent="${robot_name}gripper_palm_link">
+      <origin xyz="${palm_to_proximal_x}
+                   ${palm_to_proximal_y}
+                   ${palm_to_proximal_z}"
+              rpy="0.0 0.0 0.0" />
+  </xacro:hsr_beetle_finger_with_vacuum>
+
+  <xacro:hsr_beetle_finger_without_vacuum name="${robot_name}right" parent="${robot_name}gripper_palm_link">
+      <origin xyz="${palm_to_proximal_x}
+                   ${-palm_to_proximal_y}
+                   ${palm_to_proximal_z}"
+              rpy="0.0 0.0 0.0" />
+  </xacro:hsr_beetle_finger_without_vacuum>
+</robot>
