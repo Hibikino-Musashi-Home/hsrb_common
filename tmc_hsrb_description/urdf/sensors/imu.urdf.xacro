@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="hsrb">
+    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/imu.gazebo.xacro"/>
+
+    <!-- imu sensor -->
+    <xacro:macro name="imu_sensor" params="prefix parent *origin">
+        <joint name="${prefix}_imu_joint" type="fixed">
+            <insert_block name="origin" />
+            <parent link="${parent}" />
+            <child link="${prefix}_imu_link" />
+        </joint>
+
+        <link name="${prefix}_imu_link"/>
+
+        <xacro:imu_gazebo sensor_name="${prefix}_imu" frame_name="${prefix}_imu_link"/>
+    </xacro:macro>
+
+</robot>

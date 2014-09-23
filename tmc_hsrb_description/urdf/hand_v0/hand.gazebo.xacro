@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="hsrb_hand_gazebo" params="robot_name">
+
+        <gazebo_link name="${robot_name}/hand_palm_link" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_link name="${robot_name}/hand_camera_link" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_link name="${robot_name}/left_proximal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${robot_name}/left_distal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${robot_name}/left_finger_tip_frame" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${robot_name}/left_finger_vacuum_frame" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${robot_name}/right_proximal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${robot_name}/right_distal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${robot_name}/right_finger_tip_frame" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${robot_name}/right_finger_vacuum_frame" gravity="true" collide="false" friction="1.0"/>
+
+        <gazebo_joint name="${robot_name}/left_proximal_joint"/>
+        <gazebo_joint name="${robot_name}/left_distal_joint"/>
+        <gazebo_joint name="${robot_name}/right_proximal_joint"/>
+        <gazebo_joint name="${robot_name}/right_distal_joint"/>
+
+        <gazebo>
+            <gripper name="grasp_hack">
+                <grasp_check>
+                    <attach_steps>1</attach_steps>
+                    <detach_steps>5</detach_steps>
+                    <min_contact_count>1</min_contact_count>
+                </grasp_check>
+                <gripper_link>${robot_name}/right_distal_link</gripper_link>
+                <gripper_link>${robot_name}/left_distal_link</gripper_link>
+                <gripper_link>${robot_name}/right_proximal_link</gripper_link>
+                <gripper_link>${robot_name}/left_proximal_link</gripper_link>
+                <palm_link>${robot_name}/hand_palm_link</palm_link>
+            </gripper>
+        </gazebo>
+
+    </xacro:macro>
+</robot>

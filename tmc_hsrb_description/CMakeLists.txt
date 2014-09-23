@@ -4,16 +4,16 @@ project(tmc_hsrb_description)
 find_package(catkin REQUIRED COMPONENTS urdf)
 
 # for beetle
-set(HSR_BEETLE_URDF_DIR ${PROJECT_SOURCE_DIR}/urdf/beetle)
-set(HSR_BEETLE_URDF ${PROJECT_SOURCE_DIR}/robots/beetle/beetle.urdf)
-set(HSR_BEETLE_XACRO ${PROJECT_SOURCE_DIR}/robots/beetle/beetle.urdf.xacro)
+set(HSRB_URDF_DIR ${PROJECT_SOURCE_DIR}/urdf)
+set(HSRB_URDF ${PROJECT_SOURCE_DIR}/robots/hsrb.urdf)
+set(HSRB_XACRO ${PROJECT_SOURCE_DIR}/robots/hsrb.urdf.xacro)
 
 add_custom_command(
-  OUTPUT ${HSR_BEETLE_URDF}
-  DEPENDS ${HSR_BEETLE_URDF_DIR}/*
-  COMMAND ${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro.py ${HSR_BEETLE_XACRO} > ${HSR_BEETLE_URDF})
+  OUTPUT ${HSRB_URDF}
+  DEPENDS ${HSRB_XACRO} ${HSRB_URDF_DIR}/*
+  COMMAND ${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro.py ${HSRB_XACRO} > ${HSRB_URDF})
 
-add_custom_target(hsr_urdfs ALL DEPENDS ${HSR_BEETLE_URDF})
+add_custom_target(hsrb_urdf ALL DEPENDS ${HSRB_URDF})
 
 catkin_package(
     DEPENDS
@@ -22,8 +22,6 @@ catkin_package(
     LIBRARIES
     CFG_EXTRAS
 )
-
-include_directories(${catkin_INCLUDE_DIRS})
 
 install(DIRECTORY meshes/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes

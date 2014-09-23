@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="hsrb_base_transmission" params="robot_name">
+        <hsrb_trans joint="${robot_name}/base_roll_joint" reduction="1"/>
+        <hsrb_trans joint="${robot_name}/left_drive_wheel_joint" reduction="1"/>
+        <hsrb_trans joint="${robot_name}/right_drive_wheel_joint" reduction="1"/>
+    </xacro:macro>
+
+</robot>

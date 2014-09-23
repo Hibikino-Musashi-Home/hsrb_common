@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="hsrb_torso_gazebo" params="robot_name">
+        <gazebo_link name="${robot_name}/torso_lift_link" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_joint name="${robot_name}/torso_lift_joint"/>
+
+        <gazebo>
+            <plugin name="torso_mimic_plugin" filename="libgazebo_mimic_plugin.so">
+                <joint>${robot_name}/torso_lift_joint</joint>
+                <mimicJoint>${robot_name}/arm_lift_joint</mimicJoint>
+                <multiplier>0.5</multiplier>
+                <p>900.0</p>
+                <i>200.0</i>
+                <d>100.0</d>
+                <i_clamp>200</i_clamp>
+            </plugin>
+        </gazebo>
+    </xacro:macro>
+</robot>
