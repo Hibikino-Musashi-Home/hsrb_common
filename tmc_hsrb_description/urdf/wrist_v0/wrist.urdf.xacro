@@ -24,7 +24,7 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/wrist_flex.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/wrist_v0/wrist_flex.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
@@ -62,14 +62,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/wrist_roll.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/wrist_v0/wrist_roll.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/wrist_roll.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/wrist_v0/wrist_roll.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>

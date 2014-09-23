@@ -120,26 +120,26 @@
         <link name="${name}_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/base.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/base_v0/base.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/body.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/base_v0/body.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/torso_base.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/base_v0/torso_base.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/base.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/base_v0/base.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>

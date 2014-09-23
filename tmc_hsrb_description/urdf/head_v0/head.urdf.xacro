@@ -27,14 +27,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/head_pan.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head_pan.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/head_pan.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head_pan.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>
@@ -57,38 +57,38 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/head_upper.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head_upper.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/head_tilt.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head_tilt.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/tablet_base.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/tablet_base.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/tablet.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/tablet.dae" />
                 </geometry>
                 <material name="tablet" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/head.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/tablet.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/tablet.stl" />
                 </geometry>
                 <material name="tablet" />
             </collision>

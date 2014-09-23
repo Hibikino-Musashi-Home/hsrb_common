@@ -13,14 +13,14 @@
         <link name="${prefix}_laser_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/laser.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/sensors/laser.dae" />
                 </geometry>
                 <material name="black" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/laser.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/sensors/laser.stl" />
                 </geometry>
                 <material name="black" />
             </collision>

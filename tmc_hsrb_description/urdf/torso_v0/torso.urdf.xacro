@@ -25,14 +25,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/torso.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/torso_v0/torso.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/torso.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/torso_v0/torso.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>

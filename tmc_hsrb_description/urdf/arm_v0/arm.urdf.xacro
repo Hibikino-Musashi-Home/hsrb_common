@@ -23,14 +23,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/shoulder.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/shoulder.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/shoulder.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/shoulder.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -53,14 +53,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/arm_flex.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_flex.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/arm_flex.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_flex.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>
@@ -83,14 +83,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/arm_roll.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_roll.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/arm_roll.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_roll.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>

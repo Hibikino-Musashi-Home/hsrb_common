@@ -14,7 +14,7 @@
             <visual>
                 <origin xyz="0 0 0" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/xtion.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/sensors/xtion.dae" />
                 </geometry>
                 <material name="black" />
             </visual>
@@ -22,7 +22,7 @@
             <collision>
                 <origin xyz="0 0 0" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/xtion.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/sensors/xtion.stl" />
                 </geometry>
                 <material name="black" />
             </collision>

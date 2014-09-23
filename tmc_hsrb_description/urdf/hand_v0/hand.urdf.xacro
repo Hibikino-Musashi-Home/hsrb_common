@@ -26,14 +26,14 @@
         <link name="${name}_palm_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/palm.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/palm.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/palm.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/palm.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -87,14 +87,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/left_proximal.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/left_proximal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/left_proximal.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/left_proximal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -119,14 +119,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/left_distal.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/left_distal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/left_distal.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/left_distal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -179,14 +179,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/right_proximal.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/right_proximal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/right_proximal.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/right_proximal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -211,14 +211,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/visual/right_distal.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/right_distal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/collision/right_distal.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/right_distal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
