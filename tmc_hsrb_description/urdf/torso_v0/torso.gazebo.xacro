@@ -5,7 +5,7 @@
         <gazebo_joint name="${robot_name}/torso_lift_joint"/>
 
         <gazebo>
-            <plugin name="torso_mimic_plugin" filename="libgazebo_mimic_plugin.so">
+            <plugin name="torso_mimic_plugin" filename="libtmc_gazebo_mimic_plugin.so">
                 <joint>${robot_name}/torso_lift_joint</joint>
                 <mimicJoint>${robot_name}/arm_lift_joint</mimicJoint>
                 <multiplier>0.5</multiplier>
