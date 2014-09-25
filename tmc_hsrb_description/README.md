@@ -1,4 +1,4 @@
-`tmc_hsrb_common`
+`tmc_hsrb_description`
 ==============================================
 
 概要
