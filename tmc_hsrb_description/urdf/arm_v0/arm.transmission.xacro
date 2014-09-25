@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro naem="hsrb_arm_transmission" params="robot_name">
+        <hsrb_trans joint="${robot_name}/arm_lift_joint" reduction="1"/>
+        <hsrb_trans joint="${robot_name}/arm_flex_joint" reduction="1"/>
+        <hsrb_trans joint="${robot_name}/arm_roll_joint" reduction="1"/>
+    </xacro:macro>
+
+</robot>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki.xacro">
+    <xacro:macro name="hsrb_hand_transmission" params="robot_name">
+        <hsrb_trans joint="${robot_name}/hand_palm_joint" reduction="1"/>
+        <hsrb_trans joint="${robot_name}/left_proximal_joint" reduction="1"/>
+        <hsrb_trans joint="${robot_name}/left_distal_joint" reduction="1"/>
+        <hsrb_trans joint="${robot_name}/right_proximal_joint" reduction="1"/>
+        <hsrb_trans joint="${robot_name}/right_distal_joint" reduction="1"/>
+    </xacro:macro>
+</robot>

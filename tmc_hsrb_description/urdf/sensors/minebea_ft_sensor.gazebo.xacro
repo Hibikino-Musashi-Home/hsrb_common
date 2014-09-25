@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="minebea_ft_sensor_gazebo" params="sensor_name joint_name ros_topic">
+        <gazebo reference="${joint_name}">
+            <provideFeedback>true</provideFeedback>
+        </gazebo>
+        <gazebo>
+            <plugin name="ft_sensor" filename="libtmc_gazebo_ft_sensor_plugin.so">
+                <updateRate>30.0</updateRate>
+                <topicName>${ros_topic}</topicName>
+                <jointName>${joint_name}</jointName>
+            </plugin>
+        </gazebo>
+    </xacro:macro>
+
+</robot>

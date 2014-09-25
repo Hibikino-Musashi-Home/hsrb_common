@@ -1,5 +1,0 @@
-<launch>
-  <!-- send urdf to param server -->
-  <param name="robot_description"
-         command="$(find xacro)/xacro.py $(find tmc_hsrb_description)/robots/beetle/beetle.urdf.xacro" />
-</launch>
