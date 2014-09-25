@@ -21,6 +21,5 @@
   <run_depend>joint_state_publisher</run_depend>
   <run_depend>rviz</run_depend>
 
-  <test_depend>xacro</test_depend>
   <test_depend>urdfdom</test_depend>
 </package>
