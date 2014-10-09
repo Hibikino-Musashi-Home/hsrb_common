@@ -44,9 +44,8 @@
     </xacro:hsrb_hand_base>
 
     <gazebo>
-        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <plugin name="hsrb_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>${robot_name}</robotNamespace>
-            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
         </plugin>
     </gazebo>
 </robot>

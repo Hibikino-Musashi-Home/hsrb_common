@@ -24,7 +24,7 @@
         <joint name="${prefix}_drive_wheel_joint" type="continuous">
             <insert_block name="origin" />
             <axis xyz="0.0 1.0 0.0" />
-            <limit effort="100.0" velocity="10.0" />
+            <limit effort="1000.0" velocity="10.0" />
             <parent link="${parent}" />
             <child link="${prefix}_drive_wheel_link" />
         </joint>
@@ -45,9 +45,9 @@
                 <material name="wheel" />
             </collision>
             <inertial>
-                <mass value="1"/>
+                <mass value="0.1"/>
                 <origin xyz="0 0 0"/>
-                <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
             </inertial>
         </link>
     </xacro:macro>
@@ -67,7 +67,7 @@
             <inertial>
                 <mass value="0.3"/>
                 <origin xyz="0 0 0"/>
-                <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
             </inertial>
         </link>
 
@@ -82,7 +82,7 @@
             <inertial>
                 <mass value="0.3"/>
                 <origin xyz="0 0 0"/>
-                <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
             </inertial>
         </link>
 
@@ -109,7 +109,7 @@
             <inertial>
                 <mass value="0.3"/>
                 <origin xyz="0 0 0"/>
-                <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
             </inertial>
         </link>
     </xacro:macro>
@@ -162,10 +162,9 @@
         <joint name="${name}_roll_joint" type="continuous">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 0.0 1.0" />
-            <limit effort="100.0" velocity="1.0" />
+            <limit effort="1000.0" velocity="1.0" />
             <parent link="${name}_body_link" />
             <child link="${name}_roll_link" />
-            <limit effort="1.0" velocity="1.0"/>
         </joint>
 
         <link name="${name}_roll_link">
