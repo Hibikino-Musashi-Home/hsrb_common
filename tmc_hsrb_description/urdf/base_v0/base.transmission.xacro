@@ -1,10 +1,35 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-
     <xacro:macro name="hsrb_base_transmission" params="robot_name">
+        <!--
         <hsrb_trans joint="${robot_name}/base_roll_joint" reduction="1"/>
         <hsrb_trans joint="${robot_name}/left_drive_wheel_joint" reduction="1"/>
         <hsrb_trans joint="${robot_name}/right_drive_wheel_joint" reduction="1"/>
+        -->
+        <transmission name="${robot_name}/base_roll_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${robot_name}/base_roll_joint"/>
+            <actuator name="${robot_name}/base_roll_joint_motor">
+                <hardwareInterface>VelocityJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+        <transmission name="${robot_name}/left_drive_wheel_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${robot_name}/left_drive_wheel_joint"/>
+            <actuator name="${robot_name}/left_drive_wheel_joint_motor">
+                <hardwareInterface>VelocityJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+        <transmission name="${robot_name}/right_drive_wheel_joint_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${robot_name}/right_drive_wheel_joint"/>
+            <actuator name="${robot_name}/right_drive_wheel_joint_motor">
+                <hardwareInterface>VelocityJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
     </xacro:macro>
 
 </robot>
