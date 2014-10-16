@@ -6,12 +6,12 @@
             <provideFeedback>true</provideFeedback>
         </gazebo>
         <gazebo>
-            <plugin name="ft_sensor" filename="libtmc_gazebo_ft_sensor_plugin.so">
+            <plugin name="ft_sensor" filename="libgazebo_ros_force.so">
                 <updateRate>30.0</updateRate>
                 <topicName>${ros_topic}</topicName>
                 <jointName>${joint_name}</jointName>
+                <bodyName>wrist_roll_link</bodyName>
             </plugin>
         </gazebo>
     </xacro:macro>
-
 </robot>

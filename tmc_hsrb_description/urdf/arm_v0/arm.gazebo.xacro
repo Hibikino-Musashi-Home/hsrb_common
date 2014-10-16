@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:macro naem="hsrb_arm_gazebo" params="robot_name">
-        <gazebo_link name="${robot_name}/arm_lift_link" gravity="true" collide="false" friction="0.9"/>
-        <gazebo_link name="${robot_name}/arm_flex_link" gravity="true" collide="false" friction="0.9"/>
-        <gazebo_link name="${robot_name}/arm_roll_link" gravity="true" collide="false" friction="0.9"/>
+    <xacro:macro name="hsrb_arm_gazebo" params="prefix">
+        <gazebo_link name="${prefix}_lift_link" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_link name="${prefix}_flex_link" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_link name="${prefix}_roll_link" gravity="true" collide="false" friction="0.9"/>
 
-        <gazebo_joint name="${robot_name}/arm_lift_joint"/>
-        <gazebo_joint name="${robot_name}/arm_flex_joint"/>
-        <gazebo_joint name="${robot_name}/arm_roll_joint"/>
+        <gazebo_joint name="${prefix}_lift_joint"/>
+        <gazebo_joint name="${prefix}_flex_joint"/>
+        <gazebo_joint name="${prefix}_roll_joint"/>
     </xacro:macro>
 
 </robot>
