@@ -37,9 +37,9 @@
         <link name="${prefix}_depth_camera_pointcloud_frame"></link>
 
         <xacro:depth_camera_gazebo
-            sensor_name="${robot_name}/head_depth_camera"
-            parent_camera_link="${robot_name}/head_depth_camera_link" 
-            parent_depth_link="${robot_name}/head_depth_camera_pointcloud_frame"/>
+            sensor_name="${prefix}_depth_camera"
+            parent_camera_link="${prefix}_depth_camera_link" 
+            parent_depth_link="${prefix}_depth_camera_pointcloud_frame"/>
 
     </xacro:macro>
 

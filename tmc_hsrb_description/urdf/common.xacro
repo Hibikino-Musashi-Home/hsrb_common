@@ -3,15 +3,26 @@
 
   <xacro:property name="pi" value="3.14159265359"/>
 
-  <macro name="hsrb_trans" params="joint reduction">
-     <transmission name="${joint}_trans">
+  <macro name="hsrb_effort_joint_transmission" params="joint reduction">
+     <transmission name="${joint}_transmission">
        <type>transmission_interface/SimpleTransmission</type>
        <joint name="${joint}"/>
-       <actuator name="${joint}_motor">
+       <actuator name="${joint}_actuator">
          <hardwareInterface>EffortJointInterface</hardwareInterface>
          <mechanicalReduction>${reduction}</mechanicalReduction>
        </actuator>
      </transmission>
+  </macro>
+
+  <macro name="hsrb_velocity_joint_transmission" params="joint reduction">
+      <transmission name="${prefix}_transmission">
+          <type>transmission_interface/SimpleTransmission</type>
+          <joint name="${joint}"/>
+          <actuator name="${joint}_actuator">
+              <hardwareInterface>VelocityJointInterface</hardwareInterface>
+              <mechanicalReduction>${reduction}</mechanicalReduction>
+          </actuator>
+      </transmission>
   </macro>
 
   <macro name="gazebo_link" params="name gravity collide friction">
@@ -35,7 +46,7 @@
       <fdir1>1 0 0</fdir1>
       <maxVel>1.0</maxVel>
       <minDepth>0.00</minDepth>
-      <material value="Gazebo/Black"/>
+      <material value="Gazebo/FlatBlack"/>
     </gazebo>
   </macro>
 

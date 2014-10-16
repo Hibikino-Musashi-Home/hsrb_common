@@ -1,36 +1,36 @@
 <?xml version="1.0" ?>
 <robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="imu_gazebo" params="sensor_name frame_name">
-    <gazebo reference="${frame_name}">
-      <sensor type="imu" name="${sensor_name}">
-        <update_rate>10.0</update_rate>
-        <imu>
-          <noise>
-            <type>gaussian</type>
-            <rate>
-              <mean>0.0</mean>
-              <stddev>2e-4</stddev>
-              <bias_mean>0.0000075</bias_mean>
-              <bias_stddev>0.0000008</bias_stddev>
-            </rate>
-            <accel>
-              <mean>0.0</mean>
-              <stddev>1.7e-2</stddev>
-              <bias_mean>0.1</bias_mean>
-              <bias_stddev>0.001</bias_stddev>
-            </accel>
-          </noise>
-        </imu>
-      </sensor>
-    </gazebo>
-    <gazebo>
-      <plugin name="imu_plugin" filename="libtmc_gazebo_imu_plugin.so">
-        <imuName>${sensor_name}</imuName>
-        <topicName>${sensor_name}</topicName>
-        <frameName>${frame_name}</frameName>
-      </plugin>
-    </gazebo>
-  </xacro:macro>
-
+    <xacro:macro name="imu_gazebo" params="sensor_name frame_name">
+        <gazebo reference="${frame_name}">
+            <sensor type="imu" name="${sensor_name}">
+                <update_rate>10.0</update_rate>
+                <imu>
+                    <noise>
+                        <type>gaussian</type>
+                        <rate>
+                            <mean>0.0</mean>
+                            <stddev>2e-4</stddev>
+                            <bias_mean>0.0000075</bias_mean>
+                            <bias_stddev>0.0000008</bias_stddev>
+                        </rate>
+                        <accel>
+                            <mean>0.0</mean>
+                            <stddev>1.7e-2</stddev>
+                            <bias_mean>0.1</bias_mean>
+                            <bias_stddev>0.001</bias_stddev>
+                        </accel>
+                    </noise>
+                </imu>
+            </sensor>
+        </gazebo>
+        <gazebo>
+            <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+                <imuName>${sensor_name}</imuName>
+                <topicName>${sensor_name}</topicName>
+                <frameName>${frame_name}</frameName>
+                <bodyName>base_link</bodyName>
+            </plugin>
+        </gazebo>
+    </xacro:macro>
 </robot>
