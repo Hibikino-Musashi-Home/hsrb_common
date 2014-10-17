@@ -6,7 +6,7 @@
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/minebea_ft_sensor.urdf.xacro"/>
 
     <!-- wrist -->
-    <xacro:macro name="hsrb_wrist" params="prefix parent *origin">
+    <xacro:macro name="hsrb_wrist" params="prefix robot_namespace parent *origin">
         <joint name="${prefix}_flex_joint" type="revolute">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 -1.0 0.0" />
@@ -75,7 +75,7 @@
             </collision>
         </link>
 
-        <xacro:minebea_ft_sensor prefix="${prefix}" parent="${prefix}_roll_link" joint_name="${prefix}_roll_joint">
+        <xacro:minebea_ft_sensor prefix="${prefix}" robot_namespace="${robot_namespace}" parent="${prefix}_roll_link" joint_name="${prefix}_roll_joint">
             <origin xyz="0.0 0.0 0.0735" rpy="${pi} 0.0 0.0"/>
         </xacro:minebea_ft_sensor>
 

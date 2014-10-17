@@ -18,12 +18,12 @@
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/hand_v0/hand.urdf.xacro" />
 
     <!-- constant -->
-    <xacro:property name="robot_name" value= "hsrb"/>
+    <xacro:property name="robot_name" value="hsrb"/>
 
     <!-- create robot -->
-    <xacro:hsrb_base prefix="base" />
+    <xacro:hsrb_base prefix="base" robot_namespace="${robot_name}"/>
 
-    <xacro:hsrb_torso prefix="torso" parent="base_body_link" mimic="arm_lift_joint">
+    <xacro:hsrb_torso prefix="torso" parent="base_body_link" mimic_joint="arm_lift_joint">
         <origin xyz="0.0 0.0 0.752" rpy="0.0 0.0 0.0"/>
     </xacro:hsrb_torso>
 
@@ -35,7 +35,7 @@
         <origin xyz="0.0 0.0 0.340" rpy="0.0 0.0 0.0"/>
     </xacro:hsrb_arm>
 
-    <xacro:hsrb_wrist prefix="wrist" parent="arm_roll_link">
+    <xacro:hsrb_wrist prefix="wrist" parent="arm_roll_link" robot_namespace="${robot_name}">
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
     </xacro:hsrb_wrist>
 

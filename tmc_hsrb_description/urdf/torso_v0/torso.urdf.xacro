@@ -5,7 +5,7 @@
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/torso_v0/torso.gazebo.xacro"/>
 
     <!-- torso -->
-    <xacro:macro name="hsrb_torso" params="prefix parent mimic *origin">
+    <xacro:macro name="hsrb_torso" params="prefix parent mimic_joint *origin">
         <joint name="${prefix}_lift_joint" type="prismatic">
             <insert_block name="origin" />
             <!-- <origin xyz="0.0 0.0 0.752" rpy="0.0 0.0 0.0" /> -->
@@ -13,7 +13,7 @@
             <limit effort="100.0" velocity="0.1" lower="0.0" upper="0.345" />
             <parent link="${parent}" />
             <child link="${prefix}_lift_link" />
-            <mimic joint="${mimic}" multiplier="0.5" />
+            <mimic joint="${mimic_joint}" multiplier="0.5" />
         </joint>
 
         <link name="${prefix}_lift_link">
@@ -37,7 +37,7 @@
                 <material name="body_sub" />
             </collision>
         </link>
-        <xacro:hsrb_torso_gazebo prefix="${prefix}"/>
+        <xacro:hsrb_torso_gazebo prefix="${prefix}" mimic_joint="${mimic_joint}"/>
         <xacro:hsrb_torso_transmission prefix="${prefix}"/>
     </xacro:macro>
 </robot>

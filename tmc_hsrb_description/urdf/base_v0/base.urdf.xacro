@@ -112,7 +112,7 @@
 
 
     <!-- base -->
-    <xacro:macro name="hsrb_base" params="prefix">
+    <xacro:macro name="hsrb_base" params="prefix robot_namespace">
         <link name="base_footprint"/>
 
         <joint name="${prefix}_joint" type="fixed">
@@ -211,11 +211,11 @@
 
 
         <!-- sensors -->
-        <xacro:hokuyo_laser prefix="${prefix}" parent="${prefix}_link">
+        <xacro:hokuyo_laser prefix="${prefix}" robot_namespace="${robot_namespace}" parent="${prefix}_link">
             <origin xyz="0.1375 0.0 0.1895" rpy="0.0 0.0 0.0" />
         </xacro:hokuyo_laser>
 
-        <xacro:imu_sensor prefix="${prefix}" parent="${prefix}_link">
+        <xacro:imu_sensor prefix="${prefix}" robot_namespace="${robot_namespace}" parent="${prefix}_link">
             <origin xyz="0.0005 0.1296 0.181" rpy="${pi} 0.0 0.0" />
         </xacro:imu_sensor>
 
