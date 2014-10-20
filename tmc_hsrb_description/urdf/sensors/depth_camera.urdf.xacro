@@ -3,7 +3,7 @@
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/depth_camera.gazebo.xacro"/>
 
     <!-- depth_camera -->
-    <xacro:macro name="depth_camera1" params="prefix parent *origin">
+    <xacro:macro name="depth_camera1" params="prefix parent robot_namespace *origin">
         <joint name="${prefix}_depth_camera_joint" type="fixed">
             <insert_block name="origin" />
             <parent link="${parent}"/>
@@ -37,6 +37,7 @@
         <link name="${prefix}_depth_camera_pointcloud_frame"></link>
 
         <xacro:depth_camera_gazebo
+            robot_namespace="${robot_namespace}"
             sensor_name="${prefix}_depth_camera"
             parent_camera_link="${prefix}_depth_camera_link" 
             parent_depth_link="${prefix}_depth_camera_pointcloud_frame"/>

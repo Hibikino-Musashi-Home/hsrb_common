@@ -1,15 +1,15 @@
 <?xml version="1.0" ?>
 <robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:macro name="rgb_camera_gazebo" params="sensor_name frame_name">
+    <xacro:macro name="wide_camera_gazebo" params="sensor_name frame_name robot_namespace">
         <gazebo reference="${frame_name}">
             <sensor type="camera" name="${sensor_name}">
                 <update_rate>10.0</update_rate>
                 <camera name="${sensor_name}">
-                    <horizontal_fov>1.3962634</horizontal_fov>
+                    <horizontal_fov>1.16762527</horizontal_fov>
                     <image>
-                        <width>320</width>
-                        <height>240</height>
+                        <width>1280</width>
+                        <height>1024</height>
                         <format>R8G8B8</format>
                     </image>
                     <clip>
@@ -18,14 +18,12 @@
                     </clip>
                     <noise>
                         <type>gaussian</type>
-                        <!-- Noise is sampled independently per pixel on each frame.
-                             That pixel's noise value is added to each of its color
-                             channels, which at that point lie in the range [0,1]. -->
                         <mean>0.0</mean>
                         <stddev>0.007</stddev>
                     </noise>
                 </camera>
                 <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                    <robotNamespace>${robot_namespace}</robotNamespace>
                     <alwaysOn>0</alwaysOn>
                     <updateRate>0.0</updateRate>
                     <cameraName>${sensor_name}</cameraName>

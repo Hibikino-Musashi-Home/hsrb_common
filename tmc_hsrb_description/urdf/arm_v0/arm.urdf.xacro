@@ -12,6 +12,7 @@
             <limit effort="100.0" velocity="0.2" lower="0.0" upper="0.69" />
             <parent link="${parent}" />
             <child link="${prefix}_lift_link" />
+            <dynamics damping="1.0"/>
         </joint>
 
         <link name="${prefix}_lift_link">
@@ -42,6 +43,7 @@
             <limit effort="100.0" velocity="1.2" lower="-2.62" upper="0.0" />
             <parent link="${prefix}_lift_link" />
             <child link="${prefix}_flex_link" />
+            <dynamics damping="1.0"/>
         </joint>
 
         <link name="${prefix}_flex_link">
@@ -72,6 +74,7 @@
             <limit effort="100.0" velocity="2.0" lower="-2.09" upper="3.84" />
             <parent link="${prefix}_flex_link" />
             <child link="${prefix}_roll_link" />
+            <dynamics damping="0.1"/>
         </joint>
 
         <link name="${prefix}_roll_link">

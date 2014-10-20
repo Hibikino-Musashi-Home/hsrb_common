@@ -14,6 +14,7 @@
             <parent link="${parent}" />
             <child link="${prefix}_lift_link" />
             <mimic joint="${mimic_joint}" multiplier="0.5" />
+            <dynamics damping="10.0"/>
         </joint>
 
         <link name="${prefix}_lift_link">

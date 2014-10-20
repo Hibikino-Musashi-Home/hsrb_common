@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/stereo_camera.gazebo.xacro"/>
 
-    <xacro:macro name="pointgrey_chameleon" params="prefix parent *origin">
+    <xacro:macro name="pointgrey_chameleon" params="prefix parent robot_namespace *origin">
         <joint name="${prefix}_camera_joint" type="fixed">
             <insert_block name="origin" />
             <parent link="${parent}" />
@@ -19,7 +19,10 @@
             </visual>
         </link>
 
-        <xacro:pointgrey_chameleon_gazebo sensor_name="${prefix}_camera" frame_name="${prefix}_camera_link"/>
+        <xacro:pointgrey_chameleon_gazebo
+            sensor_name="${prefix}_camera"
+            frame_name="${prefix}_camera_link"
+            robot_namespace="${robot_namespace}"/>
     </xacro:macro>
 
 </robot>

@@ -3,7 +3,7 @@
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/hand_v0/hand.transmission.xacro"/>
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/hand_v0/hand.gazebo.xacro"/>
 
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/rgb_camera.urdf.xacro"/>
+    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/wide_camera.urdf.xacro"/>
 
     <xacro:property name="palm_to_proximal_x" value="-0.01675" />
     <xacro:property name="palm_to_proximal_y" value="-0.0245" />
@@ -89,9 +89,9 @@
         </xacro:hsrb_finger_without_vacuum>
 
         <!-- camera -->
-        <xacro:rgb_camera prefix="${prefix}" parent="${prefix}_palm_link">
+        <xacro:wide_camera prefix="${prefix}" parent="${prefix}_palm_link" robot_namespace="${robot_name}">
             <origin xyz="0.039 0.0 -0.0045" rpy="${pi} ${-pi/2} 0"/>
-        </xacro:rgb_camera>
+        </xacro:wide_camera>
 
         <xacro:hsrb_hand_gazebo prefix="${prefix}"/>
         <xacro:hsrb_hand_transmission prefix="${prefix}"/>

@@ -6,7 +6,7 @@
 
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/depth_camera.urdf.xacro"/>
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/stereo_camera.urdf.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/rgb_camera.urdf.xacro"/>
+    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/wide_camera.urdf.xacro"/>
 
     <!-- head -->
     <xacro:macro name="hsrb_head" params="prefix parent *origin">
@@ -16,6 +16,7 @@
             <limit effort="100.0" velocity="1.0" lower="-3.84" upper="2.09" />
             <parent link="${parent}" />
             <child link="${prefix}_pan_link" />
+            <dynamics damping="1.0"/>
         </joint>
 
         <link name="${prefix}_pan_link">
@@ -46,6 +47,7 @@
             <limit effort="100.0" velocity="1.0" lower="-1.57" upper="0.52" />
             <parent link="${prefix}_pan_link" />
             <child link="${prefix}_tilt_link" />
+            <dynamics damping="10.0"/>
         </joint>
 
         <link name="${prefix}_tilt_link">
@@ -95,19 +97,19 @@
         </link>
 
         <!-- cameras -->
-        <xacro:pointgrey_chameleon prefix="${prefix}_left" parent="${prefix}_tilt_link">
+        <xacro:pointgrey_chameleon prefix="${prefix}_left" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="0.02 0.07 0.061" rpy="0 0 0"/>
         </xacro:pointgrey_chameleon>
 
-        <xacro:pointgrey_chameleon prefix="${prefix}_right" parent="${prefix}_tilt_link">
+        <xacro:pointgrey_chameleon prefix="${prefix}_right" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="0.02 -0.07 0.061" rpy="0 0 0"/>
         </xacro:pointgrey_chameleon>
 
-        <xacro:rgb_camera prefix="${prefix}_center" parent="${prefix}_tilt_link">
+        <xacro:wide_camera prefix="${prefix}_center" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="0.0195 0.0 0.061" rpy="0 0 0"/>
-        </xacro:rgb_camera>
+        </xacro:wide_camera>
 
-        <xacro:depth_camera1 prefix="${prefix}" parent="${prefix}_tilt_link">
+        <xacro:depth_camera1 prefix="${prefix}" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="-0.079796 0.022 0.215172" rpy="0 0 0"/>
         </xacro:depth_camera1>
 
