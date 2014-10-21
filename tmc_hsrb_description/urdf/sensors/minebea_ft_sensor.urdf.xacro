@@ -2,7 +2,7 @@
 <robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/minebea_ft_sensor.gazebo.xacro"/>
 
-    <xacro:macro name="minebea_ft_sensor" params="prefix parent joint_name *origin">
+    <xacro:macro name="minebea_ft_sensor" params="prefix robot_namespace parent joint_name *origin">
         <joint name="${prefix}_ft_sensor_joint" type="fixed">
             <insert_block name="origin"/>
             <parent link="${parent}"/>
@@ -11,6 +11,6 @@
 
         <link name="${prefix}_ft_sensor_frame"/>
 
-        <xacro:minebea_ft_sensor_gazebo sensor_name="${prefix}_ft_sensor" joint_name="${joint_name}" ros_topic="${prefix}_wrench" />
+        <xacro:minebea_ft_sensor_gazebo sensor_name="${prefix}_ft_sensor" robot_namespace="${robot_namespace}" joint_name="${joint_name}" ros_topic="${prefix}_wrench" />
     </xacro:macro>
 </robot>

@@ -6,19 +6,20 @@
 
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/depth_camera.urdf.xacro"/>
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/stereo_camera.urdf.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/rgb_camera.urdf.xacro"/>
+    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/wide_camera.urdf.xacro"/>
 
     <!-- head -->
-    <xacro:macro name="hsrb_head" params="name parent *origin">
-        <joint name="${name}_pan_joint" type="revolute">
+    <xacro:macro name="hsrb_head" params="prefix parent *origin">
+        <joint name="${prefix}_pan_joint" type="revolute">
             <insert_block name="origin" />
             <axis xyz="0.0 0.0 1.0" />
             <limit effort="100.0" velocity="1.0" lower="-3.84" upper="2.09" />
             <parent link="${parent}" />
-            <child link="${name}_pan_link" />
+            <child link="${prefix}_pan_link" />
+            <dynamics damping="1.0"/>
         </joint>
 
-        <link name="${name}_pan_link">
+        <link name="${prefix}_pan_link">
             <inertial>
                 <mass value="0.571903"/>
                 <origin xyz="0.001724 -0.001969 -0.028886"/>
@@ -40,15 +41,16 @@
             </collision>
         </link>
 
-        <joint name="${name}_tilt_joint" type="revolute">
+        <joint name="${prefix}_tilt_joint" type="revolute">
             <origin xyz="0.02 0.0 0.0" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 -1.0 0.0" />
             <limit effort="100.0" velocity="1.0" lower="-1.57" upper="0.52" />
-            <parent link="${name}_pan_link" />
-            <child link="${name}_tilt_link" />
+            <parent link="${prefix}_pan_link" />
+            <child link="${prefix}_tilt_link" />
+            <dynamics damping="10.0"/>
         </joint>
 
-        <link name="${name}_tilt_link">
+        <link name="${prefix}_tilt_link">
             <inertial>
                 <mass value="2.123802"/>
                 <origin xyz="-0.055376 -0.002436 0.117733"/>
@@ -95,23 +97,23 @@
         </link>
 
         <!-- cameras -->
-        <xacro:pointgrey_chameleon prefix="${name}_left" parent="${name}_tilt_link">
+        <xacro:pointgrey_chameleon prefix="${prefix}_left" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="0.02 0.07 0.061" rpy="0 0 0"/>
         </xacro:pointgrey_chameleon>
 
-        <xacro:pointgrey_chameleon prefix="${name}_right" parent="${name}_tilt_link">
+        <xacro:pointgrey_chameleon prefix="${prefix}_right" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="0.02 -0.07 0.061" rpy="0 0 0"/>
         </xacro:pointgrey_chameleon>
 
-        <xacro:rgb_camera prefix="${name}_center" parent="${name}_tilt_link">
+        <xacro:wide_camera prefix="${prefix}_center" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="0.0195 0.0 0.061" rpy="0 0 0"/>
-        </xacro:rgb_camera>
+        </xacro:wide_camera>
 
-        <xacro:depth_camera1 prefix="${name}" parent="${name}_tilt_link">
+        <xacro:depth_camera1 prefix="${prefix}" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="-0.079796 0.022 0.215172" rpy="0 0 0"/>
         </xacro:depth_camera1>
 
-        <xacro:hsrb_head_gazebo robot_name="${robot_name}"/>
-        <xacro:hsrb_head_transmission robot_name="${robot_name}"/>
+        <xacro:hsrb_head_gazebo prefix="${prefix}"/>
+        <xacro:hsrb_head_transmission prefix="${prefix}"/>
     </xacro:macro>
 </robot>

@@ -6,16 +6,17 @@
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/minebea_ft_sensor.urdf.xacro"/>
 
     <!-- wrist -->
-    <xacro:macro name="hsrb_wrist" params="name parent *origin">
-        <joint name="${name}_flex_joint" type="revolute">
+    <xacro:macro name="hsrb_wrist" params="prefix robot_namespace parent *origin">
+        <joint name="${prefix}_flex_joint" type="revolute">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 -1.0 0.0" />
             <limit effort="100.0" velocity="1.5" lower="-1.92" upper="1.22" />
             <parent link="${parent}" />
-            <child link="${name}_flex_link" />
+            <child link="${prefix}_flex_link" />
+            <dynamics damping="1.0"/>
         </joint>
 
-        <link name="${name}_flex_link">
+        <link name="${prefix}_flex_link">
             <inertial>
                 <mass value="0.681225"/>
                 <origin xyz="0.000131 -0.003929 0.00217"/>
@@ -45,15 +46,16 @@
             </collision>
         </link>
 
-        <joint name="${name}_roll_joint" type="revolute">
+        <joint name="${prefix}_roll_joint" type="revolute">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 0.0 1.0" />
             <limit effort="100.0" velocity="1.5" lower="-3.84" upper="2.09" />
-            <parent link="${name}_flex_link" />
-            <child link="${name}_roll_link" />
+            <parent link="${prefix}_flex_link" />
+            <child link="${prefix}_roll_link" />
+            <dynamics damping="1.0"/>
         </joint>
 
-        <link name="${name}_roll_link">
+        <link name="${prefix}_roll_link">
             <inertial>
                 <mass value="0.761692"/>
                 <origin xyz="-0.001416 -0.001547 0.081689"/>
@@ -75,11 +77,15 @@
             </collision>
         </link>
 
-        <xacro:minebea_ft_sensor prefix="${name}" parent="${name}_roll_link" joint_name="${name}_roll_joint">
+        <xacro:minebea_ft_sensor
+            prefix="${prefix}"
+            robot_namespace="${robot_namespace}"
+            parent="${prefix}_roll_link"
+            joint_name="${prefix}_roll_joint">
             <origin xyz="0.0 0.0 0.0735" rpy="${pi} 0.0 0.0"/>
         </xacro:minebea_ft_sensor>
 
-        <xacro:hsrb_wrist_gazebo robot_name="${robot_name}"/>
-        <xacro:hsrb_wrist_transmission robot_name="${robot_name}"/>
+        <xacro:hsrb_wrist_gazebo prefix="${prefix}"/>
+        <xacro:hsrb_wrist_transmission prefix="${prefix}"/>
     </xacro:macro>
 </robot>

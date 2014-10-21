@@ -3,7 +3,7 @@
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/hokuyo_laser.gazebo.xacro"/>
 
     <!-- range sensor -->
-    <xacro:macro name="hokuyo_laser" params="prefix parent *origin">
+    <xacro:macro name="hokuyo_laser" params="prefix robot_namespace parent *origin">
         <joint name="${prefix}_laser_joint" type="fixed">
             <insert_block name="origin" />
             <parent link="${parent}" />
@@ -28,6 +28,7 @@
 
         <xacro:hokuyo_laser_gazebo
             sensor_name="${prefix}_laser"
+            robot_namespace="${robot_namespace}"
             ros_topic="${prefix}_scan"
             frame_name="${prefix}_laser_link"
             min_angle="-1.22" max_angle="1.22" />

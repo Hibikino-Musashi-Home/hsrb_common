@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/rgb_camera.gazebo.xacro"/>
+    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/wide_camera.gazebo.xacro"/>
 
     <!-- wide rgb camera -->
-    <xacro:macro name="rgb_camera" params="prefix parent *origin">
+    <xacro:macro name="wide_camera" params="prefix parent robot_namespace *origin">
         <joint name="${prefix}_camera_joint" type="fixed">
             <insert_block name="origin" />
             <parent link="${parent}" />
@@ -12,6 +12,10 @@
 
         <link name="${prefix}_camera_link"></link>
 
-        <xacro:rgb_camera_gazebo sensor_name="${prefix}_camera" frame_name="${prefix}_camera_link"/>
+        <xacro:wide_camera_gazebo
+            sensor_name="${prefix}_camera"
+            frame_name="${prefix}_camera_link"
+            robot_namespace="${robot_namespace}"
+            />
     </xacro:macro>
 </robot>

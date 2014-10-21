@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:macro name="hsrb_head_transmission" params="robot_name">
-        <hsrb_trans joint="${robot_name}/head_pan_joint" reduction="1"/>
-        <hsrb_trans joint="${robot_name}/head_tilt_joint" reduction="1"/>
+    <xacro:macro name="hsrb_head_transmission" params="prefix">
+        <hsrb_effort_joint_transmission joint="${prefix}_pan_joint" reduction="1"/>
+        <hsrb_effort_joint_transmission joint="${prefix}_tilt_joint" reduction="1"/>
     </xacro:macro>
 
 </robot>

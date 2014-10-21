@@ -1,34 +1,35 @@
 <?xml version="1.0" ?>
 <robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="hokuyo_laser_gazebo" params="sensor_name ros_topic frame_name min_angle max_angle">
-    <gazebo reference="${frame_name}">
-      <sensor type="ray" name="${sensor_name}">
-        <pose>0 0 0 0 0 0</pose>
-        <update_rate>10.0</update_rate>
-        <visualize>false</visualize>
-        <ray>
-          <scan>
-            <horizontal>
-              <samples>640</samples>
-              <resolution>1</resolution>
-              <min_angle>${min_angle*180.0/3.14159}</min_angle>
-              <max_angle>${max_angle*180.0/3.14159}</max_angle>
-            </horizontal>
-          </scan>
-          <range>
-            <min>0.08</min>
-            <max>10</max>
-            <resolution>0.01</resolution>
-          </range>
-        </ray>
+    <xacro:macro name="hokuyo_laser_gazebo" params="sensor_name robot_namespace ros_topic frame_name min_angle max_angle">
+        <gazebo reference="${frame_name}">
+            <sensor type="ray" name="${sensor_name}">
+                <pose>0 0 0 0 0 0</pose>
+                <update_rate>10.0</update_rate>
+                <visualize>false</visualize>
+                <ray>
+                    <scan>
+                        <horizontal>
+                            <samples>640</samples>
+                            <resolution>1</resolution>
+                            <min_angle>${min_angle*180.0/3.14159}</min_angle>
+                            <max_angle>${max_angle*180.0/3.14159}</max_angle>
+                        </horizontal>
+                    </scan>
+                    <range>
+                        <min>0.08</min>
+                        <max>10</max>
+                        <resolution>0.01</resolution>
+                    </range>
+                </ray>
 
-        <plugin name="hokuyo_laser" filename="libgazebo_ros_laser.so">
-          <topicName>${ros_topic}</topicName>
-          <frameName>${frame_name}</frameName>
-        </plugin>
-      </sensor>
-    </gazebo>
-  </xacro:macro>
+                <plugin name="hokuyo_laser" filename="libgazebo_ros_laser.so">
+                    <robotNamespace>${robot_namespace}</robotNamespace>
+                    <topicName>${ros_topic}</topicName>
+                    <frameName>${frame_name}</frameName>
+                </plugin>
+            </sensor>
+        </gazebo>
+    </xacro:macro>
 
 </robot>

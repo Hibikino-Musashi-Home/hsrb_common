@@ -5,16 +5,17 @@
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/arm_v0/arm.gazebo.xacro"/>
 
     <!-- arm -->
-    <xacro:macro name="hsrb_arm" params="name parent *origin">
-        <joint name="${name}_lift_joint" type="prismatic">
+    <xacro:macro name="hsrb_arm" params="prefix parent *origin">
+        <joint name="${prefix}_lift_joint" type="prismatic">
             <insert_block name="origin" />
             <axis xyz="0.0 0.0 1.0" />
             <limit effort="100.0" velocity="0.2" lower="0.0" upper="0.69" />
             <parent link="${parent}" />
-            <child link="${name}_lift_link" />
+            <child link="${prefix}_lift_link" />
+            <dynamics damping="1.0"/>
         </joint>
 
-        <link name="${name}_lift_link">
+        <link name="${prefix}_lift_link">
             <inertial>
                 <mass value="1.275819"/>
                 <origin xyz="0.051549 0.042438 -0.064145"/>
@@ -36,15 +37,16 @@
             </collision>
         </link>
 
-        <joint name="${name}_flex_joint" type="revolute">
+        <joint name="${prefix}_flex_joint" type="revolute">
             <origin xyz="0.141 0.078 0.0" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 -1.0 0.0" />
             <limit effort="100.0" velocity="1.2" lower="-2.62" upper="0.0" />
-            <parent link="${name}_lift_link" />
-            <child link="${name}_flex_link" />
+            <parent link="${prefix}_lift_link" />
+            <child link="${prefix}_flex_link" />
+            <dynamics damping="1.0"/>
         </joint>
 
-        <link name="${name}_flex_link">
+        <link name="${prefix}_flex_link">
             <inertial>
                 <mass value="1.339295"/>
                 <origin xyz="0.000632 0.006404 0.118529"/>
@@ -66,15 +68,16 @@
             </collision>
         </link>
 
-        <joint name="${name}_roll_joint" type="revolute">
+        <joint name="${prefix}_roll_joint" type="revolute">
             <origin xyz="0.005 0.0 0.345" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 0.0 1.0" />
             <limit effort="100.0" velocity="2.0" lower="-2.09" upper="3.84" />
-            <parent link="${name}_flex_link" />
-            <child link="${name}_roll_link" />
+            <parent link="${prefix}_flex_link" />
+            <child link="${prefix}_roll_link" />
+            <dynamics damping="0.1"/>
         </joint>
 
-        <link name="${name}_roll_link">
+        <link name="${prefix}_roll_link">
             <inertial>
                 <mass value="0.247936"/>
                 <origin xyz="-0.006927 0.002039 -0.064837"/>
@@ -96,7 +99,7 @@
             </collision>
         </link>
 
-        <xacro:hsrb_arm_gazebo robot_name="${robot_name}"/>
-        <xacro:hsrb_arm_transmission robot_name="${robot_name}"/>
+        <xacro:hsrb_arm_gazebo prefix="${prefix}"/>
+        <xacro:hsrb_arm_transmission prefix="${prefix}"/>
     </xacro:macro>
 </robot>

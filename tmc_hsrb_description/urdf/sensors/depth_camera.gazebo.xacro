@@ -19,7 +19,7 @@
     <xacro:property name="XtionMaxDistance" value="5"/>
     <xacro:property name="XtionFrameRate" value="30"/>
 
-    <xacro:macro name="depth_camera_gazebo" params="sensor_name parent_camera_link parent_depth_link">
+    <xacro:macro name="depth_camera_gazebo" params="robot_namespace sensor_name parent_camera_link parent_depth_link">
         <gazebo reference="${parent_camera_link}">
             <sensor type="depth" name="openni_camera_camera">
                 <always_on>0</always_on>
@@ -38,15 +38,16 @@
                     </clip>
                 </camera>
                 <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+                    <robotNamespace>${robot_namespace}</robotNamespace>
                     <alwaysOn>true</alwaysOn>
                     <updateRate>10.0</updateRate>
                     <cameraName>${sensor_name}</cameraName>
                     <frameName>${parent_depth_link}</frameName>
-                    <imageTopicName>/${sensor_name}/rgb/image_raw</imageTopicName>
-                    <depthImageTopicName>/${sensor_name}/depth/image_raw</depthImageTopicName>
-                    <pointCloudTopicName>/${sensor_name}/depth/points</pointCloudTopicName>
-                    <cameraInfoTopicName>/${sensor_name}/rgb/camera_info</cameraInfoTopicName>
-                    <depthImageCameraInfoTopicName>/${sensor_name}/depth/camera_info</depthImageCameraInfoTopicName>
+                    <imageTopicName>${sensor_name}/rgb/image_raw</imageTopicName>
+                    <depthImageTopicName>${sensor_name}/depth/image_raw</depthImageTopicName>
+                    <pointCloudTopicName>${sensor_name}/depth/points</pointCloudTopicName>
+                    <cameraInfoTopicName>${sensor_name}/rgb/camera_info</cameraInfoTopicName>
+                    <depthImageCameraInfoTopicName>${sensor_name}/depth/camera_info</depthImageCameraInfoTopicName>
                     <pointCloudCutoff>0.4</pointCloudCutoff>
                     <hackBaseline>0.0</hackBaseline>
                     <distortionK1>0.0</distortionK1>

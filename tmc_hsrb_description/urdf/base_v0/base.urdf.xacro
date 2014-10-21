@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/base_v0/base.transmission.xacro"/>
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/base_v0/base.gazebo.xacro"/>
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/hokuyo_laser.urdf.xacro"/>
@@ -14,22 +13,21 @@
     <xacro:property name="drive_wheel_offset_y" value="0.1275" />
 
     <xacro:property name="passive_wheel_radius" value="0.03" />
-
     <xacro:property name="passive_wheel_offset_x" value="0.145" />
     <xacro:property name="passive_wheel_offset_y" value="0.04" />
 
-
     <!-- drive wheel -->
-    <xacro:macro name="hsrb_drive_wheel" params="prefix parent *origin">
-        <joint name="${prefix}_drive_wheel_joint" type="continuous">
+    <xacro:macro name="hsrb_drive_wheel" params="prefix suffix parent *origin">
+        <joint name="${prefix}_${suffix}_drive_wheel_joint" type="continuous">
             <insert_block name="origin" />
             <axis xyz="0.0 1.0 0.0" />
             <limit effort="1000.0" velocity="10.0" />
             <parent link="${parent}" />
-            <child link="${prefix}_drive_wheel_link" />
+            <child link="${prefix}_${suffix}_drive_wheel_link" />
+            <dynamics damping="1.0"/>
         </joint>
 
-        <link name="${prefix}_drive_wheel_link">
+        <link name="${prefix}_${suffix}_drive_wheel_link">
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0"/>
                 <geometry>
@@ -52,18 +50,18 @@
         </link>
     </xacro:macro>
 
-
     <!-- passive wheel -->
-    <xacro:macro name="hsrb_passive_wheel" params="prefix parent *origin">
-        <joint name="${prefix}_passive_wheel_x_joint" type="continuous">
+    <xacro:macro name="hsrb_passive_wheel" params="prefix suffix parent *origin">
+        <joint name="${prefix}_${suffix}_passive_wheel_x_joint" type="continuous">
             <insert_block name="origin" />
             <axis xyz="1.0 0.0 0.0" />
             <limit effort="1000.0" velocity="100.0" />
             <parent link="${parent}" />
-            <child link="${prefix}_passive_wheel_x_frame" />
+            <child link="${prefix}_${suffix}_passive_wheel_x_frame" />
+            <dynamics damping="1.0"/>
         </joint>
 
-        <link name="${prefix}_passive_wheel_x_frame">
+        <link name="${prefix}_${suffix}_passive_wheel_x_frame">
             <inertial>
                 <mass value="0.3"/>
                 <origin xyz="0 0 0"/>
@@ -71,14 +69,14 @@
             </inertial>
         </link>
 
-        <joint name="${prefix}_passive_wheel_y_joint" type="continuous">
+        <joint name="${prefix}_${suffix}_passive_wheel_y_joint" type="continuous">
             <axis xyz="0.0 1.0 0.0" />
             <limit effort="1000.0" velocity="100.0" />
-            <parent link="${prefix}_passive_wheel_x_frame" />
-            <child link="${prefix}_passive_wheel_y_frame" />
+            <parent link="${prefix}_${suffix}_passive_wheel_x_frame" />
+            <child link="${prefix}_${suffix}_passive_wheel_y_frame" />
         </joint>
 
-        <link name="${prefix}_passive_wheel_y_frame">
+        <link name="${prefix}_${suffix}_passive_wheel_y_frame">
             <inertial>
                 <mass value="0.3"/>
                 <origin xyz="0 0 0"/>
@@ -86,14 +84,14 @@
             </inertial>
         </link>
 
-        <joint name="${prefix}_passive_wheel_z_joint" type="continuous">
+        <joint name="${prefix}_${suffix}_passive_wheel_z_joint" type="continuous">
             <axis xyz="0.0 0.0 1.0" />
             <limit effort="1000.0" velocity="100.0" />
-            <parent link="${prefix}_passive_wheel_y_frame" />
-            <child link="${prefix}_passive_wheel_z_link" />
+            <parent link="${prefix}_${suffix}_passive_wheel_y_frame" />
+            <child link="${prefix}_${suffix}_passive_wheel_z_link" />
         </joint>
 
-        <link name="${prefix}_passive_wheel_z_link">
+        <link name="${prefix}_${suffix}_passive_wheel_z_link">
             <visual>
                 <geometry>
                     <sphere radius="${passive_wheel_radius}" />
@@ -116,8 +114,15 @@
 
 
     <!-- base -->
-    <xacro:macro name="hsrb_base" params="name">
-        <link name="${name}_link">
+    <xacro:macro name="hsrb_base" params="prefix robot_namespace">
+        <link name="base_footprint"/>
+
+        <joint name="${prefix}_joint" type="fixed">
+            <parent link="base_footprint" />
+            <child link="${prefix}_link" />
+        </joint>
+
+        <link name="${prefix}_link">
             <visual>
                 <geometry>
                     <mesh filename="package://tmc_hsrb_description/meshes/base_v0/base.dae" />
@@ -145,12 +150,12 @@
             </collision>
         </link>
 
-        <joint name="${name}_body_joint" type="fixed">
-            <parent link="${name}_link" />
-            <child link="${name}_body_link" />
+        <joint name="${prefix}_body_joint" type="fixed">
+            <parent link="${prefix}_link" />
+            <child link="${prefix}_body_link" />
         </joint>
 
-        <link name="${name}_body_link">
+        <link name="${prefix}_body_link">
             <inertial>
                 <mass value="11.017971"/>
                 <origin xyz="-0.025978 -0.005498 0.17633"/>
@@ -159,15 +164,16 @@
             </inertial>
         </link>
 
-        <joint name="${name}_roll_joint" type="continuous">
+        <joint name="${prefix}_roll_joint" type="continuous">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 0.0 1.0" />
             <limit effort="1000.0" velocity="1.0" />
-            <parent link="${name}_body_link" />
-            <child link="${name}_roll_link" />
+            <parent link="${prefix}_body_link" />
+            <child link="${prefix}_roll_link" />
+            <dynamics damping="0.7"/>
         </joint>
 
-        <link name="${name}_roll_link">
+        <link name="${prefix}_roll_link">
             <inertial>
                 <origin xyz="-0.01948200 0.00219100 0.07101300" />
                 <mass value="10.239419"/>
@@ -178,28 +184,28 @@
 
 
         <!-- wheels -->
-        <xacro:hsrb_drive_wheel prefix="${robot_name}/right" parent="${name}_roll_link">
+        <xacro:hsrb_drive_wheel prefix="${prefix}" suffix="right" parent="${prefix}_roll_link">
             <origin xyz="${drive_wheel_offset_x}
                 ${-drive_wheel_offset_y}
                 ${drive_wheel_radius}"
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_drive_wheel>
 
-        <xacro:hsrb_drive_wheel prefix="${robot_name}/left" parent="${name}_roll_link">
+        <xacro:hsrb_drive_wheel prefix="${prefix}" suffix="left" parent="${prefix}_roll_link">
             <origin xyz="${drive_wheel_offset_x}
                 ${drive_wheel_offset_y}
                 ${drive_wheel_radius}"
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_drive_wheel>
 
-        <xacro:hsrb_passive_wheel prefix="${robot_name}/right" parent="${name}_roll_link">
+        <xacro:hsrb_passive_wheel prefix="${prefix}" suffix="right" parent="${prefix}_roll_link">
             <origin xyz="${passive_wheel_offset_x}
                 ${-passive_wheel_offset_y}
                 ${passive_wheel_radius}"
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_passive_wheel>
 
-        <xacro:hsrb_passive_wheel prefix="${robot_name}/left" parent="${name}_roll_link">
+        <xacro:hsrb_passive_wheel prefix="${prefix}" suffix="left" parent="${prefix}_roll_link">
             <origin xyz="${passive_wheel_offset_x}
                 ${passive_wheel_offset_y}
                 ${passive_wheel_radius}"
@@ -208,15 +214,18 @@
 
 
         <!-- sensors -->
-        <xacro:hokuyo_laser prefix="${name}" parent="${name}_link">
+        <xacro:hokuyo_laser
+            prefix="${prefix}"
+            robot_namespace="${robot_namespace}"
+            parent="${prefix}_link">
             <origin xyz="0.1375 0.0 0.1895" rpy="0.0 0.0 0.0" />
         </xacro:hokuyo_laser>
 
-        <xacro:imu_sensor prefix="${name}" parent="${name}_link">
+        <xacro:imu_sensor prefix="${prefix}" robot_namespace="${robot_namespace}" parent="${prefix}_link">
             <origin xyz="0.0005 0.1296 0.181" rpy="${pi} 0.0 0.0" />
         </xacro:imu_sensor>
 
-        <xacro:hsrb_base_gazebo robot_name="${robot_name}"/>
-        <xacro:hsrb_base_transmission robot_name="${robot_name}"/>
+        <xacro:hsrb_base_gazebo prefix="${prefix}"/>
+        <xacro:hsrb_base_transmission prefix="${prefix}"/>
     </xacro:macro>
 </robot>
