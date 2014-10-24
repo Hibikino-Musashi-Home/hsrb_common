@@ -5,26 +5,26 @@ project(tmc_hsrb_description)
 
 find_package(catkin REQUIRED COMPONENTS xacro)
 
-set(HSRB_URDF_DIR ${PROJECT_SOURCE_DIR}/urdf)
-set(HSRB_URDF ${PROJECT_SOURCE_DIR}/robots/hsrb.urdf)
-set(HSRB_XACRO ${PROJECT_SOURCE_DIR}/robots/hsrb.urdf.xacro)
 
-add_custom_command(
-  OUTPUT ${HSRB_URDF}
-  DEPENDS ${HSRB_XACRO} ${HSRB_URDF_DIR}/*
-  COMMAND ${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro.py ${HSRB_XACRO} > ${HSRB_URDF})
+file(GLOB _robot_xacros "${PROJECT_SOURCE_DIR}/robots/*.urdf.xacro")
+file(GLOB_RECURSE _component_xacros "${PROJECT_SOURCE_DIR}/urdf/*.xacro")
 
-add_custom_target(hsrb_urdf ALL DEPENDS ${HSRB_URDF})
+# Generate robot URDFs from each *.urdf.xacro files.
+foreach(_xacro ${_robot_xacros})
+    get_filename_component(_dir ${_xacro} DIRECTORY)
+    get_filename_component(_name ${_xacro} NAME_WE)
+    set(_urdf ${_dir}/${_name}.urdf)
+    add_custom_command(
+        OUTPUT ${_urdf}
+        DEPENDS ${_xacro} ${_component_xacros}
+        COMMAND ${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro.py ${_xacro} > ${_urdf})
+    add_custom_target(${PROJECT_NAME}_${name}_gen_urdf ALL DEPENDS ${_urdf})
+endforeach()
 
-catkin_package(
-    DEPENDS
-    CATKIN_DEPENDS xacro
-    INCLUDE_DIRS
-    LIBRARIES
-    CFG_EXTRAS
-)
 
-install(DIRECTORY launch meshes robots urdf
+catkin_package(CATKIN_DEPENDS xacro)
+
+install(DIRECTORY launch/ meshes/ robots/ urdf/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
 )
 
