@@ -18,7 +18,7 @@
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/hand_v0/hand.urdf.xacro" />
 
     <!-- constant -->
-    <xacro:property name="robot_name" value= "hsrb"/>
+    <xacro:property name="robot_name" value="hsrb"/>
 
     <!-- create robot -->
     <xacro:hsrb_base prefix="base" robot_namespace="${robot_name}"/>
