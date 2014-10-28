@@ -32,21 +32,21 @@
     </camera>
   </library_cameras>
   <library_images>
-    <image id="black_png" name="black_png">
-      <init_from>black.png</init_from>
+    <image id="gray_png" name="gray_png">
+      <init_from>gray.png</init_from>
     </image>
   </library_images>
   <library_effects>
-    <effect id="Black-effect">
+    <effect id="Gray-effect">
       <profile_COMMON>
-        <newparam sid="black_png-surface">
+        <newparam sid="gray_png-surface">
           <surface type="2D">
-            <init_from>black_png</init_from>
+            <init_from>gray_png</init_from>
           </surface>
         </newparam>
-        <newparam sid="black_png-sampler">
+        <newparam sid="gray_png-sampler">
           <sampler2D>
-            <source>black_png-surface</source>
+            <source>gray_png-surface</source>
           </sampler2D>
         </newparam>
         <technique sid="common">
@@ -58,7 +58,7 @@
               <color sid="ambient">1 1 1 1</color>
             </ambient>
             <diffuse>
-              <texture texture="black_png-sampler" texcoord="UVMap"/>
+              <texture texture="gray_png-sampler" texcoord="UVMap"/>
             </diffuse>
             <specular>
               <color sid="specular">1 1 1 1</color>
@@ -81,8 +81,8 @@
     </effect>
   </library_effects>
   <library_materials>
-    <material id="Black-material" name="Black">
-      <instance_effect url="#Black-effect"/>
+    <material id="Gray-material" name="Gray">
+      <instance_effect url="#Gray-effect"/>
     </material>
   </library_materials>
   <library_geometries>
@@ -120,7 +120,7 @@
         <vertices id="Range_Sensor-mesh-vertices">
           <input semantic="POSITION" source="#Range_Sensor-mesh-positions"/>
         </vertices>
-        <polylist material="Black-material" count="2639">
+        <polylist material="Gray-material" count="2639">
           <input semantic="VERTEX" source="#Range_Sensor-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#Range_Sensor-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#Range_Sensor-mesh-map-0" offset="2" set="0"/>
@@ -143,7 +143,7 @@
         <instance_geometry url="#Range_Sensor-mesh">
           <bind_material>
             <technique_common>
-              <instance_material symbol="Black-material" target="#Black-material">
+              <instance_material symbol="Gray-material" target="#Gray-material">
                 <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
               </instance_material>
             </technique_common>
