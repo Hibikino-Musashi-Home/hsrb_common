@@ -11,7 +11,7 @@ file(GLOB_RECURSE _component_xacros "${PROJECT_SOURCE_DIR}/urdf/*.xacro")
 
 # Generate robot URDFs from each *.urdf.xacro files.
 foreach(_xacro ${_robot_xacros})
-    get_filename_component(_dir ${_xacro} DIRECTORY)
+    get_filename_component(_dir ${_xacro} PATH)
     get_filename_component(_name ${_xacro} NAME_WE)
     set(_urdf ${_dir}/${_name}.urdf)
     add_custom_command(
