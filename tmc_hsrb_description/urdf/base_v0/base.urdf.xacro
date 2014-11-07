@@ -125,7 +125,7 @@
         <link name="${prefix}_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/base_v0/base.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/base_v0/base_light.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
