@@ -31,7 +31,7 @@
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/shoulder.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/shoulder_light.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -55,14 +55,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_flex.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_flex_light.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_flex.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_flex_light.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>
@@ -86,14 +86,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_roll.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_roll_light.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_roll.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_roll_light.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>

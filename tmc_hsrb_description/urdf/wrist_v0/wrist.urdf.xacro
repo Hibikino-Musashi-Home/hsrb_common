@@ -71,7 +71,7 @@
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/wrist_v0/wrist_roll.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/wrist_v0/wrist_roll_light.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>
