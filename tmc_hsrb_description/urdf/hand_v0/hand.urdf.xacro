@@ -48,7 +48,7 @@
 
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/palm.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/palm_light.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
