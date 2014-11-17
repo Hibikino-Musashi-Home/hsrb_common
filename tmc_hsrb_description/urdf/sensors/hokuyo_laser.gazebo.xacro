@@ -3,27 +3,27 @@
 
     <xacro:macro name="hokuyo_laser_gazebo" params="sensor_name robot_namespace ros_topic frame_name min_angle max_angle">
         <gazebo reference="${frame_name}">
-            <sensor type="ray" name="${sensor_name}">
+            <sensor type="gpu_ray" name="${sensor_name}">
                 <pose>0 0 0 0 0 0</pose>
-                <update_rate>10.0</update_rate>
-                <visualize>false</visualize>
+                <update_rate>30.0</update_rate>
+                <visualize>true</visualize>
                 <ray>
                     <scan>
                         <horizontal>
-                            <samples>640</samples>
-                            <resolution>1</resolution>
-                            <min_angle>${min_angle*180.0/3.14159}</min_angle>
-                            <max_angle>${max_angle*180.0/3.14159}</max_angle>
+                            <samples>1081</samples>
+                            <resolution>0.25</resolution>
+                            <min_angle>-2.3562</min_angle>
+                            <max_angle>2.3562</max_angle>
                         </horizontal>
                     </scan>
                     <range>
-                        <min>0.08</min>
-                        <max>10</max>
-                        <resolution>0.01</resolution>
+                        <min>0.06</min>
+                        <max>20</max>
+                        <resolution>0.001</resolution>
                     </range>
                 </ray>
 
-                <plugin name="hokuyo_laser" filename="libgazebo_ros_laser.so">
+                <plugin name="hokuyo_laser" filename="libgazebo_ros_gpu_laser.so">
                     <robotNamespace>${robot_namespace}</robotNamespace>
                     <topicName>${ros_topic}</topicName>
                     <frameName>${frame_name}</frameName>
