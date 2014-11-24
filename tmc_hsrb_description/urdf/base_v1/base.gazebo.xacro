@@ -9,6 +9,14 @@
         <gazebo_link_rubber name="${prefix}_right_passive_wheel_z_link"/>
         <gazebo_link_rubber name="${prefix}_left_passive_wheel_z_link"/>
 
+        <gazebo_link_flat_black name="${prefix}_right_passive_caster_roll_link" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_link_rubber name="${prefix}_right_passive_caster_left_wheel_link"/>
+        <gazebo_link_rubber name="${prefix}_right_passive_caster_right_wheel_link"/>
+
+        <gazebo_link_flat_black name="${prefix}_left_passive_caster_roll_link" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_link_rubber name="${prefix}_left_passive_caster_left_wheel_link"/>
+        <gazebo_link_rubber name="${prefix}_left_passive_caster_right_wheel_link"/>
+
         <gazebo_link name="${prefix}_range_sensor_link" gravity="true" collide="false" friction="0.9"/>
         <gazebo_link name="${prefix}_imu_sensor_link" gravity="true" collide="false" friction="0.9"/>
     </xacro:macro>

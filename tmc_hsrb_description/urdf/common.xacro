@@ -34,6 +34,16 @@
     </gazebo>
   </macro>
 
+  <macro name="gazebo_link_flat_black" params="name gravity collide friction">
+    <gazebo reference="${name}">
+      <selfCollide>${collide}</selfCollide>
+      <gravity>${gravity}</gravity>
+      <mu1>${friction}</mu1>
+      <mu2>${friction}</mu2>
+      <material value="Gazebo/FlatBlack"/>
+    </gazebo>
+  </macro>
+
   <macro name="gazebo_link_rubber" params="name">
     <gazebo reference="${name}">
       <selfCollide>false</selfCollide>
