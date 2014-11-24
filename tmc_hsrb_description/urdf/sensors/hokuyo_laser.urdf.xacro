@@ -31,7 +31,7 @@
             robot_namespace="${robot_namespace}"
             ros_topic="${prefix}_scan"
             frame_name="${prefix}_laser_link"
-            min_angle="-1.22" max_angle="1.22" />
+            min_angle="-2.3562" max_angle="2.3562" />
     </xacro:macro>
 
 </robot>
