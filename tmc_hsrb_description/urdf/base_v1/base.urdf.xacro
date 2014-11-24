@@ -9,14 +9,14 @@
     <xacro:property name="drive_wheel_width" value="0.03" />
     <xacro:property name="drive_wheel_radius" value="0.040" />
 
-    <xacro:property name="drive_wheel_offset_x" value="-0.110" />
+    <xacro:property name="drive_wheel_offset_x" value="0.110" />
     <xacro:property name="drive_wheel_offset_y" value="0.133" />
 
     <xacro:property name="passive_caster_height" value="0.058" />
     <xacro:property name="passive_caster_radius" value="0.025" />
     <xacro:property name="passive_caster_width" value="0.014" />
     <xacro:property name="passive_caster_offset_x" value="0.1495" />
-    <xacro:property name="passive_caster_offset_y" value="0.11" />
+    <xacro:property name="passive_caster_offset_y" value="0.055" />
 
     <!-- drive wheel -->
     <xacro:macro name="hsrb_drive_wheel" params="prefix suffix parent *origin">
@@ -221,13 +221,13 @@
         <!-- wheels -->
         <xacro:hsrb_drive_wheel prefix="${prefix}" suffix="right" parent="${prefix}_roll_link">
             <origin
-                xyz="${drive_wheel_offset_x} ${-drive_wheel_offset_y} ${drive_wheel_radius}"
+                xyz="${-drive_wheel_offset_x} ${-drive_wheel_offset_y} ${drive_wheel_radius}"
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_drive_wheel>
 
         <xacro:hsrb_drive_wheel prefix="${prefix}" suffix="left" parent="${prefix}_roll_link">
             <origin
-                xyz="${drive_wheel_offset_x} ${drive_wheel_offset_y} ${drive_wheel_radius}"
+                xyz="${-drive_wheel_offset_x} ${drive_wheel_offset_y} ${drive_wheel_radius}"
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_drive_wheel>
 
