@@ -84,7 +84,7 @@
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head_light.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>
