@@ -166,7 +166,7 @@
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/base_v1/body.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/base_v1/body_light.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
