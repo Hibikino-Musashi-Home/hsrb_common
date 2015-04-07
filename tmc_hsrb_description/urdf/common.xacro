@@ -6,7 +6,9 @@
   <macro name="hsrb_effort_joint_transmission" params="joint reduction">
      <transmission name="${joint}_transmission">
        <type>transmission_interface/SimpleTransmission</type>
-       <joint name="${joint}"/>
+       <joint name="${joint}">
+         <hardwareInterface>EffortJointInterface</hardwareInterface>
+       </joint>
        <actuator name="${joint}_actuator">
          <hardwareInterface>EffortJointInterface</hardwareInterface>
          <mechanicalReduction>${reduction}</mechanicalReduction>
@@ -17,7 +19,9 @@
   <macro name="hsrb_velocity_joint_transmission" params="joint reduction">
       <transmission name="${prefix}_transmission">
           <type>transmission_interface/SimpleTransmission</type>
-          <joint name="${joint}"/>
+          <joint name="${joint}">
+            <hardwareInterface>VelocityJointInterface</hardwareInterface>
+          </joint>
           <actuator name="${joint}_actuator">
               <hardwareInterface>VelocityJointInterface</hardwareInterface>
               <mechanicalReduction>${reduction}</mechanicalReduction>
