@@ -12,11 +12,9 @@
     <xacro:property name="drive_wheel_offset_x" value="0.110" />
     <xacro:property name="drive_wheel_offset_y" value="0.133" />
 
-    <xacro:property name="passive_caster_height" value="0.058" />
-    <xacro:property name="passive_caster_radius" value="0.025" />
-    <xacro:property name="passive_caster_width" value="0.014" />
-    <xacro:property name="passive_caster_offset_x" value="0.1495" />
-    <xacro:property name="passive_caster_offset_y" value="0.055" />
+    <xacro:property name="passive_wheel_radius" value="0.03" />
+    <xacro:property name="passive_wheel_offset_x" value="0.1495" />
+    <xacro:property name="passive_wheel_offset_y" value="0.055" />
 
     <!-- drive wheel -->
     <xacro:macro name="hsrb_drive_wheel" params="prefix suffix parent *origin">
@@ -53,61 +51,17 @@
     </xacro:macro>
 
     <!-- passive wheel -->
-    <xacro:macro name="hsrb_passive_caster" params="prefix suffix parent *origin">
-        <joint name="${prefix}_${suffix}_passive_caster_roll_joint" type="continuous">
+    <xacro:macro name="hsrb_passive_wheel" params="prefix suffix parent *origin">
+        <joint name="${prefix}_${suffix}_passive_wheel_x_joint" type="continuous">
             <insert_block name="origin" />
-            <axis xyz="0.0 0.0 1.0" />
+            <axis xyz="1.0 0.0 0.0" />
             <limit effort="1000.0" velocity="100.0" />
             <parent link="${parent}" />
-            <child link="${prefix}_${suffix}_passive_caster_roll_link" />
-            <dynamics damping="0.7"/>
-        </joint>
-
-        <link name="${prefix}_${suffix}_passive_caster_roll_link">
-            <inertial>
-                <mass value="0.3"/>
-                <origin xyz="0 0 0"/>
-                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
-            </inertial>
-            <visual>
-                <origin xyz="0.0 0 -0.0165"/>
-                <geometry>
-                    <cylinder radius="0.0085" length="0.033"/>
-                </geometry>
-                <material name="wheel" />
-            </visual>
-            <visual>
-                <origin xyz="0.017 0.0 -0.033" rpy="1.57 0.0 0.0"/>
-                <geometry>
-                    <cylinder radius="0.02" length="0.021"/>
-                </geometry>
-                <material name="wheel" />
-            </visual>
-        </link>
-
-        <joint name="${prefix}_${suffix}_passive_caster_left_wheel_joint" type="continuous">
-            <origin xyz="0.017 0.0175 -0.033"/>
-            <axis xyz="0.0 1.0 0.0" />
-            <limit effort="1000.0" velocity="100.0" />
-            <parent link="${prefix}_${suffix}_passive_caster_roll_link" />
-            <child link="${prefix}_${suffix}_passive_caster_left_wheel_link" />
+            <child link="${prefix}_${suffix}_passive_wheel_x_frame" />
             <dynamics damping="1.0"/>
         </joint>
 
-        <link name="${prefix}_${suffix}_passive_caster_left_wheel_link">
-            <visual>
-                <origin rpy="1.57 0.0 0.0"/>
-                <geometry>
-                    <cylinder radius="${passive_caster_radius}" length="${passive_caster_width}"/>
-                </geometry>
-                <material name="wheel" />
-            </visual>
-            <collision>
-                <origin rpy="1.57 0.0 0.0"/>
-                <geometry>
-                    <cylinder radius="${passive_caster_radius}" length="${passive_caster_width}"/>
-                </geometry>
-            </collision>
+        <link name="${prefix}_${suffix}_passive_wheel_x_frame">
             <inertial>
                 <mass value="0.3"/>
                 <origin xyz="0 0 0"/>
@@ -115,27 +69,38 @@
             </inertial>
         </link>
 
-        <joint name="${prefix}_${suffix}_passive_caster_right_wheel_joint" type="continuous">
-            <origin xyz="0.017 -0.0175 -0.033"/>
+        <joint name="${prefix}_${suffix}_passive_wheel_y_joint" type="continuous">
             <axis xyz="0.0 1.0 0.0" />
             <limit effort="1000.0" velocity="100.0" />
-            <parent link="${prefix}_${suffix}_passive_caster_roll_link" />
-            <child link="${prefix}_${suffix}_passive_caster_right_wheel_link" />
-            <dynamics damping="1.0"/>
+            <parent link="${prefix}_${suffix}_passive_wheel_x_frame" />
+            <child link="${prefix}_${suffix}_passive_wheel_y_frame" />
         </joint>
 
-        <link name="${prefix}_${suffix}_passive_caster_right_wheel_link">
+        <link name="${prefix}_${suffix}_passive_wheel_y_frame">
+            <inertial>
+                <mass value="0.3"/>
+                <origin xyz="0 0 0"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+            </inertial>
+        </link>
+
+        <joint name="${prefix}_${suffix}_passive_wheel_z_joint" type="continuous">
+            <axis xyz="0.0 0.0 1.0" />
+            <limit effort="1000.0" velocity="100.0" />
+            <parent link="${prefix}_${suffix}_passive_wheel_y_frame" />
+            <child link="${prefix}_${suffix}_passive_wheel_z_link" />
+        </joint>
+
+        <link name="${prefix}_${suffix}_passive_wheel_z_link">
             <visual>
-                <origin rpy="1.57 0.0 0.0"/>
                 <geometry>
-                    <cylinder radius="${passive_caster_radius}" length="${passive_caster_width}"/>
+                    <sphere radius="${passive_wheel_radius}" />
                 </geometry>
                 <material name="wheel" />
             </visual>
             <collision>
-                <origin rpy="1.57 0.0 0.0"/>
                 <geometry>
-                    <cylinder radius="${passive_caster_radius}" length="${passive_caster_width}"/>
+                    <sphere radius="${passive_wheel_radius}" />
                 </geometry>
                 <material name="wheel" />
             </collision>
@@ -146,7 +111,6 @@
             </inertial>
         </link>
     </xacro:macro>
-
 
     <!-- base -->
     <xacro:macro name="hsrb_base" params="prefix robot_namespace">
@@ -231,20 +195,20 @@
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_drive_wheel>
 
-        <xacro:hsrb_passive_caster prefix="${prefix}" suffix="right" parent="${prefix}_roll_link">
-            <origin
-                xyz="${passive_caster_offset_x} ${-passive_caster_offset_y} ${passive_caster_height}"
+        <xacro:hsrb_passive_wheel prefix="${prefix}" suffix="right" parent="${prefix}_roll_link">
+            <origin xyz="${passive_wheel_offset_x}
+                ${-passive_wheel_offset_y}
+                ${passive_wheel_radius}"
                 rpy="0.0 0.0 0.0" />
-        </xacro:hsrb_passive_caster>
+        </xacro:hsrb_passive_wheel>
 
-        <xacro:hsrb_passive_caster prefix="${prefix}" suffix="left" parent="${prefix}_roll_link">
-            <origin
-                xyz="${passive_caster_offset_x} ${passive_caster_offset_y} ${passive_caster_height}"
+        <xacro:hsrb_passive_wheel prefix="${prefix}" suffix="left" parent="${prefix}_roll_link">
+            <origin xyz="${passive_wheel_offset_x}
+                ${passive_wheel_offset_y}
+                ${passive_wheel_radius}"
                 rpy="0.0 0.0 0.0" />
-        </xacro:hsrb_passive_caster>
+        </xacro:hsrb_passive_wheel>
 
-
-        <!-- sensors -->
         <xacro:hokuyo_laser
             prefix="${prefix}"
             robot_namespace="${robot_namespace}"
