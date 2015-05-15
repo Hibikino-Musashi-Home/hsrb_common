@@ -9,10 +9,10 @@
                 <joint>${prefix}_lift_joint</joint>
                 <mimicJoint>${mimic_joint}</mimicJoint>
                 <multiplier>0.5</multiplier>
-                <p>900.0</p>
-                <i>200.0</i>
-                <d>100.0</d>
-                <i_clamp>200</i_clamp>
+                <p>30000.0</p>
+                <i>6000.0</i>
+                <d>3000.0</d>
+                <i_clamp>6000.0</i_clamp>
             </plugin>
         </gazebo>
     </xacro:macro>
