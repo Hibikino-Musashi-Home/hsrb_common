@@ -122,6 +122,12 @@
         </joint>
 
         <link name="${prefix}_link">
+            <inertial>
+                <mass value="11.017971"/>
+                <origin xyz="-0.025978 -0.005498 0.17633"/>
+                <inertia ixx="0.3742" ixy="0.000434172172" ixz="0.03088"
+                    iyy="0.3436" iyz="0.01775" izz="0.1509"/>
+            </inertial>
             <visual>
                 <geometry>
                     <mesh filename="package://tmc_hsrb_description/meshes/base_v1/base_light.dae" />
@@ -148,25 +154,11 @@
             </collision>
         </link>
 
-        <joint name="${prefix}_body_joint" type="fixed">
-            <parent link="${prefix}_link" />
-            <child link="${prefix}_body_link" />
-        </joint>
-
-        <link name="${prefix}_body_link">
-            <inertial>
-                <mass value="11.017971"/>
-                <origin xyz="-0.025978 -0.005498 0.17633"/>
-                <inertia ixx="0.3742" ixy="0.000434172172" ixz="0.03088"
-                    iyy="0.3436" iyz="0.01775" izz="0.1509"/>
-            </inertial>
-        </link>
-
         <joint name="${prefix}_roll_joint" type="continuous">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 0.0 1.0" />
             <limit effort="1000.0" velocity="1.0" />
-            <parent link="${prefix}_body_link" />
+            <parent link="${prefix}_link" />
             <child link="${prefix}_roll_link" />
             <dynamics damping="0.7"/>
         </joint>
@@ -183,26 +175,26 @@
 
 
         <!-- wheels -->
-        <xacro:hsrb_drive_wheel prefix="${prefix}" suffix="right" parent="${prefix}_roll_link">
+        <xacro:hsrb_drive_wheel prefix="${prefix}" suffix="r" parent="${prefix}_roll_link">
             <origin
                 xyz="${-drive_wheel_offset_x} ${-drive_wheel_offset_y} ${drive_wheel_radius}"
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_drive_wheel>
 
-        <xacro:hsrb_drive_wheel prefix="${prefix}" suffix="left" parent="${prefix}_roll_link">
+        <xacro:hsrb_drive_wheel prefix="${prefix}" suffix="l" parent="${prefix}_roll_link">
             <origin
                 xyz="${-drive_wheel_offset_x} ${drive_wheel_offset_y} ${drive_wheel_radius}"
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_drive_wheel>
 
-        <xacro:hsrb_passive_wheel prefix="${prefix}" suffix="right" parent="${prefix}_roll_link">
+        <xacro:hsrb_passive_wheel prefix="${prefix}" suffix="r" parent="${prefix}_roll_link">
             <origin xyz="${passive_wheel_offset_x}
                 ${-passive_wheel_offset_y}
                 ${passive_wheel_radius}"
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_passive_wheel>
 
-        <xacro:hsrb_passive_wheel prefix="${prefix}" suffix="left" parent="${prefix}_roll_link">
+        <xacro:hsrb_passive_wheel prefix="${prefix}" suffix="l" parent="${prefix}_roll_link">
             <origin xyz="${passive_wheel_offset_x}
                 ${passive_wheel_offset_y}
                 ${passive_wheel_radius}"

@@ -1,16 +1,16 @@
 <?xml version="1.0" ?>
 <robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/depth_camera.gazebo.xacro"/>
+    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/asus_xtion.gazebo.xacro"/>
 
-    <!-- depth_camera -->
-    <xacro:macro name="depth_camera1" params="prefix parent robot_namespace *origin">
-        <joint name="${prefix}_depth_camera_joint" type="fixed">
+    <!-- rgbd_sensor -->
+    <xacro:macro name="asus_xtion" params="prefix parent robot_namespace *origin">
+        <joint name="${prefix}_rgbd_sensor_joint" type="fixed">
             <insert_block name="origin" />
             <parent link="${parent}"/>
-            <child link="${prefix}_depth_camera_link"/>
+            <child link="${prefix}_rgbd_sensor_link"/>
         </joint>
 
-        <link name="${prefix}_depth_camera_link">
+        <link name="${prefix}_rgbd_sensor_link">
             <visual>
                 <origin xyz="0 0 0" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
                 <geometry>
@@ -28,19 +28,19 @@
             </collision>
         </link>
 
-        <joint name="${prefix}_depth_camera_pointcloud_frame_joint" type="fixed">
+        <joint name="${prefix}_rgbd_sensor_pointcloud_frame_joint" type="fixed">
             <origin xyz="0 0 0" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
-            <parent link="${prefix}_depth_camera_link"/>
-            <child link="${prefix}_depth_camera_pointcloud_frame"/>
+            <parent link="${prefix}_rgbd_sensor_link"/>
+            <child link="${prefix}_rgbd_sensor_pointcloud_frame"/>
         </joint>
         `
-        <link name="${prefix}_depth_camera_pointcloud_frame"></link>
+        <link name="${prefix}_rgbd_sensor_pointcloud_frame"></link>
 
-        <xacro:depth_camera_gazebo
+        <xacro:rgbd_sensor_gazebo
             robot_namespace="${robot_namespace}"
-            sensor_name="${prefix}_depth_camera"
-            parent_camera_link="${prefix}_depth_camera_link" 
-            parent_depth_link="${prefix}_depth_camera_pointcloud_frame"/>
+            sensor_name="${prefix}_rgbd_sensor"
+            parent_camera_link="${prefix}_rgbd_sensor_link" 
+            parent_depth_link="${prefix}_rgbd_sensor_pointcloud_frame"/>
 
     </xacro:macro>
 

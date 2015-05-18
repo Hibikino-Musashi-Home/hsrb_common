@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/stereo_camera.gazebo.xacro"/>
+    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/pointgrey_chameleon.gazebo.xacro"/>
 
     <xacro:macro name="pointgrey_chameleon" params="prefix parent robot_namespace *origin">
         <joint name="${prefix}_camera_joint" type="fixed">
