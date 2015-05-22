@@ -28,6 +28,7 @@
             <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
                 <imuName>${sensor_name}</imuName>
                 <topicName>${sensor_name}</topicName>
+                <serviceName>${sensor_name}</serviceName>
                 <frameName>${frame_name}</frameName>
                 <bodyName>base_link</bodyName>
                 <robotNamespace>${robot_namespace}</robotNamespace>
