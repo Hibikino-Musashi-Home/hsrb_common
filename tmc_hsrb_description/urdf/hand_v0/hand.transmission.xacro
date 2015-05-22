@@ -2,11 +2,11 @@
 <robot xmlns:xacro="http://www.ros.org/wiki.xacro">
     <xacro:macro name="hsrb_hand_transmission" params="prefix">
         <hsrb_effort_joint_transmission joint="${prefix}_motor_joint" reduction="1"/>
-        <hsrb_effort_joint_transmission joint="${prefix}_l_actuated_proximal_joint" reduction="1"/>
+        <hsrb_effort_joint_transmission joint="${prefix}_l_proximal_joint" reduction="1"/>
         <hsrb_effort_joint_transmission joint="${prefix}_l_spring_proximal_joint" reduction="1"/>
         <hsrb_effort_joint_transmission joint="${prefix}_l_mimic_distal_joint" reduction="1"/>
         <hsrb_effort_joint_transmission joint="${prefix}_l_distal_joint" reduction="1"/>
-        <hsrb_effort_joint_transmission joint="${prefix}_r_actuated_proximal_joint" reduction="1"/>
+        <hsrb_effort_joint_transmission joint="${prefix}_r_proximal_joint" reduction="1"/>
         <hsrb_effort_joint_transmission joint="${prefix}_r_spring_proximal_joint" reduction="1"/>
         <hsrb_effort_joint_transmission joint="${prefix}_r_mimic_distal_joint" reduction="1"/>
         <hsrb_effort_joint_transmission joint="${prefix}_r_distal_joint" reduction="1"/>

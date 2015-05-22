@@ -12,8 +12,8 @@
     <xacro:property name="base_joint_angle_range_min" value="-0.1" />
     <xacro:property name="base_joint_angle_range_max" value="1.24" />
 
-    <xacro:property name="actuated_proximal_joint_angle_range_min" value="-0.1" />
-    <xacro:property name="actuated_proximal_joint_angle_range_max" value="1.24" />
+    <xacro:property name="proximal_joint_angle_range_min" value="-0.1" />
+    <xacro:property name="proximal_joint_angle_range_max" value="1.24" />
     <xacro:property name="spring_proximal_joint_angle_range_min" value="0.0" />
     <xacro:property name="spring_proximal_joint_angle_range_max" value="0.698" />
     <xacro:property name="distal_joint_angle_offset" value="0.087" />
@@ -64,8 +64,8 @@
         <joint name="${prefix}_motor_joint" type="revolute">
             <axis xyz="1.0 0.0 0.0" />
             <limit effort="100.0" velocity="1.0"
-                lower="${actuated_proximal_joint_angle_range_min}"
-                upper="${actuated_proximal_joint_angle_range_max}" />
+                lower="${proximal_joint_angle_range_min}"
+                upper="${proximal_joint_angle_range_max}" />
             <parent link="${prefix}_palm_link" />
             <child link="${prefix}_motor_frame" />
             <dynamics damping="1.0"/>
@@ -101,27 +101,27 @@
 
     <!-- gripper finger proximal base -->
     <xacro:macro name="hsrb_finger_proximal_base" params="prefix suffix parent *origin *axis">
-        <joint name="${prefix}_${suffix}_actuated_proximal_joint" type="revolute">
+        <joint name="${prefix}_${suffix}_proximal_joint" type="revolute">
             <insert_block name="origin" />
             <insert_block name="axis" />
             <limit effort="100.0" velocity="1.0"
-                lower="${actuated_proximal_joint_angle_range_min}"
-                upper="${actuated_proximal_joint_angle_range_max}" />
+                lower="${proximal_joint_angle_range_min}"
+                upper="${proximal_joint_angle_range_max}" />
             <parent link="${parent}" />
-            <child link="${prefix}_${suffix}_actuated_proximal_link" />
+            <child link="${prefix}_${suffix}_proximal_link" />
             <mimic joint="${prefix}_motor_joint" />
             <dynamics damping="1.0"/>
         </joint>
 
         <!-- dummy link -->
-        <xacro:hsrb_gripper_dummy_link name="${prefix}_${suffix}_actuated_proximal_link" />
+        <xacro:hsrb_gripper_dummy_link name="${prefix}_${suffix}_proximal_link" />
 
         <joint name="${prefix}_${suffix}_spring_proximal_joint" type="revolute">
             <insert_block name="axis" />
             <limit effort="100.0" velocity="1.0"
                 lower="${spring_proximal_joint_angle_range_min}"
                 upper="${spring_proximal_joint_angle_range_max}" />
-            <parent link="${prefix}_${suffix}_actuated_proximal_link" />
+            <parent link="${prefix}_${suffix}_proximal_link" />
             <child link="${prefix}_${suffix}_spring_proximal_link" />
             <dynamics damping="1.0"/>
         </joint>
@@ -147,8 +147,8 @@
         <joint name="${prefix}_${suffix}_distal_joint" type="revolute">
             <insert_block name="axis" />
             <limit effort="100.0" velocity="1.0"
-                lower="${-actuated_proximal_joint_angle_range_max}"
-                upper="${-actuated_proximal_joint_angle_range_min}" />
+                lower="${-proximal_joint_angle_range_max}"
+                upper="${-proximal_joint_angle_range_min}" />
             <parent link="${prefix}_${suffix}_mimic_distal_link" />
             <child link="${prefix}_${suffix}_distal_link" />
             <mimic joint="${prefix}_motor_joint" multiplier="-1.0" offset="${-distal_joint_angle_offset}"/>
