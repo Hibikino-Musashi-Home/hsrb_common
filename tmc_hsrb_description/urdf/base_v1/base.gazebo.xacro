@@ -2,12 +2,11 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:macro name="hsrb_base_gazebo" params="prefix">
         <gazebo_link name="${prefix}_link" gravity="true" collide="false" friction="0.9"/>
-        <gazebo_link name="${prefix}_body_link" gravity="true" collide="false" friction="0.9"/>
         <gazebo_link name="${prefix}_roll_link" gravity="true" collide="false" friction="0.9"/>
-        <gazebo_link_rubber name="${prefix}_right_drive_wheel_link"/>
-        <gazebo_link_rubber name="${prefix}_left_drive_wheel_link"/>
-        <gazebo_link_rubber name="${prefix}_right_passive_wheel_z_link"/>
-        <gazebo_link_rubber name="${prefix}_left_passive_wheel_z_link"/>
+        <gazebo_link_rubber name="${prefix}_r_drive_wheel_link"/>
+        <gazebo_link_rubber name="${prefix}_l_drive_wheel_link"/>
+        <gazebo_link_rubber name="${prefix}_r_passive_wheel_z_link"/>
+        <gazebo_link_rubber name="${prefix}_l_passive_wheel_z_link"/>
 
         <gazebo_link name="${prefix}_range_sensor_link" gravity="true" collide="false" friction="0.9"/>
         <gazebo_link name="${prefix}_imu_sensor_link" gravity="true" collide="false" friction="0.9"/>

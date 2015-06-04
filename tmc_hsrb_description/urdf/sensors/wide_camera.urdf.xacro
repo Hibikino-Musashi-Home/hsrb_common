@@ -7,14 +7,14 @@
         <joint name="${prefix}_camera_joint" type="fixed">
             <insert_block name="origin" />
             <parent link="${parent}" />
-            <child link="${prefix}_camera_link" />
+            <child link="${prefix}_camera_frame" />
         </joint>
 
-        <link name="${prefix}_camera_link"></link>
+        <link name="${prefix}_camera_frame"></link>
 
         <xacro:wide_camera_gazebo
             sensor_name="${prefix}_camera"
-            frame_name="${prefix}_camera_link"
+            frame_name="${prefix}_camera_frame"
             robot_namespace="${robot_namespace}"
             />
     </xacro:macro>

@@ -7,12 +7,12 @@
         <joint name="${prefix}_imu_joint" type="fixed">
             <insert_block name="origin" />
             <parent link="${parent}" />
-            <child link="${prefix}_imu_link" />
+            <child link="${prefix}_imu_frame" />
         </joint>
 
-        <link name="${prefix}_imu_link"/>
+        <link name="${prefix}_imu_frame"/>
 
-        <xacro:imu_gazebo sensor_name="${prefix}_imu" robot_namespace="${robot_namespace}" frame_name="${prefix}_imu_link"/>
+        <xacro:imu_gazebo sensor_name="${prefix}_imu" robot_namespace="${robot_namespace}" frame_name="${prefix}_imu_frame"/>
     </xacro:macro>
 
 </robot>

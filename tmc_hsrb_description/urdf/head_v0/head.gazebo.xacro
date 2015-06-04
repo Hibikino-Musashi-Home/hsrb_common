@@ -4,8 +4,8 @@
     <xacro:macro name="hsrb_head_gazebo" params="prefix">
         <gazebo_link name="${prefix}_pan_link" gravity="true" collide="false" friction="0.9"/>
         <gazebo_link name="${prefix}_tilt_link" gravity="true" collide="false" friction="0.9"/>
-        <gazebo_link name="${prefix}_left_camera_link" gravity="true" collide="false" friction="0.9"/>
-        <gazebo_link name="${prefix}_right_camera_link" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_link name="${prefix}_l_camera_link" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_link name="${prefix}_r_camera_link" gravity="true" collide="false" friction="0.9"/>
         <gazebo_link name="${prefix}_center_camera_link" gravity="true" collide="false" friction="0.9"/>
         <gazebo_link name="${prefix}_xtion_link" gravity="true" collide="false" friction="0.9"/>
 

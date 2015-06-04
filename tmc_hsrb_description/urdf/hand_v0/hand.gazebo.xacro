@@ -3,29 +3,29 @@
     <xacro:macro name="hsrb_hand_gazebo" params="prefix">
         <gazebo_link name="${prefix}_palm_link" gravity="true" collide="false" friction="0.9"/>
         <gazebo_link name="${prefix}_camera_link" gravity="true" collide="false" friction="0.9"/>
-        <gazebo_link name="${prefix}_left_actuated_proximal_link" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_left_spring_proximal_link" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_left_mimic_link" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_left_distal_link" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_left_finger_tip_frame" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_left_finger_vacuum_frame" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_right_actuated_proximal_link" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_right_spring_proximal_link" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_right_mimic_link" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_right_distal_link" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_right_finger_tip_frame" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_right_finger_vacuum_frame" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_l_actuated_proximal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_l_spring_proximal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_l_mimic_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_l_distal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_l_finger_tip_frame" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_l_finger_vacuum_frame" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_r_actuated_proximal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_r_spring_proximal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_r_mimic_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_r_distal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_r_finger_tip_frame" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_r_finger_vacuum_frame" gravity="true" collide="false" friction="1.0"/>
 
         <gazebo_joint name="${prefix}_palm_joint"/>
         <gazebo_joint name="${prefix}_motor_joint"/>
-        <gazebo_joint name="${prefix}_left_actuated_proximal_joint"/>
-        <gazebo_joint name="${prefix}_left_spring_proximal_joint"/>
-        <gazebo_joint name="${prefix}_left_mimic_distal_joint"/>
-        <gazebo_joint name="${prefix}_left_distal_joint"/>
-        <gazebo_joint name="${prefix}_right_actuated_proximal_joint"/>
-        <gazebo_joint name="${prefix}_right_spring_proximal_joint"/>
-        <gazebo_joint name="${prefix}_right_mimic_distal_joint"/>
-        <gazebo_joint name="${prefix}_right_distal_joint"/>
+        <gazebo_joint name="${prefix}_l_actuated_proximal_joint"/>
+        <gazebo_joint name="${prefix}_l_spring_proximal_joint"/>
+        <gazebo_joint name="${prefix}_l_mimic_distal_joint"/>
+        <gazebo_joint name="${prefix}_l_distal_joint"/>
+        <gazebo_joint name="${prefix}_r_actuated_proximal_joint"/>
+        <gazebo_joint name="${prefix}_r_spring_proximal_joint"/>
+        <gazebo_joint name="${prefix}_r_mimic_distal_joint"/>
+        <gazebo_joint name="${prefix}_r_distal_joint"/>
 
         <gazebo>
             <plugin name="hsrb_hrh_gripper_plugin" filename="libtmc_gazebo_hrh_gripper.so">
@@ -36,10 +36,10 @@
                     <detach_steps>5</detach_steps>
                     <min_contact_count>1</min_contact_count>
                 </grasp_check>
-                <gripper_link>${prefix}_right_distal_link</gripper_link>
-                <gripper_link>${prefix}_left_distal_link</gripper_link>
-                <gripper_link>${prefix}_right_spring_proximal_link</gripper_link>
-                <gripper_link>${prefix}_left_spring_proximal_link</gripper_link>
+                <gripper_link>${prefix}_r_distal_link</gripper_link>
+                <gripper_link>${prefix}_l_distal_link</gripper_link>
+                <gripper_link>${prefix}_r_spring_proximal_link</gripper_link>
+                <gripper_link>${prefix}_l_spring_proximal_link</gripper_link>
                 <palm_link>${prefix}_palm_link</palm_link>
             </gripper>
         </gazebo>

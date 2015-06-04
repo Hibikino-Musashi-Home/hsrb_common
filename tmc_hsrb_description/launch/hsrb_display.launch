@@ -12,6 +12,6 @@
 
     <!-- load displays -->
     <param name="use_gui" value="$(arg gui)"/>
-    <node name="rviz" pkg="rviz" type="rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tmc_hsrb_description)/launch/hsrb_display.rviz"/>
 
 </launch>
