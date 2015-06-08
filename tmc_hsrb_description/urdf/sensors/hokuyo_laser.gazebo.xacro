@@ -24,8 +24,7 @@
                 </ray>
 
                 <plugin name="hokuyo_laser" filename="libgazebo_ros_gpu_laser.so">
-                    <robotNamespace>${robot_namespace}</robotNamespace>
-                    <topicName>${ros_topic}</topicName>
+                    <topicName>${robot_namespace}/${ros_topic}</topicName>
                     <frameName>${frame_name}</frameName>
                 </plugin>
             </sensor>
