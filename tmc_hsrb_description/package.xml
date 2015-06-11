@@ -1,6 +1,6 @@
 <package>
   <name>tmc_hsrb_description</name>
-  <version>1.0.0</version>
+  <version>0.2.1</version>
   <description>HSRのロボット定義ファイルを置く</description>
   <maintainer email="koji_terada@mail.toyota.co.jp">Koji Terada</maintainer>
   <maintainer email="akiyoshi_ochiai@mail.toyota.co.jp">Akiyoshi Ochiai</maintainer>
