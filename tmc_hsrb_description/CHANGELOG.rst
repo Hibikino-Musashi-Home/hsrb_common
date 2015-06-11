@@ -2,8 +2,8 @@
 Changelog for package tmc_hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.0 (2015-06-11)
+------------------
 * フレーム/関節/リンク構造の修正
 * trajectory駆動のtransmissionをeffortからpositionに変更
 * 標準モデルファイルをhsr1sからhsr2sに変更
