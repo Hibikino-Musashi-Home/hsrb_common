@@ -1,0 +1,48 @@
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Changelog for package tmc_hsrb_description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Forthcoming
+-----------
+* フレーム/関節/リンク構造の修正
+* trajectory駆動のtransmissionをeffortからpositionに変更
+* 標準モデルファイルをhsr1sからhsr2sに変更
+* mimicのゲイン更新
+* 受動輪をキャスターから球に変更
+* hokuyoレーザーの角度の分解能を変更
+* 関節のtransmission用にhardwareInterfaceタグを追加
+* beetle3号機用にモデルファイルを修正
+  base,body,laserモデルを新規作成
+  すべてのvisualモデルをシェーディング
+* collision用mesh修正
+* beetle3用にベースのメッシュを変更
+* 軽量baseモデルを2Sのbase径に合わせる
+* 受動キャスターのtread値を修正
+* 受動キャスターを実モデルに追加
+* HSR-B2S (Robot No.3) モデルを追加
+* UTM-20LXの設定をhokuyoレーザーのentityに追加
+* ロボットモデルの軽量化と肩の色を実機に合わせる
+* Contributors: 落合 亮吉, 伊豫田 喜美, 田中 和仁, 寺田 耕志
+
+0.2.1 (2014-10-30)
+------------------
+* cmakeの問題修正
+* Contributors: 落合 亮吉
+
+0.2.0 (2014-10-28)
+------------------
+* depthカメラのtfフレーム修正
+* 台車レーザーセンサの色をグレーに
+* ハンド関節にダンプパラメータ追加
+* URDF生成コマンド修正
+* カメラ系のprefixを追加
+* センサ群にロボットのネームスペース追加
+* ロボットモデルのファイル名変更
+* URDFのprefixや関節名を変更
+* base_controllerに合うようモデルパラメータ修正
+* inertiaテンソルパラメータ修正
+* システム要求事項をREADMEに追加
+* URDFバリデーションテスト追加
+* シミュレータのURDFとメッシュを更新(バージョン毎のレイアウトに)
+* tmc_hsrb_simluatorからレポジトリ移動
+* Contributors: 落合 亮吉
