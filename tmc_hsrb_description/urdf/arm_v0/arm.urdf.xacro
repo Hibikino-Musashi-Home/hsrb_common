@@ -55,7 +55,7 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_flex.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_flex_light.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
@@ -86,7 +86,7 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_roll.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_roll_light.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>

@@ -48,7 +48,7 @@
 
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/palm.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/palm_light.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
@@ -67,12 +67,12 @@
                 lower="${actuated_proximal_joint_angle_range_min}"
                 upper="${actuated_proximal_joint_angle_range_max}" />
             <parent link="${prefix}_palm_link" />
-            <child link="${prefix}_motor_link" />
+            <child link="${prefix}_motor_frame" />
             <dynamics damping="1.0"/>
         </joint>
 
         <!-- dummy link -->
-        <xacro:hsrb_gripper_dummy_link name="${prefix}_motor_link" />
+        <xacro:hsrb_gripper_dummy_link name="${prefix}_motor_frame" />
     </xacro:macro>
 
     <xacro:macro name="hsrb_hand" params="prefix parent *origin">
@@ -80,12 +80,12 @@
             <insert_block name="origin" />
         </xacro:hsrb_gripper_base>
 
-        <xacro:hsrb_finger_with_vacuum prefix="${prefix}" suffix="left" parent="${prefix}_palm_link">
+        <xacro:hsrb_finger_with_vacuum prefix="${prefix}" suffix="l" parent="${prefix}_palm_link">
             <origin xyz="${palm_to_proximal_x} ${palm_to_proximal_y} ${palm_to_proximal_z}"
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_finger_with_vacuum>
 
-        <xacro:hsrb_finger_without_vacuum prefix="${prefix}" suffix="right" parent="${prefix}_palm_link">
+        <xacro:hsrb_finger_without_vacuum prefix="${prefix}" suffix="r" parent="${prefix}_palm_link">
             <origin xyz="${palm_to_proximal_x} ${-palm_to_proximal_y} ${palm_to_proximal_z}"
                 rpy="0.0 0.0 0.0" />
         </xacro:hsrb_finger_without_vacuum>
@@ -173,14 +173,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/left_proximal.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/l_proximal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/left_proximal.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/l_proximal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -201,14 +201,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/left_distal.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/l_distal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/left_distal.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/l_distal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -262,14 +262,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/right_proximal.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/r_proximal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/right_proximal.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/r_proximal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -290,14 +290,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/right_distal.dae" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/r_distal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/right_distal.stl" />
+                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/r_distal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>

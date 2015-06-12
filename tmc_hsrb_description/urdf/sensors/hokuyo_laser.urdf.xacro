@@ -4,13 +4,13 @@
 
     <!-- range sensor -->
     <xacro:macro name="hokuyo_laser" params="prefix robot_namespace parent *origin">
-        <joint name="${prefix}_laser_joint" type="fixed">
+        <joint name="${prefix}_range_sensor_joint" type="fixed">
             <insert_block name="origin" />
             <parent link="${parent}" />
-            <child link="${prefix}_laser_link" />
+            <child link="${prefix}_range_sensor_link" />
         </joint>
 
-        <link name="${prefix}_laser_link">
+        <link name="${prefix}_range_sensor_link">
             <visual>
                 <geometry>
                     <mesh filename="package://tmc_hsrb_description/meshes/sensors/laser.dae" />
@@ -27,11 +27,11 @@
         </link>
 
         <xacro:hokuyo_laser_gazebo
-            sensor_name="${prefix}_laser"
+            sensor_name="${prefix}_range_sensor"
             robot_namespace="${robot_namespace}"
             ros_topic="${prefix}_scan"
-            frame_name="${prefix}_laser_link"
-            min_angle="-1.22" max_angle="1.22" />
+            frame_name="${prefix}_range_sensor_link"
+            min_angle="-2.3562" max_angle="2.3562" />
     </xacro:macro>
 
 </robot>

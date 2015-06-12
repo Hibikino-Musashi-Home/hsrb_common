@@ -4,8 +4,8 @@
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/head_v0/head.transmission.xacro"/>
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/head_v0/head.gazebo.xacro"/>
 
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/depth_camera.urdf.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/stereo_camera.urdf.xacro"/>
+    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/asus_xtion.urdf.xacro"/>
+    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/pointgrey_chameleon.urdf.xacro"/>
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/wide_camera.urdf.xacro"/>
 
     <!-- head -->
@@ -97,11 +97,11 @@
         </link>
 
         <!-- cameras -->
-        <xacro:pointgrey_chameleon prefix="${prefix}_left" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
+        <xacro:pointgrey_chameleon prefix="${prefix}_l_stereo" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="0.02 0.07 0.061" rpy="0 0 0"/>
         </xacro:pointgrey_chameleon>
 
-        <xacro:pointgrey_chameleon prefix="${prefix}_right" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
+        <xacro:pointgrey_chameleon prefix="${prefix}_r_stereo" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="0.02 -0.07 0.061" rpy="0 0 0"/>
         </xacro:pointgrey_chameleon>
 
@@ -109,9 +109,9 @@
             <origin xyz="0.0195 0.0 0.061" rpy="0 0 0"/>
         </xacro:wide_camera>
 
-        <xacro:depth_camera1 prefix="${prefix}" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
+        <xacro:asus_xtion prefix="${prefix}" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
             <origin xyz="-0.079796 0.022 0.215172" rpy="0 0 0"/>
-        </xacro:depth_camera1>
+        </xacro:asus_xtion>
 
         <xacro:hsrb_head_gazebo prefix="${prefix}"/>
         <xacro:hsrb_head_transmission prefix="${prefix}"/>

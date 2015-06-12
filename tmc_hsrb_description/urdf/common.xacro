@@ -3,10 +3,25 @@
 
   <xacro:property name="pi" value="3.14159265359"/>
 
+  <macro name="hsrb_position_joint_transmission" params="joint reduction">
+     <transmission name="${joint}_transmission">
+       <type>transmission_interface/SimpleTransmission</type>
+       <joint name="${joint}">
+         <hardwareInterface>PositionJointInterface</hardwareInterface>
+       </joint>
+       <actuator name="${joint}_actuator">
+         <hardwareInterface>PositionJointInterface</hardwareInterface>
+         <mechanicalReduction>${reduction}</mechanicalReduction>
+       </actuator>
+     </transmission>
+  </macro>
+
   <macro name="hsrb_effort_joint_transmission" params="joint reduction">
      <transmission name="${joint}_transmission">
        <type>transmission_interface/SimpleTransmission</type>
-       <joint name="${joint}"/>
+       <joint name="${joint}">
+         <hardwareInterface>EffortJointInterface</hardwareInterface>
+       </joint>
        <actuator name="${joint}_actuator">
          <hardwareInterface>EffortJointInterface</hardwareInterface>
          <mechanicalReduction>${reduction}</mechanicalReduction>
@@ -17,7 +32,9 @@
   <macro name="hsrb_velocity_joint_transmission" params="joint reduction">
       <transmission name="${prefix}_transmission">
           <type>transmission_interface/SimpleTransmission</type>
-          <joint name="${joint}"/>
+          <joint name="${joint}">
+            <hardwareInterface>VelocityJointInterface</hardwareInterface>
+          </joint>
           <actuator name="${joint}_actuator">
               <hardwareInterface>VelocityJointInterface</hardwareInterface>
               <mechanicalReduction>${reduction}</mechanicalReduction>
@@ -31,6 +48,16 @@
       <gravity>${gravity}</gravity>
       <mu1>${friction}</mu1>
       <mu2>${friction}</mu2>
+    </gazebo>
+  </macro>
+
+  <macro name="gazebo_link_flat_black" params="name gravity collide friction">
+    <gazebo reference="${name}">
+      <selfCollide>${collide}</selfCollide>
+      <gravity>${gravity}</gravity>
+      <mu1>${friction}</mu1>
+      <mu2>${friction}</mu2>
+      <material value="Gazebo/FlatBlack"/>
     </gazebo>
   </macro>
 

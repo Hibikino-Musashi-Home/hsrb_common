@@ -3,7 +3,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(tmc_hsrb_description)
 
-find_package(catkin REQUIRED COMPONENTS xacro)
+find_package(catkin REQUIRED COMPONENTS xacro rosbash)
 
 
 file(GLOB _robot_xacros "${PROJECT_SOURCE_DIR}/robots/*.urdf.xacro")
@@ -18,13 +18,12 @@ foreach(_xacro ${_robot_xacros})
         OUTPUT ${_urdf}
         DEPENDS ${_xacro} ${_component_xacros}
         COMMAND ${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro.py ${_xacro} > ${_urdf})
-    add_custom_target(${PROJECT_NAME}_${name}_gen_urdf ALL DEPENDS ${_urdf})
+    add_custom_target(${PROJECT_NAME}_${_name}_gen_urdf ALL DEPENDS ${_urdf})
 endforeach()
-
 
 catkin_package(CATKIN_DEPENDS xacro)
 
-install(DIRECTORY launch/ meshes/ robots/ urdf/
+install(DIRECTORY launch meshes robots urdf
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
 )
 
