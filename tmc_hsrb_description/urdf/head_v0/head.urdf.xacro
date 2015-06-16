@@ -98,19 +98,19 @@
 
         <!-- cameras -->
         <xacro:pointgrey_chameleon prefix="${prefix}_l_stereo" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
-            <origin xyz="0.02 0.07 0.061" rpy="0 0 0"/>
+            <origin xyz="0.02 0.07 0.061" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
         </xacro:pointgrey_chameleon>
 
         <xacro:pointgrey_chameleon prefix="${prefix}_r_stereo" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
-            <origin xyz="0.02 -0.07 0.061" rpy="0 0 0"/>
+            <origin xyz="0.02 -0.07 0.061" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
         </xacro:pointgrey_chameleon>
 
         <xacro:wide_camera prefix="${prefix}_center" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
-            <origin xyz="0.0195 0.0 0.061" rpy="0 0 0"/>
+            <origin xyz="0.0195 0.0 0.061" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
         </xacro:wide_camera>
 
-        <xacro:asus_xtion prefix="${prefix}_" parent="${prefix}_tilt_link" robot_namespace="${robot_name}" sensor_name="rgbd_sensor">
-            <origin xyz="-0.079796 0.022 0.215172" rpy="0 0 0"/>
+        <xacro:asus_xtion prefix="${prefix}" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
+            <origin xyz="-0.079796 0.022 0.215172" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
         </xacro:asus_xtion>
 
         <xacro:hsrb_head_gazebo prefix="${prefix}"/>
