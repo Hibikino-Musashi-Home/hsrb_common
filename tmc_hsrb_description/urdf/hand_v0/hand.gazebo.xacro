@@ -3,13 +3,13 @@
     <xacro:macro name="hsrb_hand_gazebo" params="prefix">
         <gazebo_link name="${prefix}_palm_link" gravity="true" collide="false" friction="0.9"/>
         <gazebo_link name="${prefix}_camera_link" gravity="true" collide="false" friction="0.9"/>
-        <gazebo_link name="${prefix}_l_actuated_proximal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_l_proximal_link" gravity="true" collide="false" friction="1.0"/>
         <gazebo_link name="${prefix}_l_spring_proximal_link" gravity="true" collide="false" friction="1.0"/>
         <gazebo_link name="${prefix}_l_mimic_link" gravity="true" collide="false" friction="1.0"/>
         <gazebo_link name="${prefix}_l_distal_link" gravity="true" collide="false" friction="1.0"/>
         <gazebo_link name="${prefix}_l_finger_tip_frame" gravity="true" collide="false" friction="1.0"/>
         <gazebo_link name="${prefix}_l_finger_vacuum_frame" gravity="true" collide="false" friction="1.0"/>
-        <gazebo_link name="${prefix}_r_actuated_proximal_link" gravity="true" collide="false" friction="1.0"/>
+        <gazebo_link name="${prefix}_r_proximal_link" gravity="true" collide="false" friction="1.0"/>
         <gazebo_link name="${prefix}_r_spring_proximal_link" gravity="true" collide="false" friction="1.0"/>
         <gazebo_link name="${prefix}_r_mimic_link" gravity="true" collide="false" friction="1.0"/>
         <gazebo_link name="${prefix}_r_distal_link" gravity="true" collide="false" friction="1.0"/>
@@ -18,11 +18,11 @@
 
         <gazebo_joint name="${prefix}_palm_joint"/>
         <gazebo_joint name="${prefix}_motor_joint"/>
-        <gazebo_joint name="${prefix}_l_actuated_proximal_joint"/>
+        <gazebo_joint name="${prefix}_l_proximal_joint"/>
         <gazebo_joint name="${prefix}_l_spring_proximal_joint"/>
         <gazebo_joint name="${prefix}_l_mimic_distal_joint"/>
         <gazebo_joint name="${prefix}_l_distal_joint"/>
-        <gazebo_joint name="${prefix}_r_actuated_proximal_joint"/>
+        <gazebo_joint name="${prefix}_r_proximal_joint"/>
         <gazebo_joint name="${prefix}_r_spring_proximal_joint"/>
         <gazebo_joint name="${prefix}_r_mimic_distal_joint"/>
         <gazebo_joint name="${prefix}_r_distal_joint"/>

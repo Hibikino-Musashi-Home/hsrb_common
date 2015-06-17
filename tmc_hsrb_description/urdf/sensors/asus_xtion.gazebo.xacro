@@ -19,7 +19,7 @@
     <xacro:property name="XtionMaxDistance" value="5"/>
     <xacro:property name="XtionFrameRate" value="30"/>
 
-    <xacro:macro name="depth_camera_gazebo" params="robot_namespace sensor_name parent_camera_link parent_depth_link">
+    <xacro:macro name="asus_xtion_gazebo" params="robot_namespace sensor_name parent_camera_link parent_depth_link">
         <gazebo reference="${parent_camera_link}">
             <sensor type="depth" name="openni_camera_camera">
                 <always_on>0</always_on>
@@ -38,18 +38,18 @@
                     </clip>
                 </camera>
                 <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
-                    <robotNamespace>${robot_namespace}</robotNamespace>
                     <alwaysOn>true</alwaysOn>
-                    <updateRate>10.0</updateRate>
+                    <baseline>0.2</baseline>
+                    <updateRate>1.0</updateRate>
                     <cameraName>${sensor_name}</cameraName>
                     <frameName>${parent_depth_link}</frameName>
-                    <imageTopicName>rgb/image_raw</imageTopicName>
-                    <depthImageTopicName>depth/image_raw</depthImageTopicName>
-                    <pointCloudTopicName>depth/points</pointCloudTopicName>
-                    <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
-                    <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
-                    <pointCloudCutoff>0.4</pointCloudCutoff>
-                    <hackBaseline>0.0</hackBaseline>
+                    <imageTopicName>/${robot_namespace}/${sensor_name}/rgb/image_raw</imageTopicName>
+                    <cameraInfoTopicName>/${robot_namespace}/${sensor_name}/rgb/camera_info</cameraInfoTopicName>
+                    <depthImageTopicName>/${robot_namespace}/${sensor_name}/depth/image_raw</depthImageTopicName>
+                    <pointCloudTopicName>/${robot_namespace}/${sensor_name}/depth/points</pointCloudTopicName>
+                    <depthImageCameraInfoTopicName>/${robot_namespace}/${sensor_name}/depth/camera_info</depthImageCameraInfoTopicName>
+                    <pointCloudCutoff>0.5</pointCloudCutoff>
+                    <pointCloudCutoffMax>9.2</pointCloudCutoffMax>
                     <distortionK1>0.0</distortionK1>
                     <distortionK2>0.0</distortionK2>
                     <distortionK3>0.0</distortionK3>
@@ -59,6 +59,7 @@
                     <Cx>0.0</Cx>
                     <Cy>0.0</Cy>
                     <focalLength>0.0</focalLength>
+                    <hackBaseline>0</hackBaseline>
                 </plugin>
             </sensor>
         </gazebo>
