@@ -16,12 +16,18 @@
     <xacro:property name="passive_wheel_offset_x" value="0.1495" />
     <xacro:property name="passive_wheel_offset_y" value="0.055" />
 
+    <xacro:property name="drive_wheel_max_effort" value="11.067" />
+    <xacro:property name="drive_wheel_max_velocity" value="20.8" />
+
+    <xacro:property name="roll_joint_max_effort" value="34.46" />
+    <xacro:property name="roll_joint_max_velocity" value="2.5" />
+
     <!-- drive wheel -->
     <xacro:macro name="hsrb_drive_wheel" params="prefix suffix parent *origin">
         <joint name="${prefix}_${suffix}_drive_wheel_joint" type="continuous">
             <insert_block name="origin" />
             <axis xyz="0.0 1.0 0.0" />
-            <limit effort="1.5" velocity="18.0" />
+            <limit effort="${drive_wheel_max_effort}" velocity="${drive_wheel_max_velocity}" />
             <parent link="${parent}" />
             <child link="${prefix}_${suffix}_drive_wheel_link" />
             <dynamics damping="1.0"/>
@@ -157,7 +163,7 @@
         <joint name="${prefix}_roll_joint" type="continuous">
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
             <axis xyz="0.0 0.0 1.0" />
-            <limit effort="100.0" velocity="10.0" />
+            <limit effort="${roll_joint_max_effort}" velocity="${roll_joint_max_velocity}" />
             <parent link="${prefix}_link" />
             <child link="${prefix}_roll_link" />
             <dynamics damping="0.7"/>
