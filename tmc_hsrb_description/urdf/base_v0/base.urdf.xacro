@@ -21,7 +21,7 @@
         <joint name="${prefix}_${suffix}_drive_wheel_joint" type="continuous">
             <insert_block name="origin" />
             <axis xyz="0.0 1.0 0.0" />
-            <limit effort="1000.0" velocity="10.0" />
+            <limit effort="1.5" velocity="18.0" />
             <parent link="${parent}" />
             <child link="${prefix}_${suffix}_drive_wheel_link" />
             <dynamics damping="1.0"/>
@@ -55,7 +55,7 @@
         <joint name="${prefix}_${suffix}_passive_wheel_x_joint" type="continuous">
             <insert_block name="origin" />
             <axis xyz="1.0 0.0 0.0" />
-            <limit effort="1000.0" velocity="100.0" />
+            <limit effort="1.0" velocity="3.0" />
             <parent link="${parent}" />
             <child link="${prefix}_${suffix}_passive_wheel_x_frame" />
             <dynamics damping="1.0"/>
