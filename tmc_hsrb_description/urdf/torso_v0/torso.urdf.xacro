@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/torso_v0/torso.transmission.xacro"/>
     <xacro:include filename="$(find tmc_hsrb_description)/urdf/torso_v0/torso.gazebo.xacro"/>
 
     <!-- torso -->
@@ -39,6 +37,5 @@
             </collision>
         </link>
         <xacro:hsrb_torso_gazebo prefix="${prefix}" mimic_joint="${mimic_joint}"/>
-        <xacro:hsrb_torso_transmission prefix="${prefix}"/>
     </xacro:macro>
 </robot>

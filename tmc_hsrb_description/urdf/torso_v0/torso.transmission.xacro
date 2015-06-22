@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
-
-    <xacro:macro name="hsrb_torso_transmission" params="prefix">
-        <hsrb_position_joint_transmission joint="${prefix}_lift_joint" reduction="1"/>
-    </xacro:macro>
-
-</robot>
