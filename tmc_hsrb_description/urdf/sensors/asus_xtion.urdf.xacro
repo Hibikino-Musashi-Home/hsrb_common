@@ -6,8 +6,7 @@
     <xacro:macro name="asus_xtion" params="prefix parent robot_namespace sensor_name *origin">
         <joint name="${prefix}_${sensor_name}_joint" type="fixed">
             <insert_block name="origin" />
-            <parent link="${parent}"/>
-            <child link="${prefix}_${sensor_name}_link"/>
+            <parent link="${parent}"/> <child link="${prefix}_${sensor_name}_link"/>
         </joint>
 
         <link name="${prefix}_${sensor_name}_link">
@@ -28,20 +27,19 @@
             </collision>
         </link>
 
-        <joint name="${prefix}_rgbd_sensor_pointcloud_frame_joint" type="fixed">
-            <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
-            <parent link="${prefix}_rgbd_sensor_link"/>
-            <child link="${prefix}_rgbd_sensor_pointcloud_frame"/>
+        <joint name="${prefix}_rgbd_sensor_gazebo_frame_joint" type="fixed">
+            <origin xyz="0 0 0" rpy="${pi/2.0} ${-pi/2.0} 0.0"/>
+            <parent link="${prefix}_${sensor_name}_link"/>
+            <child link="${prefix}_${sensor_name}_gazebo_frame"/>
         </joint>
         `
-        <link name="${prefix}_${sensor_name}_pointcloud_frame"></link>
+        <link name="${prefix}_${sensor_name}_gazebo_frame"></link>
 
         <xacro:asus_xtion_gazebo
             robot_namespace="${robot_namespace}"
             sensor_name="${sensor_name}"
-            parent_camera_link="${prefix}_${sensor_name}_link"
-            parent_depth_link="${prefix}_${sensor_name}_pointcloud_frame"/>
-
+            parent_frame="${prefix}_${sensor_name}_gazebo_frame"
+            topic_frame_id="${prefix}_${sensor_name}_rgb_frame" />
     </xacro:macro>
 
 </robot>

@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:macro name="pointgrey_chameleon_gazebo" params="sensor_name frame_name robot_namespace">
-        <gazebo reference="${frame_name}">
+    <xacro:macro name="pointgrey_chameleon_gazebo" params="sensor_name parent_frame topic_frame_id robot_namespace">
+        <gazebo reference="${parent_frame}">
             <sensor type="camera" name="${sensor_name}">
                 <update_rate>10.0</update_rate>
                 <camera name="${sensor_name}">
@@ -28,7 +28,7 @@
                     <cameraName>${sensor_name}</cameraName>
                     <imageTopicName>image_raw</imageTopicName>
                     <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-                    <frameName>${frame_name}</frameName>
+                    <frameName>${topic_frame_id}</frameName>
                     <robotNamespace>${robot_namespace}</robotNamespace>
                     <hackBaseline>0.07</hackBaseline>
                     <distortionK1>0.0</distortionK1>

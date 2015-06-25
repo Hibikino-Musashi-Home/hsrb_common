@@ -61,7 +61,7 @@
             </collision>
         </link>
 
-        <joint name="${prefix}_motor_joint" type="revolute">
+        <joint name="${prefix}_motor_frame_joint" type="revolute">
             <axis xyz="1.0 0.0 0.0" />
             <limit effort="100.0" velocity="1.0"
                 lower="${proximal_joint_angle_range_min}"
@@ -109,7 +109,7 @@
                 upper="${proximal_joint_angle_range_max}" />
             <parent link="${parent}" />
             <child link="${prefix}_${suffix}_proximal_link" />
-            <mimic joint="${prefix}_motor_joint" />
+            <mimic joint="${prefix}_motor_frame_joint" />
             <dynamics damping="1.0"/>
         </joint>
 
@@ -151,7 +151,7 @@
                 upper="${-proximal_joint_angle_range_min}" />
             <parent link="${prefix}_${suffix}_mimic_distal_link" />
             <child link="${prefix}_${suffix}_distal_link" />
-            <mimic joint="${prefix}_motor_joint" multiplier="-1.0" offset="${-distal_joint_angle_offset}"/>
+            <mimic joint="${prefix}_motor_frame_joint" multiplier="-1.0" offset="${-distal_joint_angle_offset}"/>
             <dynamics damping="1.0"/>
         </joint>
     </xacro:macro>
@@ -214,7 +214,7 @@
             </collision>
         </link>
 
-        <joint name="${prefix}_${suffix}_finger_tip_joint" type="fixed">
+        <joint name="${prefix}_${suffix}_finger_tip_frame_joint" type="fixed">
             <origin xyz="0.01675 0.0193 0.0379" rpy="${-pi/2.0} 0.0 0.0" />
             <parent link="${prefix}_${suffix}_distal_link" />
             <child link="${prefix}_${suffix}_finger_tip_frame" />
@@ -222,7 +222,7 @@
 
         <xacro:hsrb_gripper_dummy_link name="${prefix}_${suffix}_finger_tip_frame" />
 
-        <joint name="${prefix}_${suffix}_finger_vacuum_joint" type="fixed">
+        <joint name="${prefix}_${suffix}_finger_vacuum_frame_joint" type="fixed">
             <origin xyz="0.00475 -0.011539 0.03322" rpy="${pi/4.0} 0.0 0.0" />
             <parent link="${prefix}_${suffix}_distal_link" />
             <child link="${prefix}_${suffix}_finger_vacuum_frame" />
@@ -303,7 +303,7 @@
             </collision>
         </link>
 
-        <joint name="${prefix}_${suffix}_finger_tip_joint" type="fixed">
+        <joint name="${prefix}_${suffix}_finger_tip_frame_joint" type="fixed">
             <origin xyz="0.01675 -0.0193 0.0379" rpy="${pi/2.0} 0.0 0.0" />
             <parent link="${prefix}_${suffix}_distal_link" />
             <child link="${prefix}_${suffix}_finger_tip_frame" />
