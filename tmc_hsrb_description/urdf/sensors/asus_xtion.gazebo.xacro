@@ -19,8 +19,8 @@
     <xacro:property name="XtionMaxDistance" value="5"/>
     <xacro:property name="XtionFrameRate" value="30"/>
 
-    <xacro:macro name="asus_xtion_gazebo" params="robot_namespace sensor_name parent_camera_link parent_depth_link">
-        <gazebo reference="${parent_camera_link}">
+    <xacro:macro name="asus_xtion_gazebo" params="robot_namespace sensor_name parent_frame topic_frame_id">
+        <gazebo reference="${parent_frame}">
             <sensor type="depth" name="openni_camera_camera">
                 <always_on>0</always_on>
                 <visualize>true</visualize>
@@ -31,18 +31,19 @@
                         <height>240</height>
                         <format>R8G8B8</format>
                     </image>
-                    <depth_camera> </depth_camera>
+                    <depth_camera>
+                    </depth_camera>
                     <clip>
                         <near>0.1</near>
                         <far>100</far>
                     </clip>
                 </camera>
-                <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+                <plugin name="${sensor_name}_controller" filename="libgazebo_ros_openni_kinect.so">
                     <alwaysOn>true</alwaysOn>
                     <baseline>0.2</baseline>
                     <updateRate>1.0</updateRate>
                     <cameraName>${sensor_name}</cameraName>
-                    <frameName>${parent_depth_link}</frameName>
+                    <frameName>${topic_frame_id}</frameName>
                     <imageTopicName>/${robot_namespace}/${sensor_name}/rgb/image_raw</imageTopicName>
                     <cameraInfoTopicName>/${robot_namespace}/${sensor_name}/rgb/camera_info</cameraInfoTopicName>
                     <depthImageTopicName>/${robot_namespace}/${sensor_name}/depth/image_raw</depthImageTopicName>

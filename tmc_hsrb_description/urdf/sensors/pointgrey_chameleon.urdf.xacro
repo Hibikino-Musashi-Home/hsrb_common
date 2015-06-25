@@ -19,9 +19,18 @@
             </visual>
         </link>
 
+        <joint name="${prefix}_camera_gazebo_frame_joint" type="fixed">
+            <origin xyz="0 0 0" rpy="${pi/2.0} ${-pi/2.0} 0.0"/>
+            <parent link="${prefix}_camera_link" />
+            <child link="${prefix}_camera_gazebo_frame" />
+        </joint>
+
+        <link name="${prefix}_camera_gazebo_frame"></link>
+
         <xacro:pointgrey_chameleon_gazebo
             sensor_name="${prefix}_camera"
-            frame_name="${prefix}_camera_link"
+            parent_frame="${prefix}_camera_gazebo_frame"
+            topic_frame_id="${prefix}_camera_frame"
             robot_namespace="${robot_namespace}"/>
     </xacro:macro>
 
