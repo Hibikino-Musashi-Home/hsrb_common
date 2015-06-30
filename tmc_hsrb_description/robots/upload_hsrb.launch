@@ -1,5 +1,0 @@
-<launch>
-  <!-- send urdf to param server -->
-  <arg name="robot_model" default="hsrb2s"/>
-  <param name="robot_description" command="$(find xacro)/xacro.py $(find tmc_hsrb_description)/robots/$(arg robot_model).urdf.xacro" />
-</launch>
