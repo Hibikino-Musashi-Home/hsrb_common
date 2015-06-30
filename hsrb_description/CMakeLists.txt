@@ -1,7 +1,7 @@
 # copyright TOYOTA MOTOR CORPORATION
 # vim: fileencoding=utf-8 :
 cmake_minimum_required(VERSION 2.8.3)
-project(tmc_hsrb_description)
+project(hsrb_description)
 
 find_package(catkin REQUIRED COMPONENTS xacro rosbash)
 

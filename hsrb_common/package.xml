@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>tmc_hsrb_common</name>
+  <name>hsrb_common</name>
   <version>0.3.0</version>
   <description>Common robot model and settings of HSR-B</description>
   <maintainer email="akiyoshi_ochiai@mail.toyota.co.jp">Akiyoshi Ochiai</maintainer>
@@ -8,7 +8,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>tmc_hsrb_description</run_depend>
+  <run_depend>hsrb_description</run_depend>
 
   <export>
     <metapackage/>

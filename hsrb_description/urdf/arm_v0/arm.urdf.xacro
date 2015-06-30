@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/arm_v0/arm.transmission.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/arm_v0/arm.gazebo.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/arm_v0/arm.transmission.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/arm_v0/arm.gazebo.xacro"/>
 
     <!-- arm -->
     <xacro:macro name="hsrb_arm" params="prefix parent *origin">
@@ -24,14 +24,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/shoulder.dae" />
+                    <mesh filename="package://hsrb_description/meshes/arm_v0/shoulder.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/shoulder.stl" />
+                    <mesh filename="package://hsrb_description/meshes/arm_v0/shoulder.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -55,14 +55,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_flex_light.dae" />
+                    <mesh filename="package://hsrb_description/meshes/arm_v0/arm_flex_light.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_flex.stl" />
+                    <mesh filename="package://hsrb_description/meshes/arm_v0/arm_flex.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>
@@ -86,14 +86,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_roll_light.dae" />
+                    <mesh filename="package://hsrb_description/meshes/arm_v0/arm_roll_light.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/arm_v0/arm_roll.stl" />
+                    <mesh filename="package://hsrb_description/meshes/arm_v0/arm_roll.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>

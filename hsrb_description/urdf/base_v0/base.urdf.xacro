@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/base_v0/base.transmission.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/base_v0/base.gazebo.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/hokuyo_laser.urdf.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/imu.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/base_v0/base.transmission.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/base_v0/base.gazebo.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/sensors/hokuyo_laser.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/sensors/imu.urdf.xacro"/>
 
     <!-- constant -->
     <xacro:property name="drive_wheel_width" value="0.03" />
@@ -137,26 +137,26 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/base_v0/base_light.dae" />
+                    <mesh filename="package://hsrb_description/meshes/base_v0/base_light.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/base_v0/body.dae" />
+                    <mesh filename="package://hsrb_description/meshes/base_v0/body.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/base_v0/torso_base.dae" />
+                    <mesh filename="package://hsrb_description/meshes/base_v0/torso_base.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/base_v0/base.stl" />
+                    <mesh filename="package://hsrb_description/meshes/base_v0/base.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>

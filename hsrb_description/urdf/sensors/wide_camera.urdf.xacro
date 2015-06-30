@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/wide_camera.gazebo.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/sensors/wide_camera.gazebo.xacro"/>
 
     <!-- wide rgb camera -->
     <xacro:macro name="wide_camera" params="prefix parent robot_namespace *origin">

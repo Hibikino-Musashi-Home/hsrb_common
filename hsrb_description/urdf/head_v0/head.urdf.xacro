@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/head_v0/head.transmission.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/head_v0/head.gazebo.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/head_v0/head.transmission.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/head_v0/head.gazebo.xacro"/>
 
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/asus_xtion.urdf.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/pointgrey_chameleon.urdf.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/wide_camera.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/sensors/asus_xtion.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/sensors/pointgrey_chameleon.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/sensors/wide_camera.urdf.xacro"/>
 
     <!-- head -->
     <xacro:macro name="hsrb_head" params="prefix parent *origin">
@@ -28,14 +28,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head_pan.dae" />
+                    <mesh filename="package://hsrb_description/meshes/head_v0/head_pan.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head_pan.stl" />
+                    <mesh filename="package://hsrb_description/meshes/head_v0/head_pan.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>
@@ -59,38 +59,38 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head_upper.dae" />
+                    <mesh filename="package://hsrb_description/meshes/head_v0/head_upper.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head_tilt.dae" />
+                    <mesh filename="package://hsrb_description/meshes/head_v0/head_tilt.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/tablet_base.dae" />
+                    <mesh filename="package://hsrb_description/meshes/head_v0/tablet_base.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/tablet.dae" />
+                    <mesh filename="package://hsrb_description/meshes/head_v0/tablet.dae" />
                 </geometry>
                 <material name="tablet" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/head.stl" />
+                    <mesh filename="package://hsrb_description/meshes/head_v0/head.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/head_v0/tablet.stl" />
+                    <mesh filename="package://hsrb_description/meshes/head_v0/tablet.stl" />
                 </geometry>
                 <material name="tablet" />
             </collision>

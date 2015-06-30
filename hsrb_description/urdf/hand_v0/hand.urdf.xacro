@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/hand_v0/hand.transmission.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/hand_v0/hand.gazebo.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/hand_v0/hand.transmission.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/hand_v0/hand.gazebo.xacro"/>
 
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/wide_camera.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/sensors/wide_camera.urdf.xacro"/>
 
     <xacro:property name="palm_to_proximal_x" value="-0.01675" />
     <xacro:property name="palm_to_proximal_y" value="-0.0245" />
@@ -45,14 +45,14 @@
 
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/palm_light.dae" />
+                    <mesh filename="package://hsrb_description/meshes/hand_v0/palm_light.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/palm.stl" />
+                    <mesh filename="package://hsrb_description/meshes/hand_v0/palm.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -170,14 +170,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/l_proximal.dae" />
+                    <mesh filename="package://hsrb_description/meshes/hand_v0/l_proximal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/l_proximal.stl" />
+                    <mesh filename="package://hsrb_description/meshes/hand_v0/l_proximal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -198,14 +198,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/l_distal.dae" />
+                    <mesh filename="package://hsrb_description/meshes/hand_v0/l_distal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/l_distal.stl" />
+                    <mesh filename="package://hsrb_description/meshes/hand_v0/l_distal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -259,14 +259,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/r_proximal.dae" />
+                    <mesh filename="package://hsrb_description/meshes/hand_v0/r_proximal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/r_proximal.stl" />
+                    <mesh filename="package://hsrb_description/meshes/hand_v0/r_proximal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>
@@ -287,14 +287,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/r_distal.dae" />
+                    <mesh filename="package://hsrb_description/meshes/hand_v0/r_distal.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/hand_v0/r_distal.stl" />
+                    <mesh filename="package://hsrb_description/meshes/hand_v0/r_distal.stl" />
                 </geometry>
                 <material name="body_sub" />
             </collision>

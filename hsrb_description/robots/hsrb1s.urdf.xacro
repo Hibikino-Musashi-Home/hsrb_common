@@ -6,16 +6,16 @@
        xmlns:xacro="http://www.ros.org/wiki.xacro">
 
     <!-- common xacro -->
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/common.xacro" />
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/materials.urdf.xacro" />
+    <xacro:include filename="$(find hsrb_description)/urdf/common.xacro" />
+    <xacro:include filename="$(find hsrb_description)/urdf/materials.urdf.xacro" />
 
     <!-- links and joints -->
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/base_v0/base.urdf.xacro" />
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/torso_v0/torso.urdf.xacro" />
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/head_v0/head.urdf.xacro" />
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/arm_v0/arm.urdf.xacro" />
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/wrist_v0/wrist.urdf.xacro" />
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/hand_v0/hand.urdf.xacro" />
+    <xacro:include filename="$(find hsrb_description)/urdf/base_v0/base.urdf.xacro" />
+    <xacro:include filename="$(find hsrb_description)/urdf/torso_v0/torso.urdf.xacro" />
+    <xacro:include filename="$(find hsrb_description)/urdf/head_v0/head.urdf.xacro" />
+    <xacro:include filename="$(find hsrb_description)/urdf/arm_v0/arm.urdf.xacro" />
+    <xacro:include filename="$(find hsrb_description)/urdf/wrist_v0/wrist.urdf.xacro" />
+    <xacro:include filename="$(find hsrb_description)/urdf/hand_v0/hand.urdf.xacro" />
 
     <!-- constant -->
     <xacro:property name="robot_name" value="hsrb"/>

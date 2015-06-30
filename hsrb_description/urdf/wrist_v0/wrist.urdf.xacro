@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/wrist_v0/wrist.transmission.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/wrist_v0/wrist.gazebo.xacro"/>
-    <xacro:include filename="$(find tmc_hsrb_description)/urdf/sensors/minebea_ft_sensor.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/wrist_v0/wrist.transmission.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/wrist_v0/wrist.gazebo.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/sensors/minebea_ft_sensor.urdf.xacro"/>
 
     <!-- wrist -->
     <xacro:macro name="hsrb_wrist" params="prefix robot_namespace parent *origin">
@@ -25,7 +25,7 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/wrist_v0/wrist_flex.dae" />
+                    <mesh filename="package://hsrb_description/meshes/wrist_v0/wrist_flex.dae" />
                 </geometry>
                 <material name="body_sub" />
             </visual>
@@ -64,14 +64,14 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/wrist_v0/wrist_roll.dae" />
+                    <mesh filename="package://hsrb_description/meshes/wrist_v0/wrist_roll.dae" />
                 </geometry>
                 <material name="body_main" />
             </visual>
 
             <collision>
                 <geometry>
-                    <mesh filename="package://tmc_hsrb_description/meshes/wrist_v0/wrist_roll.stl" />
+                    <mesh filename="package://hsrb_description/meshes/wrist_v0/wrist_roll.stl" />
                 </geometry>
                 <material name="body_main" />
             </collision>
