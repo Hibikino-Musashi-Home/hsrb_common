@@ -24,8 +24,10 @@
                 </imu>
             </sensor>
         </gazebo>
+
         <gazebo>
-            <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+            <!-- IMU Plugin is a model plugin. Then it should be atached to HSR-B model. -->
+            <plugin name="${sensor_name}_plugin" filename="libgazebo_ros_imu.so">
                 <imuName>${sensor_name}</imuName>
                 <topicName>${sensor_name}/data</topicName>
                 <serviceName>${sensor_name}/calibrate</serviceName>

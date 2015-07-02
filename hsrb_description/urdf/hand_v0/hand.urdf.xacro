@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="hand" xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:include filename="$(find hsrb_description)/urdf/hand_v0/hand.transmission.xacro"/>
     <xacro:include filename="$(find hsrb_description)/urdf/hand_v0/hand.gazebo.xacro"/>
 

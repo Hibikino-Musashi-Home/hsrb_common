@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="head" xmlns:xacro="http://ros.org/wiki/xacro">
 
     <xacro:include filename="$(find hsrb_description)/urdf/head_v0/head.transmission.xacro"/>
     <xacro:include filename="$(find hsrb_description)/urdf/head_v0/head.gazebo.xacro"/>

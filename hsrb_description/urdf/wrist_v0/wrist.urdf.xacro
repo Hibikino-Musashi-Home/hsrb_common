@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="wrist" xmlns:xacro="http://ros.org/wiki/xacro">
 
     <xacro:include filename="$(find hsrb_description)/urdf/wrist_v0/wrist.transmission.xacro"/>
     <xacro:include filename="$(find hsrb_description)/urdf/wrist_v0/wrist.gazebo.xacro"/>

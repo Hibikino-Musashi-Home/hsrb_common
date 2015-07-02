@@ -12,7 +12,10 @@
 
         <link name="${prefix}_imu_frame"/>
 
-        <xacro:imu_gazebo sensor_name="${prefix}_imu" robot_namespace="${robot_namespace}" frame_name="${prefix}_imu_frame"/>
+        <xacro:imu_gazebo
+            sensor_name="${prefix}_imu"
+            robot_namespace="${robot_namespace}"
+            frame_name="${prefix}_imu_frame"/>
     </xacro:macro>
 
 </robot>
