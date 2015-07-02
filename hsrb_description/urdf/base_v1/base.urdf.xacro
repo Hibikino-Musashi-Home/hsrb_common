@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="base" xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:include filename="$(find hsrb_description)/urdf/base_v1/base.transmission.xacro"/>
     <xacro:include filename="$(find hsrb_description)/urdf/base_v1/base.gazebo.xacro"/>
     <xacro:include filename="$(find hsrb_description)/urdf/sensors/hokuyo_laser.urdf.xacro"/>

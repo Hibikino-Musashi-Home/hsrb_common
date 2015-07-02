@@ -77,4 +77,8 @@
     </gazebo>
   </macro>
 
+  <macro name="gazebo_joint" params="name">
+      <gazebo reference="${name}"></gazebo>
+  </macro>
+
 </robot>
