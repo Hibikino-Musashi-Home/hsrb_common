@@ -19,10 +19,10 @@
     <xacro:macro name="hsrb_gripper_dummy_link" params="name">
         <link name="${name}">
             <inertial>
-                <mass value="0.1"/>
+                <mass value="0.15"/>
                 <inertia
-                    ixx="0.01" ixy="0.0" ixz="0.0"
-                    iyy="0.01" iyz="0.0" izz="0.01"/>
+                    ixx="0.015" ixy="0.0" ixz="0.0"
+                    iyy="0.015" iyz="0.0" izz="0.015"/>
             </inertial>
         </link>
     </xacro:macro>
@@ -37,10 +37,10 @@
 
         <link name="${prefix}_palm_link">
             <inertial>
-                <mass value="0.1"/>
+                <mass value="0.15"/>
                 <inertia
-                    ixx="0.01" ixy="0.0" ixz="0.0"
-                    iyy="0.01" iyz="0.0" izz="0.01"/>
+                    ixx="0.015" ixy="0.0" ixz="0.0"
+                    iyy="0.015" iyz="0.0" izz="0.015"/>
             </inertial>
 
             <visual>
@@ -227,10 +227,10 @@
 
         <link name="${prefix}_${suffix}_finger_vacuum_frame">
             <inertial>
-                <mass value="0.1"/>
+                <mass value="0.15"/>
                 <inertia
-                    ixx="0.01" ixy="0.0" ixz="0.0"
-                    iyy="0.01" iyz="0.0" izz="0.01"/>
+                    ixx="0.015" ixy="0.0" ixz="0.0"
+                    iyy="0.015" iyz="0.0" izz="0.015"/>
             </inertial>
             <visual>
                 <origin xyz="0.0 0.0 -0.01" rpy="0.0 0.0 0.0" />
