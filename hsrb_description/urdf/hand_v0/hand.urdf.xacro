@@ -217,7 +217,8 @@
             <child link="${prefix}_${suffix}_finger_tip_frame" />
         </joint>
 
-        <link name="${prefix}_${suffix}_finger_tip_frame" />
+        <!-- TODO: this is the right format: <link name="${prefix}_${suffix}_finger_tip_frame" /> -->
+        <xacro:hsrb_gripper_dummy_link name="${prefix}_${suffix}_finger_tip_frame" />
 
         <joint name="${prefix}_${suffix}_finger_vacuum_frame_joint" type="fixed">
             <origin xyz="0.00475 -0.011539 0.03322" rpy="${pi/4.0} 0.0 0.0" />
@@ -306,6 +307,7 @@
             <child link="${prefix}_${suffix}_finger_tip_frame" />
         </joint>
 
-        <link name="${prefix}_${suffix}_finger_tip_frame" />
+        <!-- TODO: this is the right format: <link name="${prefix}_${suffix}_finger_tip_frame" /> -->
+        <xacro:hsrb_gripper_dummy_link name="${prefix}_${suffix}_finger_tip_frame" />
     </xacro:macro>
 </robot>
