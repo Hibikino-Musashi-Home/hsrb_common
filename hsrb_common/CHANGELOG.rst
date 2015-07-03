@@ -2,6 +2,12 @@
 Changelog for package hsrb_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.4.0 (2015-07-03)
+------------------
+* Update internal reference to old package names
+* Change package prefix
+* Contributors: Akiyoshi Ochiai
+
 0.3.0 (2015-06-11)
 ------------------
 
