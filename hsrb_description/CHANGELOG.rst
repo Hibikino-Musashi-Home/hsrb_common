@@ -2,6 +2,18 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add missing test_depend (liburdfdom-tools)
+* Merge branch 'feature/fix-invalid-references' of /var/git/repositories/hsr/hsrb_common into develop
+* fixed hand_v0 inertial and mass parameters
+* Fix joint/link name mismatch
+* Add joint/link name integrity test
+* Remove unused xacro file
+* Update internal reference to old package names
+* Change package prefix
+* Contributors: Akiyoshi Ochiai, kazuto_murase_aa, 寺田　耕志
+
 0.3.0 (2015-06-11)
 ------------------
 * フレーム/関節/リンク構造の修正
