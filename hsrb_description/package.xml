@@ -1,7 +1,7 @@
 <package>
   <name>hsrb_description</name>
   <version>0.3.0</version>
-  <description>HSRのロボット定義ファイルを置く</description>
+  <description>HSRのロボット定義ファイル</description>
   <maintainer email="koji_terada@mail.toyota.co.jp">Koji Terada</maintainer>
   <maintainer email="akiyoshi_ochiai@mail.toyota.co.jp">Akiyoshi Ochiai</maintainer>
 
@@ -22,5 +22,6 @@
   <run_depend>joint_state_publisher</run_depend>
   <run_depend>rviz</run_depend>
 
+  <test_depend>liburdfdom-tools</test_depend>
   <test_depend>urdfdom_py</test_depend>
 </package>
