@@ -2,8 +2,8 @@
 Changelog for package hsrb_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.0 (2015-07-03)
+------------------
 * Update internal reference to old package names
 * Change package prefix
 * Contributors: Akiyoshi Ochiai
