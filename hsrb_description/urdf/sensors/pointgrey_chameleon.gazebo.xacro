@@ -3,13 +3,13 @@
 
     <xacro:macro name="pointgrey_chameleon_gazebo" params="sensor_name parent_frame topic_frame_id robot_namespace">
         <gazebo reference="${parent_frame}">
-            <sensor type="camera" name="${sensor_name}">
+            <sensor type="multicamera" name="stereo_camera">
                 <update_rate>10.0</update_rate>
-                <camera name="${sensor_name}">
+                <camera name="left">
                     <horizontal_fov>1.16762527</horizontal_fov>
                     <image>
                         <width>1280</width>
-                        <height>1024</height>
+                        <height>960</height>
                         <format>R8G8B8</format>
                     </image>
                     <clip>
@@ -22,7 +22,25 @@
                         <stddev>0.007</stddev>
                     </noise>
                 </camera>
-                <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                <camera name="right">
+                  <pose>0 -0.07 0 0 0 0</pose>
+                    <horizontal_fov>1.16762527</horizontal_fov>
+                    <image>
+                        <width>1280</width>
+                        <height>960</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.05</near>
+                        <far>100</far>
+                    </clip>
+                    <noise>
+                        <type>gaussian</type>
+                        <mean>0.0</mean>
+                        <stddev>0.007</stddev>
+                    </noise>
+                </camera>
+                <plugin name="camera_controller" filename="libgazebo_ros_multicamera.so">
                     <alwaysOn>0</alwaysOn>
                     <updateRate>0.0</updateRate>
                     <cameraName>${sensor_name}</cameraName>
