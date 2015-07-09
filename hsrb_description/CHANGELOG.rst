@@ -2,6 +2,13 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.0 (2015-07-08)
+------------------
+* Fix camera resolution
+* Update RGBD sensor parameter to be compatible with real robots
+* use inertial to finger tip frame
+* Contributors: Akiyoshi Ochiai, kazuto_murase_aa
+
 0.4.0 (2015-07-03)
 ------------------
 * Add missing test_depend (liburdfdom-tools)

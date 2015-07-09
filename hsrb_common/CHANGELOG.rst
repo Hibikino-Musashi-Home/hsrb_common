@@ -2,6 +2,9 @@
 Changelog for package hsrb_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.0 (2015-07-08)
+------------------
+
 0.4.0 (2015-07-03)
 ------------------
 * Update internal reference to old package names
