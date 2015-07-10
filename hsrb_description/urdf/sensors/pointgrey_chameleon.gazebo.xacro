@@ -1,15 +1,15 @@
 <?xml version="1.0" ?>
 <robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:macro name="pointgrey_chameleon_gazebo" params="sensor_name parent_frame topic_frame_id robot_namespace">
+    <xacro:macro name="pointgrey_chameleon_gazebo" params="sensor_name parent_frame topic_frame_id robot_namespace baseline">
         <gazebo reference="${parent_frame}">
-            <sensor type="multicamera" name="stereo_camera">
+            <sensor type="camera" name="${sensor_name}">
                 <update_rate>10.0</update_rate>
-                <camera name="left">
+                <camera name="${sensor_name}">
                     <horizontal_fov>1.16762527</horizontal_fov>
                     <image>
                         <width>1280</width>
-                        <height>960</height>
+                        <height>1024</height>
                         <format>R8G8B8</format>
                     </image>
                     <clip>
@@ -22,25 +22,7 @@
                         <stddev>0.007</stddev>
                     </noise>
                 </camera>
-                <camera name="right">
-                  <pose>0 -0.07 0 0 0 0</pose>
-                    <horizontal_fov>1.16762527</horizontal_fov>
-                    <image>
-                        <width>1280</width>
-                        <height>960</height>
-                        <format>R8G8B8</format>
-                    </image>
-                    <clip>
-                        <near>0.05</near>
-                        <far>100</far>
-                    </clip>
-                    <noise>
-                        <type>gaussian</type>
-                        <mean>0.0</mean>
-                        <stddev>0.007</stddev>
-                    </noise>
-                </camera>
-                <plugin name="camera_controller" filename="libgazebo_ros_multicamera.so">
+                <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
                     <alwaysOn>0</alwaysOn>
                     <updateRate>0.0</updateRate>
                     <cameraName>${sensor_name}</cameraName>
@@ -48,7 +30,7 @@
                     <cameraInfoTopicName>camera_info</cameraInfoTopicName>
                     <frameName>${topic_frame_id}</frameName>
                     <robotNamespace>${robot_namespace}</robotNamespace>
-                    <hackBaseline>0.07</hackBaseline>
+                    <hackBaseline>${baseline}</hackBaseline>
                     <distortionK1>0.0</distortionK1>
                     <distortionK2>0.0</distortionK2>
                     <distortionK3>0.0</distortionK3>

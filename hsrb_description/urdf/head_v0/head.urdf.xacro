@@ -97,11 +97,11 @@
         </link>
 
         <!-- cameras -->
-        <xacro:pointgrey_chameleon prefix="${prefix}_l_stereo" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
+        <xacro:pointgrey_chameleon prefix="${prefix}_l_stereo" parent="${prefix}_tilt_link" robot_namespace="${robot_name}" baseline="0.00">
             <origin xyz="0.02 0.07 0.061" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
         </xacro:pointgrey_chameleon>
 
-        <xacro:pointgrey_chameleon prefix="${prefix}_r_stereo" parent="${prefix}_tilt_link" robot_namespace="${robot_name}">
+        <xacro:pointgrey_chameleon prefix="${prefix}_r_stereo" parent="${prefix}_tilt_link" robot_namespace="${robot_name}" baseline="0.14">
             <origin xyz="0.02 -0.07 0.061" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
         </xacro:pointgrey_chameleon>
 
