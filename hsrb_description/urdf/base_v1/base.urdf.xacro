@@ -49,9 +49,9 @@
                 <material name="wheel" />
             </collision>
             <inertial>
-                <mass value="0.1"/>
+                <mass value="0.15"/>
                 <origin xyz="0 0 0"/>
-                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+                <inertia ixx="0.015" ixy="0" ixz="0" iyy="0.015" iyz="0" izz="0.015"/>
             </inertial>
         </link>
     </xacro:macro>
@@ -71,13 +71,13 @@
             <inertial>
                 <mass value="0.3"/>
                 <origin xyz="0 0 0"/>
-                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+                <inertia ixx="0.015" ixy="0" ixz="0" iyy="0.015" iyz="0" izz="0.015"/>
             </inertial>
         </link>
 
         <joint name="${prefix}_${suffix}_passive_wheel_y_frame_joint" type="continuous">
             <axis xyz="0.0 1.0 0.0" />
-            <limit effort="100.0" velocity="20.0" />
+            <limit effort="8.85" velocity="20.0" />
             <parent link="${prefix}_${suffix}_passive_wheel_x_frame" />
             <child link="${prefix}_${suffix}_passive_wheel_y_frame" />
         </joint>
@@ -86,13 +86,13 @@
             <inertial>
                 <mass value="0.3"/>
                 <origin xyz="0 0 0"/>
-                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+                <inertia ixx="0.015" ixy="0" ixz="0" iyy="0.015" iyz="0" izz="0.015"/>
             </inertial>
         </link>
 
         <joint name="${prefix}_${suffix}_passive_wheel_z_joint" type="continuous">
             <axis xyz="0.0 0.0 1.0" />
-            <limit effort="1000.0" velocity="20.0" />
+            <limit effort="8.85" velocity="20.0" />
             <parent link="${prefix}_${suffix}_passive_wheel_y_frame" />
             <child link="${prefix}_${suffix}_passive_wheel_z_link" />
         </joint>
@@ -113,7 +113,7 @@
             <inertial>
                 <mass value="0.3"/>
                 <origin xyz="0 0 0"/>
-                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+                <inertia ixx="0.015" ixy="0" ixz="0" iyy="0.015" iyz="0" izz="0.015"/>
             </inertial>
         </link>
     </xacro:macro>
