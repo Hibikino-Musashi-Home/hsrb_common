@@ -37,7 +37,7 @@
 
         <xacro:asus_xtion_gazebo
             robot_namespace="${robot_namespace}"
-            sensor_name="${sensor_name}"
+            sensor_name="${prefix}_${sensor_name}"
             parent_frame="${prefix}_${sensor_name}_gazebo_frame"
             topic_frame_id="${prefix}_${sensor_name}_rgb_frame" />
     </xacro:macro>
