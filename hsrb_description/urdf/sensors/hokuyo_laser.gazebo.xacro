@@ -1,12 +1,13 @@
 <?xml version="1.0" ?>
 <robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:arg name="gazebo_visualization_enabled" default="true" />
 
     <xacro:macro name="hokuyo_laser_gazebo" params="sensor_name robot_namespace ros_topic frame_name min_angle max_angle">
         <gazebo reference="${frame_name}">
             <sensor type="gpu_ray" name="${sensor_name}">
                 <pose>0 0 0 0 0 0</pose>
                 <update_rate>30.0</update_rate>
-                <visualize>true</visualize>
+                <visualize>$(arg gazebo_visualization_enabled)</visualize>
                 <ray>
                     <scan>
                         <horizontal>
