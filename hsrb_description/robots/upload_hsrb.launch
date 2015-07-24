@@ -1,5 +1,7 @@
 <launch>
   <!-- send urdf to param server -->
-  <arg name="robot_model" default="hsrb3s"/>
-  <param name="robot_description" command="$(find xacro)/xacro.py $(find hsrb_description)/robots/$(arg robot_model).urdf.xacro" />
+  <arg name="robot_model" default="hsrb3s" />
+  <arg name="visualization" default="true" />
+  <param name="robot_description"
+      command="$(find xacro)/xacro.py $(find hsrb_description)/robots/$(arg robot_model).urdf.xacro gazebo_visualization_enabled:=$(arg visualization)" />
 </launch>
