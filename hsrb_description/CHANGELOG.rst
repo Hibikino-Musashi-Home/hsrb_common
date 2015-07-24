@@ -2,6 +2,18 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add visualization switch to laser sensor
+* change laser range
+* use valid namespace and change sensor config
+* add hsrb3 model.
+* add hsrb3s
+* update inertial and camera size
+* Remove unused transmission from hand dummy joints
+* changed sensor configuration and grasp hack parameter
+* Contributors: Akiyoshi Ochiai, 寺田　耕志, 村瀬 和都
+
 0.5.0 (2015-07-08)
 ------------------
 * Fix camera resolution
