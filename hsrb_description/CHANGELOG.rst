@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.0 (2015-07-24)
+------------------
 * Add visualization switch to laser sensor
 * change laser range
 * use valid namespace and change sensor config
