@@ -12,10 +12,19 @@
 
         <link name="${prefix}_camera_frame"></link>
 
+        <joint name="${prefix}_camera_gazebo_frame_joint" type="fixed">
+            <origin xyz="0 0 0" rpy="${pi/2.0} ${-pi/2.0} 0.0"/>
+            <parent link="${prefix}_camera_frame" />
+            <child link="${prefix}_camera_gazebo_frame" />
+        </joint>
+
+        <link name="${prefix}_camera_gazebo_frame"></link>
+
         <xacro:wide_camera_gazebo
-            sensor_name="${prefix}_camera"
-            frame_name="${prefix}_camera_frame"
             robot_namespace="${robot_namespace}"
+            sensor_name="${prefix}_camera"
+            parent_frame="${prefix}_camera_gazebo_frame"
+            topic_frame_id="${prefix}_camera_frame"
             />
     </xacro:macro>
 </robot>
