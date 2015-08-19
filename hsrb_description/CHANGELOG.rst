@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.0 (2015-08-19)
+------------------
 * enable hokuyo sensor for intel pc.
 * added head_center_gazebo_frame
 * use heavier base weight to stabilize move base in gazebo
