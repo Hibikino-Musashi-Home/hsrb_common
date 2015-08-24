@@ -88,8 +88,8 @@
         </xacro:hsrb_finger_without_vacuum>
 
         <!-- camera -->
-        <xacro:wide_camera prefix="${prefix}" parent="${prefix}_palm_link" robot_namespace="${robot_name}">
-            <origin xyz="0.039 0.0 -0.0045" rpy="${pi} ${-pi/2} 0"/>
+        <xacro:wide_camera prefix="${prefix}" parent="${prefix}_palm_link" robot_namespace="${robot_name}" rpy="${pi/2.0} ${-pi/2.0} 0" >
+            <origin xyz="0.039 0.0 -0.0045" rpy="0.0 0.0 0.0"/>
         </xacro:wide_camera>
 
         <xacro:hsrb_hand_gazebo prefix="${prefix}"/>
