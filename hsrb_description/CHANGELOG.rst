@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.7.1 (2015-08-25)
+------------------
 * fixed wrong links related to wide camera
 * Contributors: 村瀬 和都
 
