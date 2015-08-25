@@ -2,6 +2,11 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fixed wrong links related to wide camera
+* Contributors: 村瀬 和都
+
 0.7.0 (2015-08-19)
 ------------------
 * enable hokuyo sensor for intel pc.
