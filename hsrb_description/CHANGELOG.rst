@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.8.0 (2015-10-22)
+------------------
 * apply custom grasp_hack plugin
 * Contributors: 村瀬 和都
 
