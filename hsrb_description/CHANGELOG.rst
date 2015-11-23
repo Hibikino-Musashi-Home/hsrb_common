@@ -2,6 +2,11 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.9.0 (2015-11-23)
+------------------
+* Fix pointcloud color format to BGR
+* Contributors: Akiyoshi Ochiai
+
 0.8.0 (2015-10-22)
 ------------------
 * apply custom grasp_hack plugin
