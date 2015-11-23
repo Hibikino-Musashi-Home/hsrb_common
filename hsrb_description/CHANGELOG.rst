@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.9.0 (2015-11-23)
+------------------
 * Fix pointcloud color format to BGR
 * Contributors: Akiyoshi Ochiai
 
