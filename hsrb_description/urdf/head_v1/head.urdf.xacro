@@ -37,7 +37,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/head_v0/head_pan.stl" />
                 </geometry>
-                <material name="body_main" />
             </collision>
         </link>
 
@@ -86,13 +85,11 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/head_v0/head.stl" />
                 </geometry>
-                <material name="body_main" />
             </collision>
             <collision>
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/head_v0/tablet.stl" />
                 </geometry>
-                <material name="tablet" />
             </collision>
         </link>
 

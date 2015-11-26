@@ -46,7 +46,6 @@
                 <geometry>
                     <cylinder radius="${drive_wheel_radius}" length="${drive_wheel_width}" />
                 </geometry>
-                <material name="wheel" />
             </collision>
             <inertial>
                 <mass value="0.2"/>
@@ -108,7 +107,6 @@
                 <geometry>
                     <sphere radius="${passive_wheel_radius}" />
                 </geometry>
-                <material name="wheel" />
             </collision>
             <inertial>
                 <mass value="0.2"/>

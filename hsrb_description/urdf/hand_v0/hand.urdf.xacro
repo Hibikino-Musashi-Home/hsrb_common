@@ -54,7 +54,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/hand_v0/palm.stl" />
                 </geometry>
-                <material name="body_sub" />
             </collision>
         </link>
 
@@ -179,7 +178,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/hand_v0/l_proximal.stl" />
                 </geometry>
-                <material name="body_sub" />
             </collision>
         </link>
 
@@ -207,7 +205,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/hand_v0/l_distal.stl" />
                 </geometry>
-                <material name="body_sub" />
             </collision>
         </link>
 
@@ -269,7 +266,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/hand_v0/r_proximal.stl" />
                 </geometry>
-                <material name="body_sub" />
             </collision>
         </link>
 
@@ -297,7 +293,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/hand_v0/r_distal.stl" />
                 </geometry>
-                <material name="body_sub" />
             </collision>
         </link>
 

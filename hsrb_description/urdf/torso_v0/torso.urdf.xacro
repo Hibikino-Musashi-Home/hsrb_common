@@ -33,7 +33,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/torso_v0/torso.stl" />
                 </geometry>
-                <material name="body_sub" />
             </collision>
         </link>
         <xacro:hsrb_torso_gazebo prefix="${prefix}" mimic_joint="${mimic_joint}"/>
