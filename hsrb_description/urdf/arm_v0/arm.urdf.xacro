@@ -33,7 +33,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/arm_v0/shoulder.stl" />
                 </geometry>
-                <material name="body_sub" />
             </collision>
         </link>
 
@@ -64,7 +63,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/arm_v0/arm_flex.stl" />
                 </geometry>
-                <material name="body_main" />
             </collision>
         </link>
 
@@ -95,7 +93,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/arm_v0/arm_roll.stl" />
                 </geometry>
-                <material name="body_main" />
             </collision>
         </link>
 

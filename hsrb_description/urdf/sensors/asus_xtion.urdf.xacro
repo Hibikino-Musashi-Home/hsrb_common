@@ -23,7 +23,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/sensors/xtion.stl" />
                 </geometry>
-                <material name="black" />
             </collision>
         </link>
 
