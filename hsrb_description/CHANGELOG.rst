@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.9.1 (2015-11-27)
+------------------
 * Remove material tag from collision element
 * Contributors: 西野 環
 
