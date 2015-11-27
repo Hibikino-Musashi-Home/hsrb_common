@@ -2,6 +2,11 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove material tag from collision element
+* Contributors: 西野 環
+
 0.9.0 (2015-11-23)
 ------------------
 * Fix pointcloud color format to BGR
