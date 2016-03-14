@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.10.0 (2016-03-14)
+-------------------
 * change gazebo hardware_interface of base_roll: velocity -> position
 * Contributors: Keisuke Takeshita
 
