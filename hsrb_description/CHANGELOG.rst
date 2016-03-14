@@ -2,6 +2,11 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.10.0 (2016-03-14)
+-------------------
+* change gazebo hardware_interface of base_roll: velocity -> position
+* Contributors: Keisuke Takeshita
+
 0.9.1 (2015-11-27)
 ------------------
 * Remove material tag from collision element
