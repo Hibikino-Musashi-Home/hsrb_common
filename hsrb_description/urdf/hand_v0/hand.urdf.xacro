@@ -9,7 +9,7 @@
     <xacro:property name="palm_to_proximal_y" value="-0.0245" />
     <xacro:property name="palm_to_proximal_z" value="-0.0175" />
 
-    <xacro:property name="proximal_joint_angle_range_min" value="-0.798" />
+    <xacro:property name="proximal_joint_angle_range_min" value="-0.105" />
     <xacro:property name="proximal_joint_angle_range_max" value="1.24" />
     <xacro:property name="spring_proximal_joint_angle_range_min" value="0.0" />
     <xacro:property name="spring_proximal_joint_angle_range_max" value="0.698" />
