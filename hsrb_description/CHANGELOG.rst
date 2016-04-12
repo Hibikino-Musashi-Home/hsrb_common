@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.10.1 (2016-04-12)
+-------------------
 * change torso damping param to solve torso vibration problem
 * fix hand min limit / add comment
 * fix hand_motor_joint range
