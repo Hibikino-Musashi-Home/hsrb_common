@@ -2,6 +2,13 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* change torso damping param to solve torso vibration problem
+* fix hand min limit / add comment
+* fix hand_motor_joint range
+* Contributors: Kazuto Murase, Keisuke Takeshita
+
 0.10.0 (2016-03-14)
 -------------------
 * change gazebo hardware_interface of base_roll: velocity -> position
