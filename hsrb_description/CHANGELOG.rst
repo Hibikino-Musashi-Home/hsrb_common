@@ -2,6 +2,11 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Modify to use OpenNI HW registration
+* Contributors: Yuto Mori
+
 0.10.1 (2016-04-12)
 -------------------
 * change torso damping param to solve torso vibration problem
