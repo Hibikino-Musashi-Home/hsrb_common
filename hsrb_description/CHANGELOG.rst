@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.11.0 (2016-06-27)
+-------------------
 * Modify to use OpenNI HW registration
 * Contributors: Yuto Mori
 
