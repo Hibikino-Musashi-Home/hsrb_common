@@ -47,7 +47,7 @@
                     <imageTopicName>/${robot_namespace}/${sensor_name}/rgb/image_raw</imageTopicName>
                     <cameraInfoTopicName>/${robot_namespace}/${sensor_name}/rgb/camera_info</cameraInfoTopicName>
                     <depthImageTopicName>/${robot_namespace}/${sensor_name}/depth_registered/image_raw</depthImageTopicName>
-                    <pointCloudTopicName>/${robot_namespace}/${sensor_name}/depth/points</pointCloudTopicName>
+                    <pointCloudTopicName>/${robot_namespace}/${sensor_name}/depth_registered/points</pointCloudTopicName>
                     <depthImageCameraInfoTopicName>/${robot_namespace}/${sensor_name}/depth_registered/camera_info</depthImageCameraInfoTopicName>
                     <pointCloudCutoff>0.5</pointCloudCutoff>
                     <pointCloudCutoffMax>9.2</pointCloudCutoffMax>
