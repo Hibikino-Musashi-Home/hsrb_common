@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.11.1 (2016-08-12)
+-------------------
 * Modify topic name: depth/points => depth_registered/points
 * Contributors: Kazuto Murase
 
