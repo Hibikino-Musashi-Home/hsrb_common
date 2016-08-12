@@ -2,6 +2,11 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Modify topic name: depth/points => depth_registered/points
+* Contributors: Kazuto Murase
+
 0.11.0 (2016-06-27)
 -------------------
 * Modify to use OpenNI HW registration
