@@ -23,8 +23,9 @@ wrist_wrench:
     interpolation_width: 2.0
   compensation_node:
     estimation_method: tmc_force_torque_sensor_compensation/RigidBodyEstimation
+  # there is an order to execute
   filter_names:
-    - tmc_force_torque_sensor_compensation/DeadZoneWithLinearInterpolation
     - tmc_force_torque_sensor_compensation/BiQuadLowPassFilter
+    - tmc_force_torque_sensor_compensation/DeadZoneWithLinearInterpolation
   biquad_lowpass_filter:
     cutoff_rate: 0.02
