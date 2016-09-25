@@ -2,6 +2,11 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fixed wide camera parameters
+* Contributors: 村瀬 和都
+
 0.11.1 (2016-08-12)
 -------------------
 * Modify topic name: depth/points => depth_registered/points
