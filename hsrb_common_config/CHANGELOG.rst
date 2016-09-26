@@ -2,8 +2,8 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.12.0 (2016-09-26)
+-------------------
 * add hsrb_common_config package
 * Contributors: 村瀬 和都
 
