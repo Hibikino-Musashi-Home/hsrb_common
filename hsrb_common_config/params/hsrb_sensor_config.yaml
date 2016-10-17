@@ -7,10 +7,6 @@ urg_node:
 
 laser_scan_matcher_node:
   max_iterations: 10
-  kf_dist_linear: 0.5
-  kf_dist_angular: 0.08
-  max_angular_correction_deg: 30
-  outliers_maxPerc: 0.95
   publish_pose_stamped: true
   publish_tf: true
   fixed_frame: odom
