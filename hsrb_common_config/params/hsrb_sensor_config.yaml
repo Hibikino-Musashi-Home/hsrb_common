@@ -27,5 +27,5 @@ wrist_wrench:
     filter_names:
       - tmc_force_torque_sensor_compensation/BiQuadLowPassFilter
       - tmc_force_torque_sensor_compensation/DeadZoneWithLinearInterpolation
-  biquad_lowpass_filter:
-    cutoff_rate: 0.02
+    biquad_lowpass_filter:
+      cutoff_rate: 0.02
