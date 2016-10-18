@@ -2,6 +2,9 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.12.1 (2016-10-18)
+-------------------
+
 0.12.0 (2016-09-26)
 -------------------
 * fixed wide camera parameters
