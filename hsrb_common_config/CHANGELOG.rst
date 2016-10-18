@@ -2,8 +2,8 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.12.1 (2016-10-18)
+-------------------
 * rollback laser odom params
 * fix indent
 * fix namespace of wrist wrench compensation parameter
