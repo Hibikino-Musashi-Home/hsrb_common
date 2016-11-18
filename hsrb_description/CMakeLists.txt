@@ -1,4 +1,4 @@
-# copyright TOYOTA MOTOR CORPORATION
+# Copyright (C) 2016 Toyota Motor Corporation
 # vim: fileencoding=utf-8 :
 cmake_minimum_required(VERSION 2.8.3)
 project(hsrb_description)

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # vim: fileencoding=utf-8 :
+# Copyright (C) 2016 Toyota Motor Corporation
 from nose.tools import eq_, ok_, raises
 import subprocess
 import glob
