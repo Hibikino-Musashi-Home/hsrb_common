@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.13.0 (2016-12-02)
+-------------------
 * Update copyright
 * lint compatible
 * Contributors: 村瀬 和都, 西野 環
