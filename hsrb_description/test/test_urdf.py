@@ -1,17 +1,18 @@
 #!/usr/bin/env python
 # vim: fileencoding=utf-8 :
 # Copyright (C) 2016 Toyota Motor Corporation
-from nose.tools import eq_, ok_, raises
-import subprocess
 import glob
 import os
+import subprocess
 import tempfile
+
+from nose.tools import eq_, ok_
+
+
 try:
     import xml.etree.cElementTree as etree
-except:
+except Exception:
     import xml.etree.ElementTree as etree
-from urdf_parser_py.urdf import URDF
-
 
 
 PACKAGE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -67,7 +68,8 @@ def test_generator_integrity():
                 # When reference is None, <gazebo> tag is added to <robot>.
                 continue
             ok_(ref in links + joints,
-                "Unresolvable reference '{0}':\n{1}".format(ref, etree.tostring(gazebo)))
+                "Unresolvable reference '{0}':\n{1}".format(
+                    ref, etree.tostring(gazebo)))
 
     matched = glob.glob(ROBOTS_DIR + "/*.urdf.xacro")
     sources = [os.path.abspath(path) for path in matched]
