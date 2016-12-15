@@ -61,6 +61,17 @@
     </gazebo>
   </macro>
 
+  <macro name="gazebo_link_caster" params="name">
+    <gazebo reference="${name}">
+      <selfCollide>false</selfCollide>
+      <gravity>true</gravity>
+      <mu1>0.1</mu1>
+      <mu2>0.1</mu2>
+      <maxVel>1.0</maxVel>
+      <material value="Gazebo/FlatBlack"/>
+    </gazebo>
+  </macro>
+
   <macro name="gazebo_link_rubber" params="name">
     <gazebo reference="${name}">
       <selfCollide>false</selfCollide>
