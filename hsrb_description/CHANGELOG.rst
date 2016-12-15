@@ -2,6 +2,11 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.14.0 (2016-12-15)
+-------------------
+* modify base passive link friction
+* Contributors: 村瀬 和都
+
 0.13.0 (2016-12-02)
 -------------------
 * Update copyright
