@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.14.1 (2016-12-16)
+-------------------
 * change publish rate of xtion
 * change publish rate of stereo_camera
 * change only frction parameters in base passive link
