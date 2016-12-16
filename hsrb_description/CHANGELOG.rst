@@ -2,6 +2,13 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* change publish rate of xtion
+* change publish rate of stereo_camera
+* change only frction parameters in base passive link
+* Contributors: 村瀬 和都
+
 0.14.0 (2016-12-15)
 -------------------
 * modify base passive link friction
