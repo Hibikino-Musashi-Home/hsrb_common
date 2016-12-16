@@ -4,7 +4,7 @@
     <xacro:macro name="pointgrey_chameleon_gazebo" params="sensor_name parent_frame topic_frame_id robot_namespace baseline">
         <gazebo reference="${parent_frame}">
             <sensor type="camera" name="${sensor_name}">
-                <update_rate>10.0</update_rate>
+                <update_rate>4.0</update_rate>
                 <camera name="${sensor_name}">
                     <horizontal_fov>1.16762527</horizontal_fov>
                     <image>
