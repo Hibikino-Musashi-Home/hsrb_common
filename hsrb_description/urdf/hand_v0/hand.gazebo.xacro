@@ -33,6 +33,7 @@
                     <attach_steps>1</attach_steps>
                     <detach_steps>2</detach_steps>
                     <min_contact_count>1</min_contact_count>
+                    <max_attach_weight>1.2</max_attach_weight>
                 </grasp_check>
                 <gripper_link>${prefix}_r_distal_link</gripper_link>
                 <gripper_link>${prefix}_l_distal_link</gripper_link>
