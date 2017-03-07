@@ -3,7 +3,7 @@
 
     <!-- args -->
     <arg name="gui" default="true" />
-    <arg name="robot" default="hsrb2s" />
+    <arg name="robot" default="hsrb4s" />
 
     <!-- load robot -->
     <param name="robot_description" command="$(find xacro)/xacro.py '$(find hsrb_description)/robots/$(arg robot).urdf.xacro'" />

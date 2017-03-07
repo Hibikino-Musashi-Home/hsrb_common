@@ -1,6 +1,6 @@
 <launch>
   <!-- send urdf to param server -->
-  <arg name="robot_model" default="hsrb3s" />
+  <arg name="robot_model" default="hsrb4s" />
   <arg name="visualization" default="true" />
   <arg name="implicit_damping" default="false" />
   <param name="robot_description"
