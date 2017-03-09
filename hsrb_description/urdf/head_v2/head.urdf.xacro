@@ -74,13 +74,6 @@
                 </geometry>
                 <material name="body_sub" />
             </visual>
-            <visual>
-                <geometry>
-                    <mesh filename="package://hsrb_description/meshes/head_v1/tablet.dae" />
-                </geometry>
-                <material name="tablet" />
-            </visual>
-
             <collision>
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/head_v1/head.stl" />
