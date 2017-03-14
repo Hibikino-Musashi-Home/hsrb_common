@@ -23,7 +23,7 @@ endforeach()
 
 catkin_package(CATKIN_DEPENDS xacro)
 
-install(DIRECTORY launch meshes robots urdf
+install(DIRECTORY config launch meshes robots urdf
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
 )
 
