@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki.xacro">
 
+  <xacro:arg name="implicit_damping" default="false" />
+
   <xacro:property name="pi" value="3.14159265359"/>
 
   <macro name="hsrb_position_joint_transmission" params="joint reduction">
@@ -89,7 +91,16 @@
   </macro>
 
   <macro name="gazebo_joint" params="name">
-      <gazebo reference="${name}"></gazebo>
+    <gazebo reference="${name}">
+      <xacro:if value="$(arg implicit_damping)">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </xacro:if>
+    </gazebo>
+  </macro>
+
+  <macro name="gazebo_joint_mimic" params="name">
+    <gazebo reference="${name}">
+    </gazebo>
   </macro>
 
 </robot>

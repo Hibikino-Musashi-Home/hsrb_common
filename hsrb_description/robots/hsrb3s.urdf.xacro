@@ -19,6 +19,7 @@
 
     <!-- constant -->
     <xacro:property name="robot_name" value="hsrb"/>
+    <xacro:property name="control_period" value="0.01"/>
 
     <!-- create robot -->
     <xacro:hsrb_base prefix="base" robot_namespace="${robot_name}"/>
@@ -44,8 +45,9 @@
     </xacro:hsrb_hand>
 
     <gazebo>
-        <plugin name="${robot_name}_ros_control" filename="libgazebo_ros_control.so">
+        <plugin name="${robot_name}_ros_control" filename="lib${robot_name}_gazebo_ros_control.so">
             <robotNamespace>${robot_name}</robotNamespace>
+            <controlPeriod>${control_period}</controlPeriod>
         </plugin>
 
         <plugin name="${robot_name}_p3d_ground_truth" filename="libgazebo_ros_p3d.so">

@@ -44,7 +44,7 @@
     </xacro:hsrb_hand>
 
     <gazebo>
-        <plugin name="${robot_name}_ros_control" filename="libgazebo_ros_control.so">
+        <plugin name="${robot_name}_ros_control" filename="lib${robot_name}_gazebo_ros_control.so">
             <robotNamespace>${robot_name}</robotNamespace>
         </plugin>
 
