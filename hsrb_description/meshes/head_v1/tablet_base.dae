@@ -17,9 +17,6 @@
     <image id="display_png" name="display_png">
       <init_from>display.png</init_from>
     </image>
-    <image id="microphone_png" name="microphone_png">
-      <init_from>microphone.png</init_from>
-    </image>
     <image id="microphone" name="microphone">
       <init_from>microphone.png</init_from>
     </image>
@@ -43,13 +40,13 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <ambient>
-              <color sid="ambient">0 0 0 1</color>
+              <color sid="ambient">1 1 1 1</color>
             </ambient>
             <diffuse>
               <texture texture="gray_png-sampler" texcoord="Simulator_TabletBase_DR017-S0150-A_000-mesh-map-0"/>
             </diffuse>
             <specular>
-              <color sid="specular">0.5 0.5 0.5 1</color>
+              <color sid="specular">0.125 0.125 0.125 1</color>
             </specular>
             <shininess>
               <float sid="shininess">50</float>
