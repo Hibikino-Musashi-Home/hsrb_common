@@ -15,7 +15,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/sensors/xtion_light.dae" />
                 </geometry>
-                <material name="black" />
             </visual>
 
             <collision>

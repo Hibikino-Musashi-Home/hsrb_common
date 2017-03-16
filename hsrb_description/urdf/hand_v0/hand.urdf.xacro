@@ -48,7 +48,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/hand_v0/palm_light.dae" />
                 </geometry>
-                <material name="body_sub" />
             </visual>
 
             <collision>
@@ -172,7 +171,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/hand_v0/l_proximal.dae" />
                 </geometry>
-                <material name="body_sub" />
             </visual>
 
             <collision>
@@ -199,7 +197,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/hand_v0/l_distal.dae" />
                 </geometry>
-                <material name="body_sub" />
             </visual>
 
             <collision>
@@ -260,7 +257,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/hand_v0/r_proximal.dae" />
                 </geometry>
-                <material name="body_sub" />
             </visual>
 
             <collision>
@@ -287,7 +283,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/hand_v0/r_distal.dae" />
                 </geometry>
-                <material name="body_sub" />
             </visual>
 
             <collision>

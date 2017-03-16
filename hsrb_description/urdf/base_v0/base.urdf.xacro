@@ -137,19 +137,16 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/base_v0/base_light.dae" />
                 </geometry>
-                <material name="body_main" />
             </visual>
             <visual>
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/base_v0/body.dae" />
                 </geometry>
-                <material name="body_main" />
             </visual>
             <visual>
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/base_v0/torso_base.dae" />
                 </geometry>
-                <material name="body_sub" />
             </visual>
 
             <collision>

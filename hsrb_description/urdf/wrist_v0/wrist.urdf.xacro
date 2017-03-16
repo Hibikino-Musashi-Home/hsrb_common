@@ -65,7 +65,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/wrist_v0/wrist_roll.dae" />
                 </geometry>
-                <material name="body_main" />
             </visual>
 
             <collision>
