@@ -26,7 +26,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/arm_v0/shoulder.dae" />
                 </geometry>
-                <material name="body_sub" />
             </visual>
 
             <collision>
@@ -56,7 +55,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/arm_v0/arm_flex_light.dae" />
                 </geometry>
-                <material name="body_main" />
             </visual>
 
             <collision>
@@ -86,7 +84,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/arm_v0/arm_roll_light.dae" />
                 </geometry>
-                <material name="body_main" />
             </visual>
 
             <collision>

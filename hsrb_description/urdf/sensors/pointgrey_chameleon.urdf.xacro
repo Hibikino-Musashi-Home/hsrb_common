@@ -15,7 +15,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/sensors/head_camera.dae" />
                 </geometry>
-                <material name="black" />
             </visual>
         </link>
 

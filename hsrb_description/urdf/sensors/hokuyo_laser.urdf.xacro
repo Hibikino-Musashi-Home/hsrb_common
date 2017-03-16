@@ -16,7 +16,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/sensors/laser.dae" />
                 </geometry>
-                <material name="black" />
             </visual>
 
             <collision>
