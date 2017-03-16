@@ -30,7 +30,6 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/head_v1/head_pan.dae" />
                 </geometry>
-                <material name="body_main" />
             </visual>
 
             <collision>
@@ -60,19 +59,16 @@
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/head_v1/head_upper.dae" />
                 </geometry>
-                <material name="body_sub" />
             </visual>
             <visual>
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/head_v1/head_tilt.dae" />
                 </geometry>
-                <material name="body_main" />
             </visual>
             <visual>
                 <geometry>
                     <mesh filename="package://hsrb_description/meshes/head_v1/tablet_base.dae" />
                 </geometry>
-                <material name="body_sub" />
             </visual>
             <collision>
                 <geometry>
