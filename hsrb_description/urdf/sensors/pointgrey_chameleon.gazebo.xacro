@@ -26,7 +26,7 @@
                     <alwaysOn>0</alwaysOn>
                     <updateRate>0.0</updateRate>
                     <cameraName>${sensor_name}</cameraName>
-                    <imageTopicName>image_raw</imageTopicName>
+                    <imageTopicName>image_rect_color</imageTopicName>
                     <cameraInfoTopicName>camera_info</cameraInfoTopicName>
                     <frameName>${topic_frame_id}</frameName>
                     <robotNamespace>${robot_namespace}</robotNamespace>
