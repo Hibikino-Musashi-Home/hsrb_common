@@ -45,10 +45,10 @@
                     <updateRate>1.0</updateRate>
                     <cameraName>${sensor_name}</cameraName>
                     <frameName>${topic_frame_id}</frameName>
-                    <imageTopicName>/${robot_namespace}/${sensor_name}/rgb/image_raw</imageTopicName>
+                    <imageTopicName>/${robot_namespace}/${sensor_name}/rgb/image_rect_color</imageTopicName>
                     <cameraInfoTopicName>/${robot_namespace}/${sensor_name}/rgb/camera_info</cameraInfoTopicName>
-                    <depthImageTopicName>/${robot_namespace}/${sensor_name}/depth_registered/image_raw</depthImageTopicName>
-                    <pointCloudTopicName>/${robot_namespace}/${sensor_name}/depth_registered/points</pointCloudTopicName>
+                    <depthImageTopicName>/${robot_namespace}/${sensor_name}/depth_registered/image_rect_raw</depthImageTopicName>
+                    <pointCloudTopicName>/${robot_namespace}/${sensor_name}/depth_registered/rectified_points</pointCloudTopicName>
                     <depthImageCameraInfoTopicName>/${robot_namespace}/${sensor_name}/depth_registered/camera_info</depthImageCameraInfoTopicName>
                     <pointCloudCutoff>0.5</pointCloudCutoff>
                     <pointCloudCutoffMax>9.2</pointCloudCutoffMax>
