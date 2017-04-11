@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.15.0 (2017-04-11)
+-------------------
 * unable control period.
 * add control_period to hsrb4s.urdf.xacro
 * trim xtion edge
