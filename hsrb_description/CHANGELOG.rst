@@ -2,6 +2,30 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.15.0 (2017-04-11)
+-------------------
+* unable control period.
+* add control_period to hsrb4s.urdf.xacro
+* trim xtion edge
+* head_upper skincare
+* skincare arm_flex_light
+* delete some material items in base_v2 and head_v2
+* fix head color
+* modify URG cover collision model
+* Skin care of the scruff
+* modify head collision model
+* add microphone
+* add URG-cover
+* add hsrb4s and new base&head version
+* change gazebo sensor default topic names
+* delete some material items
+* fixed control period / add implicit damping to deal with high cfm
+* add hsrb_collicion_test yaml
+* reduction mesh
+* fix fingertip and hand surface
+* add max_attach_weight parameter
+* Contributors: Yoshimi Iyoda, 中島　弘道, 寺田　耕志, 村瀬 和都, 水野 貴文
+
 0.14.1 (2016-12-16)
 -------------------
 * change publish rate of xtion
