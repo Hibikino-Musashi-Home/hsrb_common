@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.15.1 (2017-04-13)
+-------------------
 * use old version ros_gazebo_camera plugin.
 * modify head collision model
 * Contributors: 寺田　耕志, 水野 貴文
