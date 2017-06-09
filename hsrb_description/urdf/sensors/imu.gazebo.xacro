@@ -26,15 +26,20 @@
         </gazebo>
 
         <gazebo>
-            <!-- IMU Plugin is a model plugin. Then it should be atached to HSR-B model. -->
-            <plugin name="${sensor_name}_plugin" filename="libgazebo_ros_imu.so">
-                <imuName>${sensor_name}</imuName>
-                <topicName>${sensor_name}/data</topicName>
-                <serviceName>${sensor_name}/calibrate</serviceName>
-                <frameName>${frame_name}</frameName>
-                <bodyName>base_link</bodyName>
-                <robotNamespace>${robot_namespace}</robotNamespace>
-            </plugin>
+	    <!-- IMU Plugin is a model plugin. Then it should be atached to HSR-B model. -->
+	    <plugin name="${sensor_name}_plugin" filename="libhector_gazebo_ros_imu.so">
+		<robotNamespace>${robot_namespace}</robotNamespace>
+		<updateRate>50.0</updateRate>
+		<bodyName>base_link</bodyName>
+		<topicName>${sensor_name}/data</topicName>
+		<serviceName>${sensor_name}/calibrate</serviceName>
+		<accelDrift>0.000 0.000 0.000</accelDrift>
+		<accelGaussianNoise>0.000 0.000 0.000</accelGaussianNoise>
+		<rateDrift>0.000 0.000 0.000 </rateDrift>
+		<rateGaussianNoise>0.000 0.000 0.000 </rateGaussianNoise>
+		<headingDrift>0.000</headingDrift>
+		<headingGaussianNoise>0.000</headingGaussianNoise>
+	    </plugin>
         </gazebo>
     </xacro:macro>
 </robot>
