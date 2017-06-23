@@ -5,7 +5,7 @@
     <!-- rgbd_sensor -->
     <xacro:macro name="asus_xtion" params="prefix parent robot_namespace sensor_name *origin">
         <joint name="${prefix}_${sensor_name}_joint" type="fixed">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <parent link="${parent}"/> <child link="${prefix}_${sensor_name}_link"/>
         </joint>
 

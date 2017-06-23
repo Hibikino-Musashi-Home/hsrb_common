@@ -11,7 +11,7 @@
     <!-- head -->
     <xacro:macro name="hsrb_head" params="prefix parent *origin">
         <joint name="${prefix}_pan_joint" type="revolute">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <axis xyz="0.0 0.0 1.0" />
             <limit effort="100.0" velocity="1.0" lower="-3.84" upper="2.09" />
             <parent link="${parent}" />
