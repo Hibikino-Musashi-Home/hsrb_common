@@ -1,10 +1,17 @@
 <?xml version="1.0" ?>
-<robot name="hsrb" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <xacro:macro name="imu_gazebo" params="sensor_name frame_name robot_namespace">
         <gazebo reference="${frame_name}">
             <sensor type="imu" name="${sensor_name}">
                 <update_rate>10.0</update_rate>
+	        <plugin name="${sensor_name}_plugin" filename="libgazebo_ros_imu_sensor.so">
+		    <updateRateHZ>50.0</updateRateHZ>
+		    <bodyName>base_link</bodyName>
+		    <topicName>${robot_namespace}/${sensor_name}/data</topicName>
+		    <frameName>${frame_name}</frameName>
+		    <gaussianNoise>0.0</gaussianNoise>
+		</plugin>
                 <imu>
                     <noise>
                         <type>gaussian</type>
@@ -23,23 +30,6 @@
                     </noise>
                 </imu>
             </sensor>
-        </gazebo>
-
-        <gazebo>
-	    <!-- IMU Plugin is a model plugin. Then it should be atached to HSR-B model. -->
-	    <plugin name="${sensor_name}_plugin" filename="libhector_gazebo_ros_imu.so">
-		<robotNamespace>${robot_namespace}</robotNamespace>
-		<updateRate>50.0</updateRate>
-		<bodyName>base_link</bodyName>
-		<topicName>${sensor_name}/data</topicName>
-		<serviceName>${sensor_name}/calibrate</serviceName>
-		<accelDrift>0.000 0.000 0.000</accelDrift>
-		<accelGaussianNoise>0.000 0.000 0.000</accelGaussianNoise>
-		<rateDrift>0.000 0.000 0.000 </rateDrift>
-		<rateGaussianNoise>0.000 0.000 0.000 </rateGaussianNoise>
-		<headingDrift>0.000</headingDrift>
-		<headingGaussianNoise>0.000</headingGaussianNoise>
-	    </plugin>
         </gazebo>
     </xacro:macro>
 </robot>
