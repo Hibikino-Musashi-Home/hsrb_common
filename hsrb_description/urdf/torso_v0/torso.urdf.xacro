@@ -5,7 +5,7 @@
     <!-- torso -->
     <xacro:macro name="hsrb_torso" params="prefix parent mimic_joint *origin">
         <joint name="${prefix}_lift_joint" type="prismatic">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <!-- <origin xyz="0.0 0.0 0.752" rpy="0.0 0.0 0.0" /> -->
             <axis xyz="0.0 0.0 1.0" />
             <limit effort="100.0" velocity="0.1" lower="0.0" upper="0.345" />

@@ -6,7 +6,7 @@
     <!-- range sensor -->
     <xacro:macro name="hokuyo_laser" params="prefix robot_namespace parent *origin">
         <joint name="${prefix}_range_sensor_joint" type="fixed">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <parent link="${parent}" />
             <child link="${prefix}_range_sensor_link" />
         </joint>
