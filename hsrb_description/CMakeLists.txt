@@ -33,6 +33,11 @@ foreach(_file ${_mesh_files})
     install(FILES ${_file} DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${_dir}/)
 endforeach()
 
+# make a symbolic link
+add_custom_target(link_target ALL
+     COMMAND ${CMAKE_COMMAND} -E create_symlink hsrb4s.urdf.xacro ${PROJECT_SOURCE_DIR}/robots/hsrb.urdf.xacro
+)
+
 if(CATKIN_ENABLE_TESTING)
     catkin_add_nosetests(test)
 endif()
