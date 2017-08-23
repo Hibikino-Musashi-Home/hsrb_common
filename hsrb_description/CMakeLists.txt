@@ -46,7 +46,7 @@ endforeach()
 
 # make a symbolic link
 add_custom_target(link_target ALL
-     COMMAND ${CMAKE_COMMAND} -E create_symlink hsrb4s.urdf.xacro ${PROJECT_SOURCE_DIR}/robots/hsrb.urdf.xacro
+     COMMAND ${CMAKE_COMMAND} -E create_symlink hsrb4s.urdf ${PROJECT_SOURCE_DIR}/robots/hsrb.urdf
 )
 
 if(CATKIN_ENABLE_TESTING)
