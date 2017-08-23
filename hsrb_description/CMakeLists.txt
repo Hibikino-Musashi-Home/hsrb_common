@@ -12,7 +12,7 @@ set(robots hsrb1s hsrb2s hsrb3s hsrb4s)
 # Generate robot URDFs
 # Gather dae files to be installed
 file(GLOB_RECURSE _component_xacros "${PROJECT_SOURCE_DIR}/urdf/*.xacro")
-set(_mesh_fiels "")
+set(_mesh_dirs "")
 foreach(_robot ${robots})
     set(_urdf ${PROJECT_SOURCE_DIR}/robots/${_robot}.urdf)
     set(_xacro ${_urdf}.xacro)
@@ -26,12 +26,12 @@ foreach(_robot ${robots})
 
     # find dae files in expanded urdf
     execute_process(COMMAND bash "-c" "${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro ${_xacro} | grep dae | sed -E 's/.*hsrb_description\\/(.*)\"\\/>/\\1/g'" OUTPUT_VARIABLE _dae_files)
-    string(REGEX REPLACE "\n" ";" _dae_files "${_dae_files}")
-    list(APPEND _mesh_files ${_dae_files})
+    string(REGEX REPLACE "\n" ";" _dae_files ${_dae_files})
+    foreach(_file ${_dae_files})
+        get_filename_component(_dir "${_file}" DIRECTORY)
+        list(APPEND _mesh_dirs ${_dir})
+    endforeach()
 endforeach()
-
-# remove duplicates
-list(REMOVE_DUPLICATES _mesh_files)
 
 catkin_package(CATKIN_DEPENDS xacro)
 
@@ -39,9 +39,9 @@ install(DIRECTORY config launch robots urdf
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
 )
 
-foreach(_file ${_mesh_files})
-    get_filename_component(_dir ${_file} DIRECTORY)
-    install(FILES ${_file} DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${_dir}/)
+foreach(_dir ${_mesh_dirs})
+    get_filename_component(_parent_dir ${_dir} DIRECTORY)
+    install(DIRECTORY ${_dir} DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${_parent_dir}/)
 endforeach()
 
 # make a symbolic link
