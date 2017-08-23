@@ -9,10 +9,21 @@ find_package(catkin REQUIRED COMPONENTS xacro rosbash)
 # set(robots hsrb4s)
 set(robots hsrb1s hsrb2s hsrb3s hsrb4s)
 
+# Generate robot URDFs
 # Gather dae files to be installed
+file(GLOB_RECURSE _component_xacros "${PROJECT_SOURCE_DIR}/urdf/*.xacro")
 set(_mesh_fiels "")
 foreach(_robot ${robots})
-    set(_xacro ${PROJECT_SOURCE_DIR}/robots/${_robot}.urdf.xacro)
+    set(_urdf ${PROJECT_SOURCE_DIR}/robots/${_robot}.urdf)
+    set(_xacro ${_urdf}.xacro)
+
+    # add custom target
+    add_custom_command(
+        OUTPUT ${_urdf}
+        DEPENDS ${_xacro} ${_component_xacros}
+        COMMAND ${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro ${_xacro} > ${_urdf})
+    add_custom_target(${PROJECT_NAME}_${_robot}_gen_urdf ALL DEPENDS ${_urdf})
+
     # find dae files in expanded urdf
     execute_process(COMMAND bash "-c" "${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro ${_xacro} | grep dae | sed -E 's/.*hsrb_description\\/(.*)\"\\/>/\\1/g'" OUTPUT_VARIABLE _dae_files)
     string(REGEX REPLACE "\n" ";" _dae_files "${_dae_files}")
