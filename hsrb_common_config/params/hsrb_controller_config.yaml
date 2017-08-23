@@ -44,6 +44,8 @@ omni_base_controller:
     p_gain: 1.0
   odom_t:
     p_gain: 1.0
+  yaw_velocity_limit: 1.8      # [rad/s]
+  wheel_velocity_limit: 8.5    # [rad/s]
 
 drive_mode_controller:
   type: tmc_realtime_controllers/ExxxDriveModeController
