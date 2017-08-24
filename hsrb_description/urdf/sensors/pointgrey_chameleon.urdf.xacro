@@ -4,7 +4,7 @@
 
     <xacro:macro name="pointgrey_chameleon" params="prefix parent robot_namespace *origin baseline">
         <joint name="${prefix}_camera_joint" type="fixed">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <parent link="${parent}" />
             <child link="${prefix}_camera_link" />
         </joint>

@@ -4,5 +4,5 @@
   <arg name="visualization" default="true" />
   <arg name="implicit_damping" default="false" />
   <param name="robot_description"
-      command="$(find xacro)/xacro.py $(find hsrb_description)/robots/$(arg robot_model).urdf.xacro gazebo_visualization_enabled:=$(arg visualization) implicit_damping:=$(arg implicit_damping)" />
+      command="$(find xacro)/xacro $(find hsrb_description)/robots/$(arg robot_model).urdf.xacro gazebo_visualization_enabled:=$(arg visualization) implicit_damping:=$(arg implicit_damping)" />
 </launch>

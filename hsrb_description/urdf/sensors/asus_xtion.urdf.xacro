@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
-<robot name="hsrb" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="hsrb" xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:include filename="$(find hsrb_description)/urdf/sensors/asus_xtion.gazebo.xacro"/>
 
     <!-- rgbd_sensor -->
     <xacro:macro name="asus_xtion" params="prefix parent robot_namespace sensor_name *origin">
         <joint name="${prefix}_${sensor_name}_joint" type="fixed">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <parent link="${parent}"/> <child link="${prefix}_${sensor_name}_link"/>
         </joint>
 

@@ -5,7 +5,7 @@
     <!-- wide rgb camera -->
     <xacro:macro name="wide_camera" params="prefix parent robot_namespace rpy *origin">
         <joint name="${prefix}_camera_frame_joint" type="fixed">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <parent link="${parent}" />
             <child link="${prefix}_camera_frame" />
         </joint>
