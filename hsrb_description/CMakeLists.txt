@@ -6,8 +6,7 @@ project(hsrb_description)
 find_package(catkin REQUIRED COMPONENTS xacro rosbash)
 
 # define robots to be installed
-# set(robots hsrb4s)
-set(robots hsrb1s hsrb2s hsrb3s hsrb4s)
+set(robots hsrb4s)
 
 # Generate robot URDFs
 # Gather dae files to be installed
