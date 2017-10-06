@@ -24,7 +24,7 @@ foreach(_robot ${robots})
     add_custom_target(${PROJECT_NAME}_${_robot}_gen_urdf ALL DEPENDS ${_urdf})
 
     # find dae files in expanded urdf
-    execute_process(COMMAND bash "-c" "${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro ${_xacro} | grep dae | sed -E 's/.*hsrb_description\\/(.*)\"\\/>/\\1/g'" OUTPUT_VARIABLE _dae_files)
+    execute_process(COMMAND bash "-c" "${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro --inorder ${_xacro} | grep dae | sed -E 's/.*hsrb_description\\/(.*)\"\\/>/\\1/g'" OUTPUT_VARIABLE _dae_files)
     string(REGEX REPLACE "\n" ";" _dae_files ${_dae_files})
     foreach(_file ${_dae_files})
         get_filename_component(_dir "${_file}" DIRECTORY)
