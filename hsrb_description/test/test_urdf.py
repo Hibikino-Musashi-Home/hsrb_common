@@ -24,7 +24,7 @@ def test_generator_robot_urdf():
     def test_robot_urdf(path):
         u"""XACROで変換した後に、URDFとして正しく読めるかを確認するテスト"""
         with tempfile.NamedTemporaryFile() as f:
-            args = ['rosrun', 'xacro', 'xacro', source]
+            args = ['rosrun', 'xacro', 'xacro', '--inorder',  source]
             eq_(subprocess.call(args, stdout=f), 0)
             args = ['check_urdf', f.name]
             subprocess.check_output(args)
@@ -37,7 +37,7 @@ def test_generator_robot_urdf():
 
 def test_generator_integrity():
     def check_integrity(source):
-        args = ['rosrun', 'xacro', 'xacro', source]
+        args = ['rosrun', 'xacro', 'xacro', '--inorder', source]
         urdf = subprocess.check_output(args)
         root = etree.fromstring(urdf)
 
