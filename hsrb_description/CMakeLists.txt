@@ -20,7 +20,7 @@ foreach(_robot ${robots})
     add_custom_command(
         OUTPUT ${_urdf}
         DEPENDS ${_xacro} ${_component_xacros}
-        COMMAND ${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro ${_xacro} > ${_urdf})
+        COMMAND ${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro --inorder ${_xacro} > ${_urdf})
     add_custom_target(${PROJECT_NAME}_${_robot}_gen_urdf ALL DEPENDS ${_urdf})
 
     # find dae files in expanded urdf
