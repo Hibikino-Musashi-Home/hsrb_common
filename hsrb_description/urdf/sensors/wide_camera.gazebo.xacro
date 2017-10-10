@@ -13,7 +13,7 @@
                         <format>R8G8B8</format>
                     </image>
                     <clip>
-                        <near>0.05</near>
+                        <near>0.01</near>
                         <far>100</far>
                     </clip>
                     <noise>
