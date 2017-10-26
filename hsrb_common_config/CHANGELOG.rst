@@ -2,8 +2,8 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.16.0 (2017-10-26)
+-------------------
 * Add velocity limit
 * Contributors: Satoru Onoda, 小野田 覚
 
