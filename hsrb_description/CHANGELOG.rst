@@ -2,6 +2,24 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* modify hand camera clip parameter
+* fix deprecated descriptions.
+* Add default parameter
+* increase torso and arm_lift effort maximum.
+* change common.xacro depends on ros distributions.
+* prepend hardware_interface/ on <hardware_interface> tags.
+* Only install hsrb4s meshes
+* Change 16.04 IMU plugin
+* Create symbolic link for urdf not for xacro
+* Make symbolic link
+* Install only used meshes
+* Remove unused heavy models
+* Replace xmlns:xacro to suppress warnings in Kinetic
+* Change gazebo IMU plugin
+* Contributors: Satoru Onoda, takuyaikeda, 寺田 耕志, 小野田 覚, 水野 貴文, 竹下 佳佑, 西野 環
+
 0.15.1 (2017-04-13)
 -------------------
 * use old version ros_gazebo_camera plugin.
