@@ -20,10 +20,10 @@
     <xacro:macro name="hsrb_gripper_dummy_link" params="name">
         <link name="${name}">
             <inertial>
-                <mass value="0.15"/>
+                <mass value="0.001"/>
                 <inertia
-                    ixx="0.015" ixy="0.0" ixz="0.0"
-                    iyy="0.015" iyz="0.0" izz="0.015"/>
+                    ixx="0.00015" ixy="0.0" ixz="0.0"
+                    iyy="0.00015" iyz="0.0" izz="0.00015"/>
             </inertial>
         </link>
     </xacro:macro>
@@ -64,7 +64,7 @@
                 upper="${proximal_joint_angle_range_max}" />
             <parent link="${prefix}_palm_link" />
             <child link="${prefix}_motor_dummy_link" />
-            <dynamics damping="1.0"/>
+            <dynamics damping="0.0001"/>
         </joint>
 
         <!-- dummy link -->
@@ -105,8 +105,7 @@
                 upper="${proximal_joint_angle_range_max}" />
             <parent link="${parent}" />
             <child link="${prefix}_${suffix}_proximal_link" />
-            <mimic joint="${prefix}_motor_joint" />
-            <dynamics damping="1.0"/>
+	    <dynamics damping="0.0001"/>
         </joint>
 
         <!-- dummy link -->
@@ -114,12 +113,13 @@
 
         <joint name="${prefix}_${suffix}_spring_proximal_joint" type="revolute">
             <xacro:insert_block name="axis" />
-            <limit effort="100.0" velocity="1.0"
+            <limit effort="10.0" velocity="1.0"
                 lower="${spring_proximal_joint_angle_range_min}"
                 upper="${spring_proximal_joint_angle_range_max}" />
             <parent link="${prefix}_${suffix}_proximal_link" />
             <child link="${prefix}_${suffix}_spring_proximal_link" />
-            <dynamics damping="1.0"/>
+	    <mimic joint="${prefix}_motor_joint" />
+            <dynamics damping="0.0001"/>
         </joint>
     </xacro:macro>
 
@@ -133,8 +133,8 @@
                 upper="${-spring_proximal_joint_angle_range_min}" />
             <parent link="${parent}" />
             <child link="${prefix}_${suffix}_mimic_distal_link" />
-            <mimic joint="${prefix}_${suffix}_spring_proximal_joint" multiplier="-1.0" />
-            <dynamics damping="1.0"/>
+	    <mimic joint="${prefix}_${suffix}_spring_proximal_joint" multiplier="-1.0" />
+	    <dynamics damping="0.0001"/>
         </joint>
 
         <!-- dummy link -->
@@ -147,8 +147,7 @@
                 upper="${-proximal_joint_angle_range_min}" />
             <parent link="${prefix}_${suffix}_mimic_distal_link" />
             <child link="${prefix}_${suffix}_distal_link" />
-            <mimic joint="${prefix}_motor_joint" multiplier="-1.0" offset="${-distal_joint_angle_offset}"/>
-            <dynamics damping="1.0"/>
+	    <dynamics damping="0.0001"/>
         </joint>
     </xacro:macro>
 
@@ -210,6 +209,7 @@
             <origin xyz="0.01675 0.0193 0.0379" rpy="${-pi/2.0} 0.0 0.0" />
             <parent link="${prefix}_${suffix}_distal_link" />
             <child link="${prefix}_${suffix}_finger_tip_frame" />
+	    <dynamics damping="0.0001"/>
         </joint>
 
         <!-- TODO: this is the right format: <link name="${prefix}_${suffix}_finger_tip_frame" /> -->
@@ -223,10 +223,10 @@
 
         <link name="${prefix}_${suffix}_finger_vacuum_frame">
             <inertial>
-                <mass value="0.15"/>
+                <mass value="0.001"/>
                 <inertia
-                    ixx="0.015" ixy="0.0" ixz="0.0"
-                    iyy="0.015" iyz="0.0" izz="0.015"/>
+                    ixx="0.00015" ixy="0.0" ixz="0.0"
+                    iyy="0.00015" iyz="0.0" izz="0.00015"/>
             </inertial>
             <visual>
                 <origin xyz="0.0 0.0 -0.01" rpy="0.0 0.0 0.0" />

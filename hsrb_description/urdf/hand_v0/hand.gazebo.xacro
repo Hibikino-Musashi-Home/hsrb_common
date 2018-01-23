@@ -27,22 +27,25 @@
         <gazebo_joint name="${prefix}_r_distal_joint"/>
 
         <gazebo>
-            <plugin name="hsrb_hrh_gripper_plugin" filename="libtmc_gazebo_hrh_gripper.so"></plugin>
-            <plugin name="hsrb_grasp_hack_plugin" filename="libhsrb_grasp_hack.so">
-                <grasp_check>
-                    <attach_steps>1</attach_steps>
-                    <detach_steps>2</detach_steps>
-                    <min_contact_count>1</min_contact_count>
-                    <max_attach_weight>1.2</max_attach_weight>
-                </grasp_check>
-                <gripper_link>${prefix}_r_distal_link</gripper_link>
-                <gripper_link>${prefix}_l_distal_link</gripper_link>
-                <gripper_link>${prefix}_r_spring_proximal_link</gripper_link>
-                <gripper_link>${prefix}_l_spring_proximal_link</gripper_link>
-                <!-- hand_palm_link is merged with wrist_roll_link by fixed joint -->
-                <palm_link>wrist_roll_link</palm_link>
-            </plugin>
+          <plugin name="hsrb_hrh_gripper_plugin" filename="libtmc_gazebo_hrh_gripper.so">
+            <sensitiveness>0.05</sensitiveness>
+            <update_rate>1000.0</update_rate>
+            <max_torque>8.0</max_torque>
+          </plugin>
+          <plugin name="hsrb_grasp_hack_plugin" filename="libhsrb_grasp_hack.so">
+            <grasp_check>
+              <attach_steps>1</attach_steps>
+              <detach_steps>2</detach_steps>
+              <min_contact_count>1</min_contact_count>
+              <max_attach_weight>1.2</max_attach_weight>
+            </grasp_check>
+            <gripper_link>${prefix}_r_distal_link</gripper_link>
+            <gripper_link>${prefix}_l_distal_link</gripper_link>
+            <gripper_link>${prefix}_r_spring_proximal_link</gripper_link>
+            <gripper_link>${prefix}_l_spring_proximal_link</gripper_link>
+	    <!-- hand_palm_link is merged with wrist_roll_link by fixed joint  -->
+            <palm_link>wrist_roll_link</palm_link>
+          </plugin>
         </gazebo>
-
     </xacro:macro>
 </robot>
