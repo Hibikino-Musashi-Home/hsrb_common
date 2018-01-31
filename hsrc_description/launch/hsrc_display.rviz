@@ -199,10 +199,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        head_center_camera_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         head_l_stereo_camera_gazebo_frame:
           Alpha: 1
           Show Axes: false
@@ -330,8 +326,6 @@ Visualization Manager:
           Value: false
         hand_r_spring_proximal_link:
           Value: false
-        head_center_camera_frame:
-          Value: false
         head_l_stereo_camera_gazebo_frame:
           Value: false
         head_l_stereo_camera_link:
@@ -410,8 +404,6 @@ Visualization Manager:
             torso_lift_link:
               head_pan_link:
                 head_tilt_link:
-                  head_center_camera_frame:
-                    {}
                   head_l_stereo_camera_link:
                     head_l_stereo_camera_gazebo_frame:
                       {}
