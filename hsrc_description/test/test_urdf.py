@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # vim: fileencoding=utf-8 :
-# Copyright (C) 2016 Toyota Motor Corporation
+# Copyright (C) 2017 Toyota Motor Corporation
 import glob
 import os
 import subprocess

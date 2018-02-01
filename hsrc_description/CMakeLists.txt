@@ -1,9 +1,9 @@
-# Copyright (C) 2016 Toyota Motor Corporation
+# Copyright (C) 2017 Toyota Motor Corporation
 # vim: fileencoding=utf-8 :
 cmake_minimum_required(VERSION 2.8.3)
 project(hsrc_description)
 
-find_package(catkin REQUIRED COMPONENTS xacro rosbash)
+find_package(catkin REQUIRED COMPONENTS xacro rosbash hsrb_parts_description)
 
 # define robots to be installed
 set(robots hsrc1s)
@@ -25,7 +25,7 @@ foreach(_robot ${robots})
 
 endforeach()
 
-catkin_package(CATKIN_DEPENDS xacro)
+catkin_package(CATKIN_DEPENDS xacro hsrb_parts_description)
 
 install(DIRECTORY config launch robots urdf meshes
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/

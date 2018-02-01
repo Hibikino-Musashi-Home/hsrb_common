@@ -16,9 +16,11 @@
 
   <build_depend>xacro</build_depend>
   <build_depend>rosbash</build_depend>
+  <build_depend>hsrb_parts_description</build_depend>
 
   <run_depend>xacro</run_depend>
   <run_depend>rviz</run_depend>
+  <run_depend>hsrb_parts_description</run_depend>
 
   <test_depend>liburdfdom-tools</test_depend>
   <test_depend>urdfdom_py</test_depend>
