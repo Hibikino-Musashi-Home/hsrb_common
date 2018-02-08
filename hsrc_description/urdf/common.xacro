@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find hsrc_description)/urdf/common/$(env ROS_DISTRO)/common.xacro"/>
+</robot>
