@@ -10,6 +10,8 @@
 
   <run_depend>hsrb_description</run_depend>
   <run_depend>hsrb_common_config</run_depend>
+  <run_depend>hsrb_parts_description</run_depend>
+  <run_depend>hsrc_description</run_depend>
 
   <export>
     <metapackage/>
