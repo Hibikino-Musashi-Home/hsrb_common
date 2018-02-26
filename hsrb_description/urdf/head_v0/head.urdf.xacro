@@ -4,9 +4,9 @@
     <xacro:include filename="$(find hsrb_description)/urdf/head_v0/head.transmission.xacro"/>
     <xacro:include filename="$(find hsrb_description)/urdf/head_v0/head.gazebo.xacro"/>
 
-    <xacro:include filename="$(find hsrb_description)/urdf/sensors/asus_xtion.urdf.xacro"/>
-    <xacro:include filename="$(find hsrb_description)/urdf/sensors/pointgrey_chameleon.urdf.xacro"/>
-    <xacro:include filename="$(find hsrb_description)/urdf/sensors/wide_camera.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/asus_xtion.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/pointgrey_chameleon.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/wide_camera.urdf.xacro"/>
 
     <!-- head -->
     <xacro:macro name="hsrb_head" params="prefix parent *origin">

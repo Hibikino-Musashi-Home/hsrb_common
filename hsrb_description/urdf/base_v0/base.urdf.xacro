@@ -2,8 +2,8 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:include filename="$(find hsrb_description)/urdf/base_v0/base.transmission.xacro"/>
     <xacro:include filename="$(find hsrb_description)/urdf/base_v0/base.gazebo.xacro"/>
-    <xacro:include filename="$(find hsrb_description)/urdf/sensors/hokuyo_laser.urdf.xacro"/>
-    <xacro:include filename="$(find hsrb_description)/urdf/sensors/imu.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/hokuyo_laser.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/imu.urdf.xacro"/>
 
     <!-- constant -->
     <xacro:property name="drive_wheel_width" value="0.03" />

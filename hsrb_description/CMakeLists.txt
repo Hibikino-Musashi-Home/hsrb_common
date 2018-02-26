@@ -3,7 +3,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(hsrb_description)
 
-find_package(catkin REQUIRED COMPONENTS xacro rosbash)
+find_package(catkin REQUIRED COMPONENTS xacro rosbash hsrb_parts_description)
 
 # define robots to be installed
 set(robots hsrb4s)
@@ -24,7 +24,7 @@ foreach(_robot ${robots})
     add_custom_target(${PROJECT_NAME}_${_robot}_gen_urdf ALL DEPENDS ${_urdf})
 
     # find dae files in expanded urdf
-    execute_process(COMMAND bash "-c" "${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro --inorder ${_xacro} | grep dae | sed -E 's/.*hsrb_description\\/(.*)\"\\/>/\\1/g'" OUTPUT_VARIABLE _dae_files)
+    execute_process(COMMAND bash "-c" "${CATKIN_DEVEL_PREFIX}/env.sh rosrun xacro xacro --inorder ${_xacro} | grep hsrb_description/meshes | sed -E 's/.*hsrb_description\\/(.*)\"\\/>/\\1/g'" OUTPUT_VARIABLE _dae_files)
     string(REGEX REPLACE "\n" ";" _dae_files ${_dae_files})
     foreach(_file ${_dae_files})
         get_filename_component(_dir "${_file}" DIRECTORY)
@@ -32,7 +32,7 @@ foreach(_robot ${robots})
     endforeach()
 endforeach()
 
-catkin_package(CATKIN_DEPENDS xacro)
+catkin_package(CATKIN_DEPENDS xacro hsrb_parts_description)
 
 install(DIRECTORY config launch robots urdf
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/

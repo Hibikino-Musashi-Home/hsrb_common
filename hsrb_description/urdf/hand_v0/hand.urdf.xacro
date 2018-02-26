@@ -3,7 +3,7 @@
     <xacro:include filename="$(find hsrb_description)/urdf/hand_v0/hand.transmission.xacro"/>
     <xacro:include filename="$(find hsrb_description)/urdf/hand_v0/hand.gazebo.xacro"/>
 
-    <xacro:include filename="$(find hsrb_description)/urdf/sensors/wide_camera.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/wide_camera.urdf.xacro"/>
 
     <xacro:property name="palm_to_proximal_x" value="-0.01675" />
     <xacro:property name="palm_to_proximal_y" value="-0.0245" />
