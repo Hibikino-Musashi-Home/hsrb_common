@@ -3,7 +3,7 @@
 
     <xacro:include filename="$(find hsrb_description)/urdf/wrist_v0/wrist.transmission.xacro"/>
     <xacro:include filename="$(find hsrb_description)/urdf/wrist_v0/wrist.gazebo.xacro"/>
-    <xacro:include filename="$(find hsrb_description)/urdf/sensors/minebea_ft_sensor.urdf.xacro"/>
+    <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/minebea_ft_sensor.urdf.xacro"/>
 
     <!-- wrist -->
     <xacro:macro name="hsrb_wrist" params="prefix robot_namespace parent *origin">
