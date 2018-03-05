@@ -92,6 +92,7 @@ gripper_controller:
   follow_joint_trajectory_action_monitor_rate: 20
   grasp_action_monitor_rate: 20
   apply_force_action_monitor_rate: 20
+  force_calib_data_path: /etc/opt/tmc/robot/conf.d/calib_results/hand_force_params.yaml
   position_goal_tolerance: 0.2
 
 imu_sensor_controller:
