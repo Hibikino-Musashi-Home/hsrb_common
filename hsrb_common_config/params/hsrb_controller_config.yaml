@@ -20,6 +20,7 @@ omni_base_controller:
     r_wheel: base_r_drive_wheel_joint
     steer: base_roll_joint
   constraints:
+    stopped_velocity_tolerance: 0.0
     odom_x:
       trajectory: 0.05
     odom_y:
