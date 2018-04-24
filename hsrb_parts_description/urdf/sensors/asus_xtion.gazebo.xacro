@@ -39,7 +39,7 @@
                         <far>100</far>
                     </clip>
                 </camera>
-                <plugin name="${sensor_name}_controller" filename="libgazebo_ros_openni_kinect.so">
+                <plugin name="${sensor_name}_controller" filename="libhsrb_gazebo_ros_openni_kinect.so">
                     <alwaysOn>true</alwaysOn>
                     <baseline>0.2</baseline>
                     <updateRate>1.0</updateRate>
