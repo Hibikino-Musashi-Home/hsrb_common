@@ -39,8 +39,8 @@
                 <gripper_link>${prefix}_l_distal_link</gripper_link>
                 <gripper_link>${prefix}_r_spring_proximal_link</gripper_link>
                 <gripper_link>${prefix}_l_spring_proximal_link</gripper_link>
-                <!-- hand_palm_link is merged with wrist_roll_link by fixed joint -->
-                <palm_link>wrist_roll_link</palm_link>
+		<!-- hand_palm_link is merged with wrist_ft_sensor_frame by fixed joint  -->
+		<palm_link>wrist_ft_sensor_frame</palm_link>
             </plugin>
         </gazebo>
 
