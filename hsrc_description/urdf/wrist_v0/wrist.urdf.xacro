@@ -50,10 +50,27 @@
             <axis xyz="0.0 0.0 1.0" />
             <limit effort="100.0" velocity="1.5" lower="-1.92" upper="3.67" />
             <parent link="${prefix}_flex_link" />
-            <child link="${prefix}_roll_link" />
+            <child link="${prefix}_ft_sensor_mount_link" />
             <dynamics damping="1.0"/>
         </joint>
 
+        <!-- each link must have mass in URDF so we apply very small mass (10 gram) for this coupling link -->
+        <link name="${prefix}_ft_sensor_mount_link">
+          <inertial>
+            <mass value="0.01"/>
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                     iyy="0.001" iyz="0.0" 
+                     izz="0.001" />
+          </inertial>
+        </link>
+
+        <joint name="${prefix}_ft_sensor_frame_inverse_joint" type="fixed">
+            <origin xyz="0.0 0.0 0.0735" rpy="-${pi} 0.0 0.0"/>
+            <parent link="${prefix}_ft_sensor_frame" />
+            <child link="${prefix}_roll_link" />
+        </joint>
+
+	
         <link name="${prefix}_roll_link">
             <inertial>
                 <mass value="0.761692"/>
@@ -77,9 +94,8 @@
         <xacro:minebea_ft_sensor
             prefix="${prefix}"
             robot_namespace="${robot_namespace}"
-            parent="${prefix}_roll_link"
-            joint_name="${prefix}_roll_joint">
-            <origin xyz="0.0 0.0 0.1" rpy="${pi} 0.0 0.0"/>
+	    parent="${prefix}_ft_sensor_mount_link">
+	  <origin xyz="0.0 0.0 0.1" rpy="${pi} 0.0 0.0"/>
         </xacro:minebea_ft_sensor>
 
         <xacro:hsrb_wrist_gazebo prefix="${prefix}"/>
