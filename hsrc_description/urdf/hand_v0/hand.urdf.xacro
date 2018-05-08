@@ -20,7 +20,7 @@
     <xacro:macro name="hsrb_gripper_dummy_link" params="name">
         <link name="${name}">
             <inertial>
-                <mass value="0.15"/>
+                <mass value="0.01"/>
                 <inertia
                     ixx="0.015" ixy="0.0" ixz="0.0"
                     iyy="0.015" iyz="0.0" izz="0.015"/>
