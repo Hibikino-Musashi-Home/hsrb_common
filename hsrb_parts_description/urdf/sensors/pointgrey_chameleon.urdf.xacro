@@ -16,6 +16,11 @@
                     <mesh filename="package://hsrb_parts_description/meshes/sensors/head_camera.dae" />
                 </geometry>
             </visual>
+            <inertial>
+                <origin xyz="0 0 0"/>
+                <mass value="0.01"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+            </inertial>
         </link>
 
         <joint name="${prefix}_camera_gazebo_frame_joint" type="fixed">
@@ -24,7 +29,13 @@
             <child link="${prefix}_camera_gazebo_frame" />
         </joint>
 
-        <link name="${prefix}_camera_gazebo_frame"></link>
+        <link name="${prefix}_camera_gazebo_frame">
+            <inertial>
+                <origin xyz="0 0 0"/>
+                <mass value="0.01"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+            </inertial>
+        </link>
 
         <xacro:pointgrey_chameleon_gazebo
             sensor_name="${prefix}_camera"
