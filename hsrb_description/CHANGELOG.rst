@@ -2,7 +2,23 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.16.0 (2017-10-26)
+Forthcoming
+-----------
+* add dummy weight
+* add sensor frame to collect force sensor direction.
+* fix hand offset
+* modify hand mimic joint
+* use sensors from hsrb_parts_description
+* delete f1 for wheel odometry
+* upload collision pair param
+* Stabilize gripper control.
+  - light weight dummy mass.
+  - fasten control period.
+  - update dumping factor(for sim only)
+  - set max_torque
+* Contributors: koji_terada, 水野 貴文
+
+  0.16.0 (2017-10-26)
 -------------------
 * modify hand camera clip parameter
 * fix deprecated descriptions.

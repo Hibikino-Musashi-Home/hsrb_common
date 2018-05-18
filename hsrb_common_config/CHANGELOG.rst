@@ -2,6 +2,12 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Set stopped_velocity_tolerance 0
+* Add force_calib_data_path.
+* Contributors: 太田 雄介, 竹下 佳佑, 西野 環
+
 0.16.0 (2017-10-26)
 -------------------
 * Add velocity limit
