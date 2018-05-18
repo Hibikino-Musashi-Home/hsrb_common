@@ -19,7 +19,7 @@ Forthcoming
 * Contributors: koji_terada, 水野 貴文
 
   0.16.0 (2017-10-26)
--------------------
+---------------------
 * modify hand camera clip parameter
 * fix deprecated descriptions.
 * Add default parameter
