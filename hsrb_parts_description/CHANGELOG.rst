@@ -1,17 +1,18 @@
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package hsrb_common_config
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Changelog for package hsrb_parts_description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 0.17.0 (2018-05-21)
 -------------------
-* Set stopped_velocity_tolerance 0
-* Add force_calib_data_path.
-* Contributors: 太田 雄介, 竹下 佳佑, 西野 環
+* make a no test declation.
+* add dummy weight
+* add sensor frame to collect force sensor direction.
+* use tmc_openni2_kinect_plugin to correct format.
+* add hsrb_parts_description and hsrc_description
+* Contributors: koji_terada, 水野 貴文
 
 0.16.0 (2017-10-26)
 -------------------
-* Add velocity limit
-* Contributors: Satoru Onoda, 小野田 覚
 
 0.15.1 (2017-04-13)
 -------------------
@@ -30,15 +31,9 @@ Changelog for package hsrb_common_config
 
 0.12.1 (2016-10-18)
 -------------------
-* rollback laser odom params
-* fix indent
-* fix namespace of wrist wrench compensation parameter
-* Contributors: Keisuke Takeshita, 村瀬 和都
 
 0.12.0 (2016-09-26)
 -------------------
-* add hsrb_common_config package
-* Contributors: 村瀬 和都
 
 0.11.1 (2016-08-12)
 -------------------
@@ -76,7 +71,7 @@ Changelog for package hsrb_common_config
 0.4.0 (2015-07-03)
 ------------------
 
-0.3.0 (2015-06-11)
+0.3.0 (2015-06-12)
 ------------------
 
 0.2.1 (2014-10-30)
