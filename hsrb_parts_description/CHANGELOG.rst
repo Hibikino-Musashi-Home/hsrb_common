@@ -2,8 +2,8 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.17.0 (2018-05-21)
+-------------------
 * make a no test declation.
 * add dummy weight
 * add sensor frame to collect force sensor direction.

@@ -2,8 +2,8 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.17.0 (2018-05-21)
+-------------------
 * change hsrc setting
 * fix hsrc stereo_camera position
 * Fix head_dummy
