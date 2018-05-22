@@ -2,8 +2,8 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.17.1 (2018-05-22)
+-------------------
 * Revert ft_sensor joint revolute from fixed
 * Contributors: Kazuto Murase, 水野 貴文, 西野 環
 
