@@ -2,20 +2,11 @@
 Changelog for package hsrb_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.17.1 (2018-05-22)
+-------------------
+
 0.17.0 (2018-05-21)
 -------------------
-* add hsrb_parts_description and hsrc_description
-* Contributors: 水野 貴文
-
-* add hsrb_parts_description and hsrc_description
-* Contributors: 水野 貴文
-
-* add hsrb_parts_description and hsrc_description
-* Contributors: 水野 貴文
-
-* add hsrb_parts_description and hsrc_description
-* Contributors: 水野 貴文
-
 * add hsrb_parts_description and hsrc_description
 * Contributors: 水野 貴文
 

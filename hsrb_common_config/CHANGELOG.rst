@@ -2,6 +2,9 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.17.1 (2018-05-22)
+-------------------
+
 0.17.0 (2018-05-21)
 -------------------
 * Set stopped_velocity_tolerance 0
