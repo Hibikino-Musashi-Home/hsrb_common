@@ -62,6 +62,15 @@
                     <Cy>0.0</Cy>
                     <focalLength>0.0</focalLength>
                     <hackBaseline>0</hackBaseline>
+                    <encoding>16UC1</encoding>
+                </plugin>
+                <plugin name="${sensor_name}_float_depth_image_controller" filename="libhsrb_gazebo_ros_openni_kinect.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>1.0</updateRate>
+                    <cameraName>${sensor_name}</cameraName>
+                    <frameName>${topic_frame_id}</frameName>
+                    <depthImageTopicName>/${robot_namespace}/${sensor_name}/depth_registered/image</depthImageTopicName>
+                    <encoding>32FC1</encoding>
                 </plugin>
             </sensor>
         </gazebo>
