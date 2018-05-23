@@ -2,8 +2,8 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.17.2 (2018-05-23)
+-------------------
 * use 32FC1 encoding for one depth topic
 * Contributors: kazuto_murase
 
