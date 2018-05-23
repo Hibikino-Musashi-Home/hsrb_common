@@ -2,6 +2,11 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.17.2 (2018-05-23)
+-------------------
+* use 32FC1 encoding for one depth topic
+* Contributors: kazuto_murase
+
 0.17.1 (2018-05-22)
 -------------------
 * Revert ft_sensor joint revolute from fixed
