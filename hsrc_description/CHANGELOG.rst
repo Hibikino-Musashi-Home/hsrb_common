@@ -2,6 +2,9 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.17.1 (2018-05-22)
 -------------------
 
