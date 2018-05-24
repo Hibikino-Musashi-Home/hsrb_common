@@ -2,6 +2,13 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* set suitable parameters for gripper.
+  - set stall_timeout
+  - set position torelance.
+* Contributors: koji_terada
+
 0.17.2 (2018-05-23)
 -------------------
 
