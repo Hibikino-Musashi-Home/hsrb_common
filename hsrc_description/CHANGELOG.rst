@@ -2,8 +2,8 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.17.3 (2018-05-24)
+-------------------
 * fix indent
 * set suitable parameters for gripper.
   - set stall_timeout
