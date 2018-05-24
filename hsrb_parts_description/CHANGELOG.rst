@@ -2,6 +2,11 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.17.3 (2018-05-24)
+-------------------
+* revert multi gazebo plugins.
+* Contributors: koji_terada
+
 0.17.2 (2018-05-23)
 -------------------
 * use 32FC1 encoding for one depth topic
