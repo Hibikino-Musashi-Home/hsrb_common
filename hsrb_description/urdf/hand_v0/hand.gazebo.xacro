@@ -31,6 +31,9 @@
             <sensitiveness>0.05</sensitiveness>
             <update_rate>1000.0</update_rate>
             <max_torque>8.0</max_torque>
+            <!-- 5[deg] -->
+            <error_tolerance>0.0872</error_tolerance>
+            <stall_timeout>2.0</stall_timeout>
           </plugin>
           <plugin name="hsrb_grasp_hack_plugin" filename="libhsrb_grasp_hack.so">
             <grasp_check>
