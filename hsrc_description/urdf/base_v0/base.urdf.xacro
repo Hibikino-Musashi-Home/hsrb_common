@@ -118,7 +118,13 @@
 
     <!-- base -->
     <xacro:macro name="hsrb_base" params="prefix robot_namespace">
-        <link name="base_footprint"/>
+        <link name="base_footprint">
+            <inertial>
+                <origin xyz="0 0 0"/>
+                <mass value="0.01"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+            </inertial>
+        </link>
 
         <joint name="${prefix}_footprint_joint" type="fixed">
             <parent link="base_footprint" />
