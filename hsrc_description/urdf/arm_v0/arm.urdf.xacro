@@ -7,9 +7,9 @@
     <!-- arm -->
     <xacro:macro name="hsrb_arm" params="prefix parent *origin">
         <joint name="${prefix}_lift_joint" type="prismatic">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <axis xyz="0.0 0.0 1.0" />
-            <limit effort="100.0" velocity="0.2" lower="0.0" upper="0.69" />
+            <limit effort="300.0" velocity="0.2" lower="0.0" upper="0.69" />
             <parent link="${parent}" />
             <child link="${prefix}_lift_link" />
             <dynamics damping="1.0"/>

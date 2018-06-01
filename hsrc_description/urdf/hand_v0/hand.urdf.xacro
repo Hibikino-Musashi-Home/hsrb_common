@@ -20,10 +20,10 @@
     <xacro:macro name="hsrb_gripper_dummy_link" params="name">
         <link name="${name}">
             <inertial>
-                <mass value="0.2"/>
+                <mass value="0.01"/>
                 <inertia
-                    ixx="0.015" ixy="0.0" ixz="0.0"
-                    iyy="0.015" iyz="0.0" izz="0.015"/>
+                    ixx="0.0015" ixy="0.0" ixz="0.0"
+                    iyy="0.0015" iyz="0.0" izz="0.0015"/>
             </inertial>
         </link>
     </xacro:macro>
@@ -31,7 +31,7 @@
     <!-- gripper base -->
     <xacro:macro name="hsrb_gripper_base" params="prefix parent *origin">
         <joint name="${prefix}_palm_joint" type="fixed">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <parent link="${parent}" />
             <child link="${prefix}_palm_link" />
         </joint>
@@ -65,7 +65,7 @@
                 upper="${proximal_joint_angle_range_max}" />
             <parent link="${prefix}_palm_link" />
             <child link="${prefix}_motor_dummy_link" />
-            <dynamics damping="1.0"/>
+            <dynamics damping="0.0001"/>
         </joint>
 
         <!-- dummy link -->
@@ -74,7 +74,7 @@
 
     <xacro:macro name="hsrb_hand" params="prefix parent *origin">
         <xacro:hsrb_gripper_base prefix="${prefix}" parent="${parent}">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
         </xacro:hsrb_gripper_base>
 
         <xacro:hsrb_finger_with_vacuum prefix="${prefix}" suffix="l" parent="${prefix}_palm_link">
@@ -99,64 +99,64 @@
     <!-- gripper finger proximal base -->
     <xacro:macro name="hsrb_finger_proximal_base" params="prefix suffix parent *origin *axis">
         <joint name="${prefix}_${suffix}_proximal_joint" type="revolute">
-            <insert_block name="origin" />
-            <insert_block name="axis" />
+            <xacro:insert_block name="origin" />
+            <xacro:insert_block name="axis" />
             <limit effort="100.0" velocity="1.0"
                 lower="${proximal_joint_angle_range_min}"
                 upper="${proximal_joint_angle_range_max}" />
             <parent link="${parent}" />
             <child link="${prefix}_${suffix}_proximal_link" />
             <mimic joint="${prefix}_motor_joint" />
-            <dynamics damping="1.0"/>
+            <dynamics damping="0.0001"/>
         </joint>
 
         <!-- dummy link -->
         <xacro:hsrb_gripper_dummy_link name="${prefix}_${suffix}_proximal_link" />
 
         <joint name="${prefix}_${suffix}_spring_proximal_joint" type="revolute">
-            <insert_block name="axis" />
-            <limit effort="100.0" velocity="1.0"
+            <xacro:insert_block name="axis" />
+            <limit effort="10.0" velocity="1.0"
                 lower="${spring_proximal_joint_angle_range_min}"
                 upper="${spring_proximal_joint_angle_range_max}" />
             <parent link="${prefix}_${suffix}_proximal_link" />
             <child link="${prefix}_${suffix}_spring_proximal_link" />
-            <dynamics damping="1.0"/>
+            <dynamics damping="0.0001"/>
         </joint>
     </xacro:macro>
 
     <!-- gripper finger distal base -->
     <xacro:macro name="hsrb_finger_distal_base" params="prefix suffix parent *origin *axis">
         <joint name="${prefix}_${suffix}_mimic_distal_joint" type="revolute">
-            <insert_block name="origin" />
-            <insert_block name="axis" />
+            <xacro:insert_block name="origin" />
+            <xacro:insert_block name="axis" />
             <limit effort="100.0" velocity="1.0"
                 lower="${-spring_proximal_joint_angle_range_max}"
                 upper="${-spring_proximal_joint_angle_range_min}" />
             <parent link="${parent}" />
             <child link="${prefix}_${suffix}_mimic_distal_link" />
             <mimic joint="${prefix}_${suffix}_spring_proximal_joint" multiplier="-1.0" />
-            <dynamics damping="1.0"/>
+            <dynamics damping="0.0001"/>
         </joint>
 
         <!-- dummy link -->
         <xacro:hsrb_gripper_dummy_link name="${prefix}_${suffix}_mimic_distal_link" />
 
         <joint name="${prefix}_${suffix}_distal_joint" type="revolute">
-            <insert_block name="axis" />
+            <xacro:insert_block name="axis" />
             <limit effort="100.0" velocity="1.0"
                 lower="${-proximal_joint_angle_range_max}"
                 upper="${-proximal_joint_angle_range_min}" />
             <parent link="${prefix}_${suffix}_mimic_distal_link" />
             <child link="${prefix}_${suffix}_distal_link" />
             <mimic joint="${prefix}_motor_joint" multiplier="-1.0" offset="${-distal_joint_angle_offset}"/>
-            <dynamics damping="1.0"/>
+            <dynamics damping="0.0001"/>
         </joint>
     </xacro:macro>
 
     <!-- finger with vacuum -->
     <xacro:macro name="hsrb_finger_with_vacuum" params="prefix suffix parent *origin">
         <xacro:hsrb_finger_proximal_base prefix="${prefix}" suffix="${suffix}" parent="${parent}">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <axis xyz="1.0 0.0 0.0" />
         </xacro:hsrb_finger_proximal_base>
 
@@ -211,6 +211,7 @@
             <origin xyz="0.0195 0.0226 0.0409" rpy="${-pi/2.0} 0.0 0.0" />
             <parent link="${prefix}_${suffix}_distal_link" />
             <child link="${prefix}_${suffix}_finger_tip_frame" />
+            <dynamics damping="0.0001"/>
         </joint>
 
         <!-- TODO: this is the right format: <link name="${prefix}_${suffix}_finger_tip_frame" /> -->
@@ -224,10 +225,10 @@
 
         <link name="${prefix}_${suffix}_finger_vacuum_frame">
             <inertial>
-                <mass value="0.15"/>
+                <mass value="0.01"/>
                 <inertia
-                    ixx="0.015" ixy="0.0" ixz="0.0"
-                    iyy="0.015" iyz="0.0" izz="0.015"/>
+                    ixx="0.0015" ixy="0.0" ixz="0.0"
+                    iyy="0.0015" iyz="0.0" izz="0.0015"/>
             </inertial>
             <visual>
                 <origin xyz="0.0 0.0 -0.01" rpy="0.0 0.0 0.0" />
@@ -242,7 +243,7 @@
     <!-- finger without vacuum -->
     <xacro:macro name="hsrb_finger_without_vacuum" params="prefix suffix parent *origin">
         <xacro:hsrb_finger_proximal_base prefix="${prefix}" suffix="${suffix}" parent="${parent}">
-            <insert_block name="origin" />
+            <xacro:insert_block name="origin" />
             <axis xyz="-1.0 0.0 0.0" />
         </xacro:hsrb_finger_proximal_base>
 
