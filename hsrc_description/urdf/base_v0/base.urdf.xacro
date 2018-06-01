@@ -134,7 +134,12 @@
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://hsrc_description/meshes/base_v0/base.dae" />
+                    <mesh filename="package://hsrc_description/meshes/base_v0/base_light.dae" />
+                </geometry>
+            </visual>
+            <visual>
+                <geometry>
+                    <mesh filename="package://hsrc_description/meshes/base_v0/body_light.dae" />
                 </geometry>
             </visual>
             <visual>
