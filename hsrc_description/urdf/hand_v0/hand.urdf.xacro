@@ -58,7 +58,6 @@
         </link>
 
         <joint name="${prefix}_motor_joint" type="revolute">
-            <origin xyz="0.0 0.0 0.155"/>
             <axis xyz="1.0 0.0 0.0" />
             <limit effort="100.0" velocity="1.0"
                 lower="${proximal_joint_angle_range_min}"
