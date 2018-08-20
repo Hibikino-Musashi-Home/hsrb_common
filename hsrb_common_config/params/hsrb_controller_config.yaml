@@ -99,3 +99,89 @@ gripper_controller:
 imu_sensor_controller:
   type: imu_sensor_controller/ImuSensorController
   publish_rate: 100
+
+collision_detection_controller:
+  type: hsrb_collision_detection_controller/HsrbCollisionDetectionController
+  joints:
+    - arm_flex_joint
+    - arm_lift_joint
+    - arm_roll_joint
+    - base_l_drive_wheel_joint
+    - base_roll_joint
+    - base_r_drive_wheel_joint
+    - head_pan_joint
+    - head_tilt_joint
+    - wrist_flex_joint
+    - wrist_roll_joint
+  drivers:
+    arm_flex_joint:
+      names:
+        - Current
+        - Effort
+      settings:
+        Current: {enable: true, min: -1.2, max: 1.2, limit: 1.5}
+        Effort: {enable: false, min: -19.4, max: 19.4, limit: 24.3}
+    arm_lift_joint:
+      names:
+        - Current
+        - Effort
+      settings:
+        Current: {enable: ture, min: -1.4, max: 1.4, limit: 2.1}
+        Effort: {enable: false, min: -407.5, max: 407.5, limit: 611.3}
+    arm_roll_joint:
+      names:
+        - Current
+        - Effort
+      settings:
+        Current: {enable: true, min: -0.87, max: 0.87, limit: 1.0}
+        Effort: {enable: false, min: -4.8, max: 4.8, limit: 5.5}
+    base_l_drive_wheel_joint:
+      names:
+        - Current
+        - Effort
+      settings:
+        Current: {enable: true, min: -1.4, max: 1.4, limit: 4.3}
+        Effort: {enable: false, min: -3.8, max: 3.8, limit: 11.6}
+    base_roll_joint:
+      names:
+        - Current
+        - Effort
+      settings:
+        Current: {enable: true, min: -1.49, max: 1.49, limit: 3.3}
+        Effort: {enable: false, min: -8.2, max: 8.2, limit: 18.1}
+    base_r_drive_wheel_joint:
+      names:
+        - Current
+        - Effort
+      settings:
+        Current: {enable: true, min: -1.4, max: 1.4, limit: 4.3}
+        Effort: {enable: false, min: -3.8, max: 3.8, limit: 11.6}
+    head_pan_joint:
+      names:
+        - Current
+        - Effort
+      settings:
+        Current: {enable: ture, min: -0.87, max: 0.87, limit: 1.0}
+        Effort: {enable: false, min: -1.6, max: 1.6, limit: 1.8}
+    head_tilt_joint:
+      names:
+        - Current
+        - Effort
+      settings:
+        Current: {enable: ture, min: -0.87, max: 0.87, limit: 1.0}
+        Effort: {enable: false, min: -5.7, max: 5.7, limit: 6.5}
+    wrist_flex_joint:
+      names:
+        - Current
+        - Effort
+      settings:
+        Current: {enable: ture, min: -0.87, max: 0.87, limit: 1.0}
+        Effort: {enable: false, min: -4.6, max: 4.6, limit: 5.2}
+    wrist_roll_joint:
+      names:
+        - Current
+        - Effort
+      settings:
+        Current: {enable: ture, min: -0.87, max: 0.87, limit: 1.0}
+        Effort: {enable: false, min: -4.6, max: 4.6, limit: 5.2}
+  publish_rate: 25
