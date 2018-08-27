@@ -217,7 +217,7 @@
         <xacro:hsrb_gripper_dummy_link name="${prefix}_${suffix}_finger_tip_frame" />
 
         <joint name="${prefix}_${suffix}_finger_vacuum_frame_joint" type="fixed">
-            <origin xyz="0.0075 -0.010 0.0362" rpy="${pi*50/180.0} 0.0 0.0" />
+            <origin xyz="0.0065 -0.00953 0.035577" rpy="${pi*40/180.0} 0.0 0.0" />
             <parent link="${prefix}_${suffix}_distal_link" />
             <child link="${prefix}_${suffix}_finger_vacuum_frame" />
         </joint>
