@@ -209,6 +209,60 @@
             <origin xyz="0.167 0.0 0.1904" rpy="0.0 0.0 0.0" />
         </xacro:hokuyo_laser>
 
+        <!-- base front bumper -->
+        <joint name="${prefix}_f_bumper_joint" type="revolute">
+            <limit effort="0" velocity="0" lower="0" upper="0"/>
+            <parent link="${prefix}_link" />
+            <child link="${prefix}_f_bumper_link" />
+        </joint>
+
+        <link name="${prefix}_f_bumper_link">
+            <inertial>
+                <origin xyz="0.0 0.0 0.0" />
+                <mass value="0.50"/>
+                <inertia
+                    ixx="0.07671000"  ixy="-0.01005000"  ixz="0.00174900"
+                    iyy="0.09057000" iyz="0.00154900" izz="0.14500000" />
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://hsrc_description/meshes/base_v0/front_bumper.dae" />
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://hsrc_description/meshes/base_v0/front_bumper.stl" />
+                </geometry>
+            </collision>
+        </link>
+
+       <!-- base rear bumper -->
+        <joint name="${prefix}_b_bumper_joint" type="revolute">
+            <parent link="${prefix}_link" />
+            <child link="${prefix}_b_bumper_link" />
+            <limit effort="0" velocity="0" lower="0" upper="0"/>
+        </joint>
+
+        <link name="${prefix}_b_bumper_link">
+            <inertial>
+                <origin xyz="0.0 0.0 0.0" />
+                <mass value="0.50"/>
+                <inertia
+                    ixx="0.07671000"  ixy="-0.01005000"  ixz="0.00174900"
+                    iyy="0.09057000" iyz="0.00154900" izz="0.14500000" />
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://hsrc_description/meshes/base_v0/rear_bumper.dae" />
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://hsrc_description/meshes/base_v0/rear_bumper.stl" />
+                </geometry>
+            </collision>
+        </link>
+
         <xacro:imu_sensor prefix="${prefix}" robot_namespace="${robot_namespace}" parent="${prefix}_link">
             <origin xyz="0.003 -0.08594 0.203" rpy="0.0 0.0 0.0" />
         </xacro:imu_sensor>

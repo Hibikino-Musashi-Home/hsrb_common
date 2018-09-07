@@ -9,5 +9,7 @@
         <gazebo_link_caster name="${prefix}_l_passive_wheel_z_link" />
         <gazebo_link name="${prefix}_range_sensor_link" gravity="true" collide="false" friction="0.9"/>
         <gazebo_link name="${prefix}_imu_frame" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_link_bumper name="${prefix}_f_bumper" gravity="true" collide="false" friction="0.9"/>
+        <gazebo_link_bumper name="${prefix}_b_bumper" gravity="true" collide="false" friction="0.9"/>
     </xacro:macro>
 </robot>
