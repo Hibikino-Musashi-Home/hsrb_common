@@ -31,6 +31,8 @@ omni_base_controller:
   use_laser_odom: true
   wheel_odom_map_frame: odom
   wheel_odom_base_frame: base_footprint_wheel
+  laser_odom_topic_name: laser_odom
+  laser_odom_base_frame: base_footprint_laser
 
   # these are described in hsrb_base_controllers/README.md
   steer_joint: base_roll_joint
