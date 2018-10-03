@@ -87,6 +87,27 @@
     </gazebo>
   </xacro:macro>
 
+  <xacro:macro name="gazebo_link_bumper" params="name gravity collide friction">
+    <gazebo reference="${name}_link">
+      <selfCollide>${collide}</selfCollide>
+      <gravity>${gravity}</gravity>
+      <mu1>${friction}</mu1>
+      <mu2>${friction}</mu2>
+      <sensor name="${name}_contact" type="contact">
+        <always_on>true</always_on>
+        <update_rate>10</update_rate>
+        <contact>
+          <collision>${name}_link_collision</collision>
+        </contact>
+        <plugin name="hsrb_gazebo_ros_bumper_controller" filename="libhsrb_bumper.so">
+          <robotNamespace>hsrb</robotNamespace>
+          <bumperTopicName>${name}_sensor</bumperTopicName>
+          <frameName>${name}_link</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+
   <xacro:macro name="gazebo_joint" params="name">
     <gazebo reference="${name}">
       <xacro:if value="$(arg implicit_damping)">

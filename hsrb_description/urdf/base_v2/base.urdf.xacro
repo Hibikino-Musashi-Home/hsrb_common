@@ -116,6 +116,36 @@
         </link>
     </xacro:macro>
 
+    <!-- bumper -->
+    <xacro:macro name="hsrb_bumper" params="prefix suffix parent *origin">
+        <joint name="${prefix}_${suffix}_bumper_joint" type="revolute">
+            <xacro:insert_block name="origin" />
+            <parent link="${parent}" />
+            <child link="${prefix}_${suffix}_bumper_link" />
+            <limit effort="0" velocity="0" lower="0" upper="0"/>
+        </joint>
+
+        <link name="${prefix}_${suffix}_bumper_link">
+            <inertial>
+                <origin xyz="0.0 0.0 0.0" />
+                <mass value="0.06"/>
+                <inertia
+                    ixx="0.001437"  ixy="0.0"  ixz="0.0"
+                    iyy="0.001437" iyz="0.0" izz="0.002875" />
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://hsrb_description/meshes/base_v2/bumper.dae" />
+                </geometry>
+            </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://hsrb_description/meshes/base_v2/bumper.stl" />
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+
     <!-- base -->
     <xacro:macro name="hsrb_base" params="prefix robot_namespace">
         <link name="base_footprint">
@@ -213,6 +243,19 @@
         <xacro:imu_sensor prefix="${prefix}" robot_namespace="${robot_namespace}" parent="${prefix}_link">
             <origin xyz="0.0005 0.1296 0.181" rpy="0.0 0.0 0.0" />
         </xacro:imu_sensor>
+
+        <!-- bumper -->
+        <xacro:hsrb_bumper prefix="${prefix}" suffix="f" parent="${prefix}_link">
+            <origin
+                xyz="0.0 0.0 0.0"
+                rpy="0.0 0.0 0.0" />
+        </xacro:hsrb_bumper>
+
+        <xacro:hsrb_bumper prefix="${prefix}" suffix="b" parent="${prefix}_link">
+            <origin
+                xyz="0.0 0.0013 0.0"
+                rpy="0.0 0.0 ${pi}" />
+        </xacro:hsrb_bumper>
 
         <xacro:hsrb_base_gazebo prefix="${prefix}"/>
         <xacro:hsrb_base_transmission prefix="${prefix}"/>
