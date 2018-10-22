@@ -99,7 +99,7 @@
         <contact>
           <collision>${name}_link_collision</collision>
         </contact>
-        <plugin name="hsrb_gazebo_ros_bumper_controller" filename="libhsrb_bumper.so">
+        <plugin name="hsrb_gazebo_ros_bumper_controller" filename="libhsrb_gazebo_ros_bumper.so">
           <robotNamespace>hsrb</robotNamespace>
           <bumperTopicName>${name}_sensor</bumperTopicName>
           <frameName>${name}_link</frameName>
