@@ -185,3 +185,7 @@ collision_detection_controller:
         Current: {enable: ture, min: -0.87, max: 0.87, limit: 1.0}
         Effort: {enable: false, min: -4.6, max: 4.6, limit: 5.2}
   publish_rate: 25
+
+tmc_diagnostic_controller:
+  type: tmc_realtime_controllers/DiagnosticController
+  publish_rate: 1
