@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="hsrb">
+    <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/$(env ROS_DISTRO)/mynteye_imu.gazebo.xacro"/>
+
+    <!-- imu sensor -->
+    <xacro:macro name="mynteye_imu" params="prefix parent sensor_name topic_name robot_namespace *origin">
+        <joint name="${prefix}_imu_frame_joint" type="fixed">
+            <xacro:insert_block name="origin" />
+            <parent link="${parent}" />
+            <child link="${prefix}_imu_frame" />
+        </joint>
+
+        <link name="${prefix}_imu_frame">
+            <visual>
+                <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <box size="0.005 0.005 0.005"/>
+                </geometry>
+                <material name="black" />
+            </visual>
+            <inertial>
+                <origin xyz="0 0 0"/>
+                <mass value="0.01"/>
+                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+            </inertial>
+        </link>
+        <gazebo reference="${prefix}_imu_frame">
+            <material>Gazebo/Black</material>
+        </gazebo>
+
+        <xacro:mynteye_imu_gazebo
+            sensor_name="${sensor_name}"
+            frame_name="${prefix}_imu_frame"
+            topic_name="${topic_name}"
+            robot_namespace="${robot_namespace}" />
+    </xacro:macro>
+
+</robot>

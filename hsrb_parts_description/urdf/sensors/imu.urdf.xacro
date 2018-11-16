@@ -3,7 +3,7 @@
     <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/$(env ROS_DISTRO)/imu.gazebo.xacro"/>
 
     <!-- imu sensor -->
-    <xacro:macro name="imu_sensor" params="prefix parent robot_namespace *origin">
+    <xacro:macro name="imu_sensor" params="prefix parent topic_name robot_namespace *origin">
         <joint name="${prefix}_imu_frame_joint" type="fixed">
             <xacro:insert_block name="origin" />
             <parent link="${parent}" />
@@ -20,8 +20,9 @@
 
         <xacro:imu_gazebo
             sensor_name="${prefix}_imu"
-            robot_namespace="${robot_namespace}"
-            frame_name="${prefix}_imu_frame"/>
+            frame_name="${prefix}_imu_frame"
+            topic_name="${topic_name}"
+            robot_namespace="${robot_namespace}"/>
     </xacro:macro>
 
 </robot>

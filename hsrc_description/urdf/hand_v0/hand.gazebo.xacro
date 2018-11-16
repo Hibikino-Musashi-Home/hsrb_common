@@ -34,6 +34,7 @@
                 <!-- 5[deg] -->
                 <error_tolerance>0.0872</error_tolerance>
                 <stall_timeout>2.0</stall_timeout>
+                <robot_namespace>${personal_name}/${robot_name}</robot_namespace>
             </plugin>
             <plugin name="hsrb_grasp_hack_plugin" filename="libhsrb_grasp_hack.so">
                 <grasp_check>
@@ -48,6 +49,7 @@
                 <gripper_link>${prefix}_l_spring_proximal_link</gripper_link>
 		<!-- hand_palm_link is merged with wrist_ft_sensor_frame by fixed joint  -->
 		<palm_link>wrist_ft_sensor_frame</palm_link>
+                <robot_namespace>${personal_name}/${robot_name}</robot_namespace>
             </plugin>
         </gazebo>
 

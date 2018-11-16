@@ -4,7 +4,7 @@
     <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/hokuyo_laser.gazebo.xacro"/>
 
     <!-- range sensor -->
-    <xacro:macro name="hokuyo_laser" params="prefix robot_namespace parent *origin">
+    <xacro:macro name="hokuyo_laser" params="prefix robot_namespace parent min_angle max_angle *origin">
         <joint name="${prefix}_range_sensor_joint" type="fixed">
             <xacro:insert_block name="origin" />
             <parent link="${parent}" />
@@ -35,7 +35,7 @@
             robot_namespace="${robot_namespace}"
             ros_topic="${prefix}_scan"
             frame_name="${prefix}_range_sensor_link"
-            min_angle="-2.3562" max_angle="2.3562" />
+            min_angle="${min_angle}" max_angle="${max_angle}" />
     </xacro:macro>
 
 </robot>
