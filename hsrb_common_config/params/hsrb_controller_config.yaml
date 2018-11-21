@@ -189,3 +189,4 @@ collision_detection_controller:
 tmc_diagnostic_controller:
   type: tmc_realtime_controllers/DiagnosticController
   publish_rate: 1
+  message_max_length: 500
