@@ -2,6 +2,18 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request #107 in HSR/hsrb_common from feature/HSR-20161-update-hsrc-description to develop
+  * commit '7d0815d015da72706034506ecdbbc48bcaeffb8d':
+  Update model files
+* Update model files
+* Merge pull request #101 in HSR/hsrb_common from release/0.17.3 to develop
+  * commit 'f5885ef6a48b53deef252b12b366e91c3e0bd249':
+  update package.xml and CHANGELOG.rst for v0.17.3
+  update CHANGELOG
+* Contributors: minori_higuchi, 水野 貴文, 西野 環
+
 0.17.3 (2018-05-24)
 -------------------
 * revert multi gazebo plugins.

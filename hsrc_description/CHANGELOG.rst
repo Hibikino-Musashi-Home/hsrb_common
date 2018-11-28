@@ -2,6 +2,19 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix gazebo bumper name
+* Fix bumper weight
+* Separate bumper from base
+* Update model files
+* delete hsrc hand_motor_joint xyz
+* Separate base visuals for interactive markers
+* addjust hsrc_description to hsrb_description
+* add base_footprint inertial and fix gripper_dummy_link mass value for hsrc
+* fix hsrc wrist blank
+* Contributors: minori_higuchi, 寺田 耕志, 水野 貴文, 西野 環
+
 0.17.3 (2018-05-24)
 -------------------
 * fix indent

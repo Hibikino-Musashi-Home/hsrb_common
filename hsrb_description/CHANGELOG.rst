@@ -2,6 +2,16 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix gazebo bumper name
+* Fix bumper weight
+* Separate bumper from base
+* Update model files
+* Adjust to design value
+* Modify finger_tip_frame
+* Contributors: minori_higuchi, 太田 雄介, 水野 貴文, 西野 環
+
 0.17.3 (2018-05-24)
 -------------------
 * set suitable parameters for gripper.
