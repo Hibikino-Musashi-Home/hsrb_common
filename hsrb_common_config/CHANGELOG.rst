@@ -2,8 +2,8 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.18.0 (2018-11-28)
+-------------------
 * add message_max_length param to tmc_diagnostic_controller
 * add tmc_diagnostic_controller
 * Add collision_detection_controller

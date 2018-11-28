@@ -2,8 +2,8 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.18.0 (2018-11-28)
+-------------------
 * Merge pull request #107 in HSR/hsrb_common from feature/HSR-20161-update-hsrc-description to develop
   * commit '7d0815d015da72706034506ecdbbc48bcaeffb8d':
   Update model files

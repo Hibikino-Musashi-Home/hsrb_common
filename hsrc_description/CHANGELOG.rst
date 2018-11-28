@@ -2,8 +2,8 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.18.0 (2018-11-28)
+-------------------
 * Fix gazebo bumper name
 * Fix bumper weight
 * Separate bumper from base
