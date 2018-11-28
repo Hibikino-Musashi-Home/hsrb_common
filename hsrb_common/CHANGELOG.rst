@@ -2,6 +2,11 @@
 Changelog for package hsrb_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.18.0 (2018-11-28)
+-------------------
+* add bumper sensor for simulation.
+* Contributors: 西野 環
+
 0.17.3 (2018-05-24)
 -------------------
 
