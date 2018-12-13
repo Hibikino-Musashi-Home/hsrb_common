@@ -49,5 +49,7 @@ add_custom_target(link_target ALL
 )
 
 if(CATKIN_ENABLE_TESTING)
+    find_package(roslaunch REQUIRED)
+    roslaunch_add_file_check(launch USE_TEST_DEPENDENCIES)
     catkin_add_nosetests(test)
 endif()

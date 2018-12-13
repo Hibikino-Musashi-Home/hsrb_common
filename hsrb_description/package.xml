@@ -26,4 +26,5 @@
   <test_depend>urdfdom_py</test_depend>
   <test_depend>robot_state_publisher</test_depend>
   <test_depend>joint_state_publisher</test_depend>
+  <test_depend>roslaunch</test_depend>
 </package>
