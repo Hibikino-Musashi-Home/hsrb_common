@@ -2,7 +2,6 @@
   <name>hsrb_description</name>
   <version>0.18.0</version>
   <description>HSRのロボット定義ファイル</description>
-  <maintainer email="koji_terada@mail.toyota.co.jp">Koji Terada</maintainer>
   <maintainer email="akiyoshi_ochiai@mail.toyota.co.jp">Akiyoshi Ochiai</maintainer>
 
   <license>TMC</license>
