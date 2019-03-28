@@ -2,14 +2,13 @@
   <name>hsrc_description</name>
   <version>0.18.0</version>
   <description>HSRのロボット定義ファイル</description>
-  <maintainer email="tamaki_nishino@mail.toyota.co.jp">Tamaki Nishino</maintainer>
   <maintainer email="akiyoshi_ochiai@mail.toyota.co.jp">Akiyoshi Ochiai</maintainer>
 
   <license>TMC</license>
 
   <url type="website">None</url>
 
-  <author>Koji Terada</author>
+  <author>Tamaki Nishino</author>
   <author>Akiyoshi Ochiai</author>
 
   <buildtool_depend>catkin</buildtool_depend>
