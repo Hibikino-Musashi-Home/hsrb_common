@@ -46,6 +46,7 @@
     <gazebo>
         <plugin name="${robot_name}_ros_control" filename="lib${robot_name}_gazebo_ros_control.so">
             <robotNamespace>${robot_name}</robotNamespace>
+            <legacyModeNS>true</legacyModeNS>
         </plugin>
 
         <plugin name="${robot_name}_p3d_ground_truth" filename="libgazebo_ros_p3d.so">
