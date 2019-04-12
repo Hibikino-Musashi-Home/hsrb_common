@@ -1,15 +1,15 @@
 <?xml version="1.0" ?>
 <robot name="hsrb" xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:macro name="imu_gazebo" params="sensor_name frame_name topic_name robot_namespace">
+    <xacro:macro name="mynteye_imu_gazebo" params="sensor_name frame_name topic_name robot_namespace">
         <gazebo reference="${frame_name}">
             <sensor type="imu" name="${sensor_name}">
                 <update_rate>10.0</update_rate>
 	        <plugin name="${sensor_name}_plugin" filename="libgazebo_ros_imu_sensor.so">
-		    <updateRateHZ>50.0</updateRateHZ>
+		    <updateRateHZ>100.0</updateRateHZ>
 		    <bodyName>base_link</bodyName>
-                    <topicName>${robot_namespace}/${sensor_name}/data</topicName>
-                    <frameName>${personal_name}/${frame_name}</frameName>
+		    <topicName>${sensor_name}/${topic_name}</topicName>
+		    <frameName>${personal_name}/${frame_name}</frameName>
 		    <gaussianNoise>0.0</gaussianNoise>
 		    <xyzOffset>0.0 0.0 0.0</xyzOffset>
 		    <rpyOffset>0.0 -0.0 0.0</rpyOffset>
