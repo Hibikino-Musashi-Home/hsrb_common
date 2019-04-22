@@ -2,6 +2,14 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Modify wheel odometry pulish rate.
+* Fix controller parameters.
+* Add parameters for laser odometry.
+* Add odometry config file.
+* Contributors: 城 崇平, 田中 和仁
+
 0.18.0 (2018-11-28)
 -------------------
 * add message_max_length param to tmc_diagnostic_controller

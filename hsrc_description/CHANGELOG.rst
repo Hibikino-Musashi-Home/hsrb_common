@@ -2,6 +2,13 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add legacyModeNS into urdf's gazebo-tag
+* Update maintainer
+* Add roslaunch_add_file_check
+* Contributors: Yoshimi Iyoda, minori_higuchi, 水野 貴文
+
 0.18.0 (2018-11-28)
 -------------------
 * Fix gazebo bumper name

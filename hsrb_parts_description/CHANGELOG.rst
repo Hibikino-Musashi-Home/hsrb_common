@@ -2,6 +2,11 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update maintainer
+* Contributors: 水野 貴文
+
 0.18.0 (2018-11-28)
 -------------------
 * Merge pull request #107 in HSR/hsrb_common from feature/HSR-20161-update-hsrc-description to develop
