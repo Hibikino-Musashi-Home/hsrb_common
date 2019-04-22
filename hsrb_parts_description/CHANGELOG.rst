@@ -2,8 +2,8 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.18.1 (2019-04-22)
+-------------------
 * Update maintainer
 * Contributors: 水野 貴文
 

@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.18.1 (2019-04-22)
+-------------------
 * add legacyModeNS into urdf's gazebo-tag
 * Update maintainer
 * Add roslaunch_add_file_check

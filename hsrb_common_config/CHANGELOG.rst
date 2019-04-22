@@ -2,8 +2,8 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.18.1 (2019-04-22)
+-------------------
 * Modify wheel odometry pulish rate.
 * Fix controller parameters.
 * Add parameters for laser odometry.
