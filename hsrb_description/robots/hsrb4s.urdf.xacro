@@ -48,9 +48,9 @@
     </xacro:hsrb_hand>
 
     <gazebo>
-        <plugin name="${robot_type}_ros_control" filename="lib${robot_type}_gazebo_ros_control.so">
-            <robotNamespace>${personal_name}/${robot_type}</robotNamespace>
-            <legacyModeNS>false</legacyModeNS>
+        <plugin name="${robot_name}_ros_control" filename="lib${robot_name}_gazebo_ros_control.so">
+            <robotNamespace>${robot_name}</robotNamespace>
+            <legacyModeNS>true</legacyModeNS>
         </plugin>
 
         <plugin name="${robot_type}_p3d_ground_truth" filename="libgazebo_ros_p3d.so">

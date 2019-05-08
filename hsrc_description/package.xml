@@ -1,6 +1,6 @@
 <package>
   <name>hsrc_description</name>
-  <version>0.18.0</version>
+  <version>0.18.1</version>
   <description>HSRのロボット定義ファイル</description>
   <maintainer email="akiyoshi_ochiai@mail.toyota.co.jp">Akiyoshi Ochiai</maintainer>
 

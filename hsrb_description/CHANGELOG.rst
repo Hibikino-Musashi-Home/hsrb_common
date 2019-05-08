@@ -2,6 +2,13 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.18.1 (2019-04-22)
+-------------------
+* add legacyModeNS into urdf's gazebo-tag
+* Update maintainer
+* Add roslaunch_add_file_check
+* Contributors: Yoshimi Iyoda, minori_higuchi, 水野 貴文
+
 0.18.0 (2018-11-28)
 -------------------
 * Fix gazebo bumper name
