@@ -1,13 +1,13 @@
 <launch>
   <!-- send urdf to param server -->
-  <arg name="robot_model" default="hsrc1s" />
   <arg name="namespace" default="/" />
+  <arg name="robot_model" default="hsrc1s" />
   <arg name="visualization" default="true" />
   <arg name="implicit_damping" default="false" />
 
   <group ns="$(arg namespace)">
     <param name="robot_description"
-           command="$(find xacro)/xacro --inorder $(find hsrc_description)/robots/$(arg robot_model).urdf.xacro gazebo_visualization_enabled:=$(arg visualization) implicit_damping:=$(arg implicit_damping)" />
+        command="$(find xacro)/xacro --inorder $(find hsrc_description)/robots/$(arg robot_model).urdf.xacro gazebo_visualization_enabled:=$(arg visualization) implicit_damping:=$(arg implicit_damping) personal_name:=$(arg namespace)" />
     <param name="robot_collision_pair" textfile="$(find hsrc_description)/robots/collision_pair_hsrc.xml" />
   </group>
 </launch>
