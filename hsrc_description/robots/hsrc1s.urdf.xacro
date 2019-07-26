@@ -17,7 +17,7 @@
     <xacro:include filename="$(find hsrc_description)/urdf/wrist_v0/wrist.urdf.xacro" />
     <xacro:include filename="$(find hsrc_description)/urdf/hand_v0/hand.urdf.xacro" />
 
-    <xacro:arg name="personal_name" default="hsrb"/>
+    <xacro:arg name="personal_name" default=""/>
 
     <!-- constant -->
     <xacro:property name="personal_name" value="$(arg personal_name)"/>
