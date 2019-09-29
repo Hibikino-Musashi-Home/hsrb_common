@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="hsrb" xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:macro name="imu_gazebo" params="sensor_name frame_name robot_namespace">
+    <xacro:macro name="imu_gazebo" params="sensor_name frame_name topic_name robot_namespace">
         <gazebo reference="${frame_name}">
             <sensor type="imu" name="${sensor_name}">
                 <update_rate>10.0</update_rate>
