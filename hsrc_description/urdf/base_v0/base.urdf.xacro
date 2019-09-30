@@ -235,7 +235,8 @@
         <xacro:hokuyo_laser
             prefix="${prefix}"
             robot_namespace="${robot_namespace}"
-            parent="${prefix}_link">
+            parent="${prefix}_link"
+            min_angle="-2.1" max_angle="2.1">
             <origin xyz="0.167 0.0 0.1904" rpy="0.0 0.0 0.0" />
         </xacro:hokuyo_laser>
 
@@ -252,7 +253,7 @@
                 rpy="0.0 0.0 ${pi}" />
         </xacro:hsrb_bumper>
 
-        <xacro:imu_sensor prefix="${prefix}" robot_namespace="${robot_namespace}" parent="${prefix}_link">
+        <xacro:imu_sensor prefix="${prefix}" robot_namespace="${robot_namespace}" parent="${prefix}_link" topic_name="data">
             <origin xyz="0.003 -0.08594 0.203" rpy="0.0 0.0 0.0" />
         </xacro:imu_sensor>
 
