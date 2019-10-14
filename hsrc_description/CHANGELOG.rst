@@ -2,6 +2,11 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Parameterize hokuyo_lazer max and min angles
+* Contributors: 水野 貴文
+
 0.18.1 (2019-04-22)
 -------------------
 * add legacyModeNS into urdf's gazebo-tag
