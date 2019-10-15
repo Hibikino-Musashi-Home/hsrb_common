@@ -2,8 +2,8 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.19.0 (2019-10-15)
+-------------------
 * Parameterize hokuyo_lazer max and min angles
 * Contributors: 水野 貴文
 
