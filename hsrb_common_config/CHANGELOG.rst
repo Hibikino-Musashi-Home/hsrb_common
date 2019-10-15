@@ -2,6 +2,9 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.19.0 (2019-10-15)
+-------------------
+
 0.18.1 (2019-04-22)
 -------------------
 * Modify wheel odometry pulish rate.

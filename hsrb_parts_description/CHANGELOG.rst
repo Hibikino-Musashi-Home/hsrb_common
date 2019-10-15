@@ -2,6 +2,13 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.19.0 (2019-10-15)
+-------------------
+* Parameterize hokuyo_lazer max and min angles
+* Parameterize IMU topic name
+* Add D435 and mynteye models
+* Contributors: 水野 貴文
+
 0.18.1 (2019-04-22)
 -------------------
 * Update maintainer
