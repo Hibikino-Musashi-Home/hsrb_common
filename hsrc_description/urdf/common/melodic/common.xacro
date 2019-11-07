@@ -87,7 +87,7 @@
     </gazebo>
   </xacro:macro>
 
-  <xacro:macro name="gazebo_link_bumper" params="name personal_name robot_type gravity collide friction">
+  <xacro:macro name="gazebo_link_bumper" params="name gravity collide friction">
     <gazebo reference="${name}_link">
       <selfCollide>${collide}</selfCollide>
       <gravity>${gravity}</gravity>
@@ -100,7 +100,7 @@
           <collision>${name}_link_collision</collision>
         </contact>
         <plugin name="hsrb_gazebo_ros_bumper_controller" filename="libhsrb_gazebo_ros_bumper.so">
-          <robotNamespace>${personal_name}/${robot_type}</robotNamespace>
+          <robotNamespace>hsrb</robotNamespace>
           <bumperTopicName>${name}_sensor</bumperTopicName>
           <frameName>${name}_link</frameName>
         </plugin>
