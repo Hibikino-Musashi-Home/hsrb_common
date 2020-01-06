@@ -8,8 +8,8 @@
 	        <plugin name="${sensor_name}_plugin" filename="libgazebo_ros_imu_sensor.so">
 		    <updateRateHZ>50.0</updateRateHZ>
 		    <bodyName>base_link</bodyName>
-		    <topicName>${robot_namespace}/${sensor_name}/data</topicName>
-		    <frameName>${frame_name}</frameName>
+                    <topicName>${robot_namespace}/${sensor_name}/data</topicName>
+                    <frameName>${personal_name}/${frame_name}</frameName>
 		    <gaussianNoise>0.0</gaussianNoise>
 		    <xyzOffset>0.0 0.0 0.0</xyzOffset>
 		    <rpyOffset>0.0 -0.0 0.0</rpyOffset>
