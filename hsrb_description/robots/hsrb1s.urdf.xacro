@@ -22,7 +22,6 @@
     <!-- constant -->
     <xacro:property name="personal_name" value="$(arg personal_name)"/>
     <xacro:property name="robot_name" value="hsrb"/>
-    <xacro:property name="robot_type" value="hsrb"/>
 
     <!-- create robot -->
     <xacro:hsrb_base prefix="base" robot_namespace="${robot_name}"/>
@@ -54,7 +53,7 @@
         </plugin>
 
         <plugin name="${robot_name}_p3d_ground_truth" filename="libgazebo_ros_p3d.so">
-            <robotNamespace>${personal_name}/${robot_type}</robotNamespace>
+            <robotNamespace>${personal_name}/${robot_name}</robotNamespace>
             <bodyName>base_footprint</bodyName>
             <topicName>odom_ground_truth</topicName>
             <frameName>map</frameName>

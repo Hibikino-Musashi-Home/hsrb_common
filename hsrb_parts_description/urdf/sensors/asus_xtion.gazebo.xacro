@@ -45,6 +45,7 @@
                     <updateRate>1.0</updateRate>
                     <cameraName>${sensor_name}</cameraName>
                     <frameName>${topic_frame_id}</frameName>
+                    <robotNamespace>${robot_namespace}</robotNamespace>
                     <imageTopicName>/${robot_namespace}/${sensor_name}/rgb/image_rect_color</imageTopicName>
                     <cameraInfoTopicName>/${robot_namespace}/${sensor_name}/rgb/camera_info</cameraInfoTopicName>
                     <depthImageTopicName>/${robot_namespace}/${sensor_name}/depth_registered/image_rect_raw</depthImageTopicName>
