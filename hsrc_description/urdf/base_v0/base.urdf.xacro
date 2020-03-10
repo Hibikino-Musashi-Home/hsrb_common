@@ -147,7 +147,7 @@
     </xacro:macro>
 
     <!-- base -->
-    <xacro:macro name="hsrb_base" params="prefix personal_name robot_namespace robot_type">
+    <xacro:macro name="hsrb_base" params="prefix personal_name robot_namespace robot_name">
         <link name="base_footprint">
         </link>
 
@@ -257,7 +257,7 @@
             <origin xyz="0.003 -0.08594 0.203" rpy="0.0 0.0 0.0" />
         </xacro:imu_sensor>
 
-        <xacro:hsrb_base_gazebo personal_name="${personal_name}" prefix="${prefix}" robot_type="${robot_type}"/>
+        <xacro:hsrb_base_gazebo personal_name="${personal_name}" prefix="${prefix}" robot_name="${robot_name}"/>
         <xacro:hsrb_base_transmission prefix="${prefix}"/>
     </xacro:macro>
 </robot>

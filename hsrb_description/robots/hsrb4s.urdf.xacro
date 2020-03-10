@@ -22,10 +22,9 @@
     <!-- constant -->
     <xacro:property name="personal_name" value="$(arg personal_name)"/>
     <xacro:property name="robot_name" value="hsrb"/>
-    <xacro:property name="robot_type" value="hsrb"/>
 
     <!-- create robot -->
-    <xacro:hsrb_base prefix="base" personal_name="${personal_name}" robot_namespace="${robot_name}" robot_type="${robot_type}" />
+    <xacro:hsrb_base prefix="base" personal_name="${personal_name}" robot_namespace="${robot_name}" robot_name="${robot_name}"/>
 
     <xacro:hsrb_torso prefix="torso" parent="base_link" mimic_joint="arm_lift_joint">
         <origin xyz="0.0 0.0 0.752" rpy="0.0 0.0 0.0"/>
@@ -49,12 +48,12 @@
 
     <gazebo>
         <plugin name="${robot_name}_ros_control" filename="lib${robot_name}_gazebo_ros_control.so">
-            <robotNamespace>${robot_name}</robotNamespace>
-            <legacyModeNS>true</legacyModeNS>
+            <robotNamespace>${personal_name}/${robot_name}</robotNamespace>
+            <legacyModeNS>false</legacyModeNS>
         </plugin>
 
-        <plugin name="${robot_type}_p3d_ground_truth" filename="libgazebo_ros_p3d.so">
-            <robotNamespace>${personal_name}/${robot_type}</robotNamespace>
+        <plugin name="${robot_name}_p3d_ground_truth" filename="libgazebo_ros_p3d.so">
+            <robotNamespace>${personal_name}/${robot_name}</robotNamespace>
             <bodyName>base_footprint</bodyName>
             <topicName>odom_ground_truth</topicName>
             <frameName>map</frameName>
