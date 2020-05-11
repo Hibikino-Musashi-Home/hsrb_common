@@ -64,11 +64,6 @@
                     <mesh filename="package://hsrc_description/meshes/head_v0/head.stl" />
                 </geometry>
             </collision>
-            <collision>
-                <geometry>
-                    <mesh filename="package://hsrc_description/meshes/head_v0/head_dummy.stl" />
-                </geometry>
-            </collision>
         </link>
 
         <!-- cameras -->
