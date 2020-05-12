@@ -2,6 +2,16 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix namespace handling
+* Update common.xacro and imu.gazebo.xacro for melodic
+* add personal_name parameter
+* add melodic folders
+* Insert ceiling camera link
+* Add multi robot simulation function
+* Contributors: Fukukazu Kawata, Hiromichi Nakashima, Keisuke Takeshita, 水野 貴文
+
 0.19.0 (2019-10-15)
 -------------------
 * Parameterize hokuyo_lazer max and min angles
