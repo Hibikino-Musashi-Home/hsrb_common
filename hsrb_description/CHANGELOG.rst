@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.20.0 (2020-05-12)
+-------------------
 * Fix namespace handling
 * Update common.xacro and imu.gazebo.xacro for melodic
 * add personal_name parameter

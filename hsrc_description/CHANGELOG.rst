@@ -2,8 +2,8 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.20.0 (2020-05-12)
+-------------------
 * delete hsrc's head_dummy.stl
 * Fix namespace handling
 * Update common.xacro and imu.gazebo.xacro for melodic

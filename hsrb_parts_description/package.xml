@@ -1,6 +1,6 @@
 <package>
   <name>hsrb_parts_description</name>
-  <version>0.19.0</version>
+  <version>0.20.0</version>
   <description>HSRのロボット定義共通ファイル</description>
   <maintainer email="akiyoshi_ochiai@mail.toyota.co.jp">Akiyoshi Ochiai</maintainer>
 
