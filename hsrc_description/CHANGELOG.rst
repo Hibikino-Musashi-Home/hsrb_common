@@ -2,6 +2,20 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.20.0 (2020-05-12)
+-------------------
+* delete hsrc's head_dummy.stl
+* Fix namespace handling
+* Update common.xacro and imu.gazebo.xacro for melodic
+* add personal_name parameter
+* add melodic folders
+* fix launch file non namespace pattern for hsrc
+* Remove robot_name arg
+* Update arg in upload_hsrc.launch
+* Fix namespace of hsrc_description.
+* Add multi robot simulation function
+* Contributors: Hiromichi Nakashima, Keisuke Takeshita, Yoshimi Iyoda, 水野 貴文, 片岡 巧貴
+
 0.19.0 (2019-10-15)
 -------------------
 * Parameterize hokuyo_lazer max and min angles
