@@ -2,6 +2,9 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.20.0 (2020-05-12)
 -------------------
 * Fix namespace handling
