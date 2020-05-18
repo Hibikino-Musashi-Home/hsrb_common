@@ -1,0 +1,4 @@
+gripper_controller:
+  force_control_pgain: 0.5
+  force_control_igain: 0.09
+  force_control_dgain: 5.0
