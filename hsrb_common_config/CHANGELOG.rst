@@ -2,6 +2,11 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.20.1 (2020-05-19)
+-------------------
+* add gripper force gain
+* Contributors: Yoshimi Iyoda
+
 0.20.0 (2020-05-12)
 -------------------
 
