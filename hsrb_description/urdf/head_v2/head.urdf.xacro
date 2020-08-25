@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot name="head" xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:include filename="$(find hsrb_description)/urdf/head_v1/head.transmission.xacro"/>
-    <xacro:include filename="$(find hsrb_description)/urdf/head_v1/head.gazebo.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/head_v2/head.transmission.xacro"/>
+    <xacro:include filename="$(find hsrb_description)/urdf/head_v2/head.gazebo.xacro"/>
 
     <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/asus_xtion.urdf.xacro"/>
     <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/pointgrey_chameleon.urdf.xacro"/>
