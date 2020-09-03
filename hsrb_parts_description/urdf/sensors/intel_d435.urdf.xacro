@@ -12,20 +12,20 @@
 
         <link name="${sensor_name}_link">
             <visual>
-                <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+                <origin xyz="0 -0.029 0" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
                 <geometry>
                     <mesh filename="package://hsrb_parts_description/meshes/sensors/d435_body.dae" />
                 </geometry>
             </visual>
             <visual>
-                <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+                <origin xyz="0 -0.029 0" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
                 <geometry>
                     <mesh filename="package://hsrb_parts_description/meshes/sensors/d435_front.dae" />
                 </geometry>
             </visual>
 
             <collision>
-                <origin xyz="0 0 0" rpy="0.0 0.0 0.0"/>
+                <origin xyz="0 -0.029 0" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
                 <geometry>
                     <mesh filename="package://hsrb_parts_description/meshes/sensors/d435.stl" />
                 </geometry>
