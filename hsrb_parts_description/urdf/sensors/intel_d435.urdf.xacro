@@ -38,7 +38,7 @@
         </link>
 
         <joint name="${sensor_name}_gazebo_frame_joint" type="fixed">
-            <origin xyz="0 0 0" rpy="${pi/2.0} ${-pi/2.0} 0.0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
             <parent link="${sensor_name}_link"/>
             <child link="${sensor_name}_gazebo_frame"/>
         </joint>
