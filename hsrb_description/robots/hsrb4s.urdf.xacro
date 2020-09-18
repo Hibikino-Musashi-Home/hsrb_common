@@ -18,6 +18,8 @@
     <xacro:include filename="$(find hsrb_description)/urdf/hand_v0/hand.urdf.xacro" />
 
     <xacro:arg name="personal_name" default=""/>
+    <xacro:arg name="ground_truth_xyz_offset" default="0.0\ 0.0\ 0.0"/>
+    <xacro:arg name="ground_truth_rpy_offset" default="0.0\ 0.0\ 0.0"/>
 
     <!-- constant -->
     <xacro:property name="personal_name" value="$(arg personal_name)"/>
@@ -51,13 +53,14 @@
             <robotNamespace>${personal_name}/${robot_name}</robotNamespace>
             <legacyModeNS>false</legacyModeNS>
         </plugin>
-
-        <plugin name="${robot_name}_p3d_ground_truth" filename="libgazebo_ros_p3d.so">
+        <plugin name="${robot_name}_p3d_ground_truth" filename="lib${robot_name}_gazebo_ros_p3d.so">
             <robotNamespace>${personal_name}/${robot_name}</robotNamespace>
             <bodyName>base_footprint</bodyName>
             <topicName>odom_ground_truth</topicName>
             <frameName>map</frameName>
             <updateRate>30</updateRate>
+	    <xyzOffset>$(arg ground_truth_xyz_offset)</xyzOffset>
+	    <rpyOffset>$(arg ground_truth_rpy_offset)</rpyOffset>
         </plugin>
     </gazebo>
 </robot>
