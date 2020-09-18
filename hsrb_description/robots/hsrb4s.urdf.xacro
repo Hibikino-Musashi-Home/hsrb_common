@@ -53,7 +53,7 @@
             <robotNamespace>${personal_name}/${robot_name}</robotNamespace>
             <legacyModeNS>false</legacyModeNS>
         </plugin>
-        <plugin name="${robot_name}_p3d_ground_truth" filename="libgazebo_ros_p3d.so">
+        <plugin name="${robot_name}_p3d_ground_truth" filename="lib${robot_name}_gazebo_ros_p3d.so">
             <robotNamespace>${personal_name}/${robot_name}</robotNamespace>
             <bodyName>base_footprint</bodyName>
             <topicName>odom_ground_truth</topicName>
