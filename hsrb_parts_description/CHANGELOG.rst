@@ -2,6 +2,15 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add hsrb_parts_description/NOTICE for d435 model
+* Fix d435 gazebo frame.
+* Fix d435 model pose.
+* GazeboでのIMUのトピック名設定を正しく反映
+* update d435 model
+* Contributors: Keisuke Takeshita, kazuhito_tanaka, koki_kataoka
+
 0.20.1 (2020-05-19)
 -------------------
 

@@ -2,6 +2,9 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.20.1 (2020-05-19)
 -------------------
 * add gripper force gain
