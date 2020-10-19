@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.20.2 (2020-10-19)
+-------------------
 * Change using library from libgazebo_ros_p3d to hsrb_gazebo_ros_p3d
 * Add ground_truth_offset arg
 * Add joint_state_publisher_gui to run_depend

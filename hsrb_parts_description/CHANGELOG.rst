@@ -2,8 +2,8 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.20.2 (2020-10-19)
+-------------------
 * Add hsrb_parts_description/NOTICE for d435 model
 * Fix d435 gazebo frame.
 * Fix d435 model pose.
