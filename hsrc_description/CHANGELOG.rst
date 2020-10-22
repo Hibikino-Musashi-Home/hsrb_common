@@ -2,6 +2,14 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.20.2 (2020-10-19)
+-------------------
+* Change using library from libgazebo_ros_p3d to hsrb_gazebo_ros_p3d
+* Add ground_truth_offset arg
+* Add joint_state_publisher_gui to run_depend
+* Add xacro: in tag when name applies to xacro:macro
+* Contributors: Keisuke Takeshita, Takafumi Mizuno
+
 0.20.1 (2020-05-19)
 -------------------
 
