@@ -1,6 +1,6 @@
 <package>
   <name>hsrb_description</name>
-  <version>0.20.2</version>
+  <version>0.20.3</version>
   <description>HSRのロボット定義ファイル</description>
   <maintainer email="keisuke_takeshita@mail.toyota.co.jp">Keisuke Takeshita</maintainer>
 

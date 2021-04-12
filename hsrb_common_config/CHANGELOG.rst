@@ -2,6 +2,12 @@
 Changelog for package hsrb_common_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.20.3 (2021-04-12)
+-------------------
+* Update maintainer
+* fix collision-detection-controller parameter typo
+* Contributors: Takafumi Mizuno, Yoshimi Iyoda
+
 0.20.2 (2020-10-19)
 -------------------
 

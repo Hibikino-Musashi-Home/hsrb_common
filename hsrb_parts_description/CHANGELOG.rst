@@ -2,6 +2,12 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.20.3 (2021-04-12)
+-------------------
+* Update maintainer
+* Add ir cameras to d435
+* Contributors: Keisuke Takeshita, Takafumi Mizuno
+
 0.20.2 (2020-10-19)
 -------------------
 * Add hsrb_parts_description/NOTICE for d435 model
