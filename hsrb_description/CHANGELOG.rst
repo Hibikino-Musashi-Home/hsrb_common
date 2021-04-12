@@ -2,6 +2,11 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update maintainer
+* Contributors: Takafumi Mizuno
+
 0.20.2 (2020-10-19)
 -------------------
 * Change using library from libgazebo_ros_p3d to hsrb_gazebo_ros_p3d

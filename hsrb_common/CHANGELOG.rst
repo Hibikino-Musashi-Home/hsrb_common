@@ -2,6 +2,11 @@
 Changelog for package hsrb_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update maintainer
+* Contributors: Takafumi Mizuno
+
 0.20.2 (2020-10-19)
 -------------------
 
