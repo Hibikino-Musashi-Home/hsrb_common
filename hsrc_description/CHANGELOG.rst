@@ -2,6 +2,11 @@
 Changelog for package hsrc_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.20.4 (2021-06-10)
+-------------------
+* Change to robot_state_publisher from state_publisher
+* Contributors: Takafumi Mizuno
+
 0.20.3 (2021-04-12)
 -------------------
 * Update maintainer
