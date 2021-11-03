@@ -2,8 +2,8 @@
 Changelog for package hsrb_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.20.5 (2021-11-03)
+-------------------
 * Change to use joint_state_publisher_gui because of deprecated use_gui
 * Contributors: Takafumi Mizuno
 
