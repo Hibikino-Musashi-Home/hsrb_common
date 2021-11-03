@@ -2,6 +2,9 @@
 Changelog for package hsrb_parts_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.20.4 (2021-06-10)
 -------------------
 
