@@ -1,11 +1,5 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="hsrb">
-    <!--
-    ASUS Xtion PRO LIVE
-    Specs from:
-    http://www.asus.com/Multimedia/Xtion_PRO_LIVE/#specifications
-    -->
-
     <xacro:property name="XtionWidth" value="0.018"/>
     <xacro:property name="XtionHeight" value="0.035"/>
     <xacro:property name="XtionDepth" value="0.05"/>

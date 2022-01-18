@@ -2,13 +2,16 @@
 # vim: fileencoding=utf-8 :
 # This package has no tests
 
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(hsrb_parts_description)
 
-find_package(catkin REQUIRED COMPONENTS xacro rosbash)
+find_package(ament_cmake REQUIRED)
+find_package(gazebo_ros REQUIRED)
+find_package(xacro REQUIRED)
 
-catkin_package(CATKIN_DEPENDS xacro)
-
-install(DIRECTORY urdf meshes
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
+install(
+  DIRECTORY urdf meshes
+  DESTINATION share/${PROJECT_NAME}
 )
+
+ament_package()
