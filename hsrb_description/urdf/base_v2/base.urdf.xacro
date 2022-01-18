@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <robot name="base" xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find hsrb_description)/urdf/base_v2/base.transmission.xacro"/>
     <xacro:include filename="$(find hsrb_description)/urdf/base_v2/base.gazebo.xacro"/>
     <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/hokuyo_laser.urdf.xacro"/>
     <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/imu.urdf.xacro"/>
@@ -158,14 +157,14 @@
 
         <link name="${prefix}_link">
             <inertial>
-                <mass value="50.00"/>  <!-- use dummy weight to stabilize gazebo move base (real value: 11.017971)-->
+                <mass value="50.0"/>
                 <origin xyz="-0.025978 -0.005498 0.17633"/>
                 <inertia ixx="0.3742" ixy="0.000434172172" ixz="0.03088"
-                    iyy="0.3436" iyz="0.01775" izz="0.1509"/>
+                         iyy="0.3436" iyz="0.01775" izz="0.1509"/>
             </inertial>
             <visual>
                 <geometry>
-                    <mesh filename="package://hsrb_description/meshes/base_v2/base_light.dae" />
+                    <mesh filename="package://hsrb_description/meshes/base_v2/base_light.dae"/>
                 </geometry>
             </visual>
             <visual>
@@ -259,6 +258,5 @@
         </xacro:hsrb_bumper>
 
         <xacro:hsrb_base_gazebo personal_name="${personal_name}" prefix="${prefix}" robot_name="${robot_name}"/>
-        <xacro:hsrb_base_transmission prefix="${prefix}"/>
     </xacro:macro>
 </robot>

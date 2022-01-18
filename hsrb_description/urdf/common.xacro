@@ -3,45 +3,6 @@
 
   <xacro:arg name="implicit_damping" default="false" />
 
-  <xacro:macro name="hsrb_position_joint_transmission" params="joint reduction">
-     <transmission name="${joint}_transmission">
-       <type>transmission_interface/SimpleTransmission</type>
-       <joint name="${joint}">
-         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-       </joint>
-       <actuator name="${joint}_actuator">
-         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-         <mechanicalReduction>${reduction}</mechanicalReduction>
-       </actuator>
-     </transmission>
-  </xacro:macro>
-
-  <xacro:macro name="hsrb_effort_joint_transmission" params="joint reduction">
-     <transmission name="${joint}_transmission">
-       <type>transmission_interface/SimpleTransmission</type>
-       <joint name="${joint}">
-         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-       </joint>
-       <actuator name="${joint}_actuator">
-         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-         <mechanicalReduction>${reduction}</mechanicalReduction>
-       </actuator>
-     </transmission>
-  </xacro:macro>
-
-  <xacro:macro name="hsrb_velocity_joint_transmission" params="joint reduction">
-      <transmission name="${prefix}_transmission">
-          <type>transmission_interface/SimpleTransmission</type>
-          <joint name="${joint}">
-            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-          </joint>
-          <actuator name="${joint}_actuator">
-              <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-              <mechanicalReduction>${reduction}</mechanicalReduction>
-          </actuator>
-      </transmission>
-  </xacro:macro>
-
   <xacro:macro name="gazebo_link" params="name gravity collide friction">
     <gazebo reference="${name}">
       <selfCollide>${collide}</selfCollide>

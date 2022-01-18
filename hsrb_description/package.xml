@@ -1,4 +1,5 @@
-<package>
+<?xml version="1.0"?>
+<package format="3">
   <name>hsrb_description</name>
   <version>0.20.5</version>
   <description>HSRのロボット定義ファイル</description>
@@ -11,20 +12,18 @@
   <author>Koji Terada</author>
   <author>Akiyoshi Ochiai</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <build_depend>xacro</build_depend>
-  <build_depend>rosbash</build_depend>
-  <build_depend>hsrb_parts_description</build_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>hsrb_parts_description</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>xacro</exec_depend>
 
-  <run_depend>xacro</run_depend>
-  <run_depend>rviz</run_depend>
-  <run_depend>hsrb_parts_description</run_depend>
-  <run_depend>robot_state_publisher</run_depend>
-  <run_depend>joint_state_publisher</run_depend>
-  <run_depend>joint_state_publisher_gui</run_depend>
-
-  <test_depend>liburdfdom-tools</test_depend>
-  <test_depend>urdfdom_py</test_depend>
-  <test_depend>roslaunch</test_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+    <gazebo_ros gazebo_model_path="${prefix}/.."/>
+  </export>
 </package>

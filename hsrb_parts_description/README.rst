@@ -8,9 +8,8 @@ Gazeboシミュレータ用設定も含む。
 推奨動作環境
 ++++++++++++
 
-- Ubuntu Linux 16.04 64bit
-- ROS Kinetic
-- Gazebo 7 以降
+- Ubuntu Linux 20.04
+- ROS Foxy
 
 
 フォルダ構成
