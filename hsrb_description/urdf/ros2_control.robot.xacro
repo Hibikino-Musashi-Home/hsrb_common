@@ -91,7 +91,7 @@
                         min_angle="-1.92"
                         max_angle="1.22"
                         motor_id="25"
-                        reduction="-1.0"
+                        reduction="1.0"
                         drive_mode="5"
                         velocity_limit="1.0"
                         gear_ratio="0.0035"
