@@ -6,7 +6,6 @@ cmake_minimum_required(VERSION 3.5)
 project(hsrb_parts_description)
 
 find_package(ament_cmake REQUIRED)
-find_package(gazebo_ros REQUIRED)
 find_package(xacro REQUIRED)
 
 install(
