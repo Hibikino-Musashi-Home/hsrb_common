@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot name="wrist" xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:include filename="$(find hsrc_description)/urdf/wrist_v0/wrist.transmission.xacro"/>
     <xacro:include filename="$(find hsrc_description)/urdf/wrist_v0/wrist.gazebo.xacro"/>
     <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/minebea_ft_sensor.urdf.xacro"/>
 
@@ -99,6 +98,5 @@
         </xacro:minebea_ft_sensor>
 
         <xacro:hsrb_wrist_gazebo prefix="${prefix}"/>
-        <xacro:hsrb_wrist_transmission prefix="${prefix}"/>
     </xacro:macro>
 </robot>

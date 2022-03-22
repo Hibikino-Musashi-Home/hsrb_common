@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <robot name="hand" xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find hsrc_description)/urdf/hand_v0/hand.transmission.xacro"/>
     <xacro:include filename="$(find hsrc_description)/urdf/hand_v0/hand.gazebo.xacro"/>
 
     <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/wide_camera.urdf.xacro"/>
@@ -92,7 +91,6 @@
         </xacro:wide_camera>
 
         <xacro:hsrb_hand_gazebo prefix="${prefix}"/>
-        <xacro:hsrb_hand_transmission prefix="${prefix}"/>
     </xacro:macro>
 
     <!-- gripper finger proximal base -->

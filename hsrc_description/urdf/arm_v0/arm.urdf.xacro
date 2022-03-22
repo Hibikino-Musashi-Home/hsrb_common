@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot name="arm" xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:include filename="$(find hsrc_description)/urdf/arm_v0/arm.transmission.xacro"/>
     <xacro:include filename="$(find hsrc_description)/urdf/arm_v0/arm.gazebo.xacro"/>
 
     <!-- arm -->
@@ -94,6 +93,5 @@
         </link>
 
         <xacro:hsrb_arm_gazebo prefix="${prefix}"/>
-        <xacro:hsrb_arm_transmission prefix="${prefix}"/>
     </xacro:macro>
 </robot>
