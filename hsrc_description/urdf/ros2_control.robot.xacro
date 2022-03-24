@@ -4,14 +4,7 @@
   <xacro:macro name="ros2_contorl_robot">
     <ros2_control name="hsrb" type="system">
       <hardware>
-        <xacro:if value="$(arg use_fake_hardware)">
-          <plugin>fake_components/GenericSystem</plugin>
-          <param name="fake_sensor_commands">$(arg fake_sensor_commands)</param>
-          <param name="state_following_offset">0.0</param>
-        </xacro:if>
-        <xacro:unless value="$(arg use_fake_hardware)">
-          <plugin>hsrb_robot_hardware/HsrbHW</plugin>
-        </xacro:unless>
+        <plugin>hsrb_robot_hardware/HsrbHW</plugin>
       </hardware>
 
       <xacro:macro name="hsrb_joint" params="name min_angle max_angle motor_id reduction drive_mode velocity_limit gear_ratio torque_constant control_type:=ActiveJoint">

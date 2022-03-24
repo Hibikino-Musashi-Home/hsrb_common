@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ros2_contorl_rviz">
+    <ros2_control name="hsrb" type="system">
+      <hardware>
+        <plugin>fake_components/GenericSystem</plugin>
+        <param name="fake_sensor_commands">False</param>
+        <param name="state_following_offset">0.0</param>
+      </hardware>
+
+      <xacro:macro name="hsrb_joint" params="name min_angle max_angle velocity_limit control_type:=ActiveJoint">
+        <joint name="${name}">
+          <command_interface name="position">
+            <param name="min">"${min_angle}"</param>
+            <param name="max">"${max_angle}"</param>
+          </command_interface>
+          <command_interface name="velocity">
+            <param name="min">>${-velocity_limit}</param>
+            <param name="max">>${velocity_limit}</param>
+          </command_interface>
+          <state_interface name="position"/>
+          <state_interface name="velocity"/>
+          <state_interface name="effort"/>
+          <param name="control_type">${control_type}</param>
+          <param name="velocity_limit">${velocity_limit}</param>
+        </joint>
+      </xacro:macro>
+
+      <xacro:macro name="gripper_active_joint" params="name min_angle max_angle velocity_limit left_spring_joint right_spring_joint">
+        <joint name="${name}">
+          <command_interface name="position">
+            <param name="min">"${min_angle}"</param>
+            <param name="max">"${max_angle}"</param>
+          </command_interface>
+          <state_interface name="position"/>
+          <state_interface name="velocity"/>
+          <state_interface name="effort"/>
+          <param name="control_type">Gripper</param>
+          <param name="velocity_limit">${velocity_limit}</param>
+          <param name="left_spring_joint">${left_spring_joint}</param>
+          <param name="right_spring_joint">${right_spring_joint}</param>
+        </joint>
+      </xacro:macro>
+
+      <xacro:hsrb_joint name="arm_lift_joint"
+                        min_angle="0.0"
+                        max_angle="0.69"
+                        velocity_limit="6.28"/>
+      <xacro:hsrb_joint name="arm_flex_joint"
+                        min_angle="-2.62"
+                        max_angle="0.0"
+                        velocity_limit="1.58"/>
+      <xacro:hsrb_joint name="arm_roll_joint"
+                        min_angle="-1.92"
+                        max_angle="3.67"
+                        velocity_limit="2.0"/>
+      <xacro:hsrb_joint name="wrist_flex_joint"
+                        min_angle="-1.75"
+                        max_angle="1.22"
+                        velocity_limit="2.0"/>
+      <xacro:hsrb_joint name="wrist_roll_joint"
+                        min_angle="-1.92"
+                        max_angle="3.67"
+                        velocity_limit="2.0"/>
+      <xacro:hsrb_joint name="head_pan_joint"
+                        min_angle="-3.84"
+                        max_angle="1.75"
+                        velocity_limit="2.0"/>
+      <xacro:hsrb_joint name="head_tilt_joint"
+                        min_angle="-1.57"
+                        max_angle="0.52"
+                        velocity_limit="2.0"/>
+      <xacro:gripper_active_joint name="hand_motor_joint"
+                                  min_angle="-0.798"
+                                  max_angle="1.24"
+                                  velocity_limit="1.0"
+                                  left_spring_joint="hand_l_spring_proximal_joint"
+                                  right_spring_joint="hand_r_spring_proximal_joint"/>
+      <xacro:hsrb_joint name="base_l_drive_wheel_joint"
+                        min_angle="-999999"
+                        max_angle="999999"
+                        velocity_limit="20.8"
+                        control_type="Wheel"/>
+      <xacro:hsrb_joint name="base_r_drive_wheel_joint"
+                        min_angle="-999999"
+                        max_angle="999999"
+                        velocity_limit="20.8"
+                        control_type="Wheel"/>
+      <xacro:hsrb_joint name="base_roll_joint"
+                        min_angle="-999999"
+                        max_angle="999999"
+                        velocity_limit="2.5"/>
+    </ros2_control>
+  </xacro:macro>
+</robot>

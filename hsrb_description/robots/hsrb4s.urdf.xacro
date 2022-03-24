@@ -15,9 +15,6 @@
     <xacro:arg name="gazebo_sim" default="False"/>
     <xacro:arg name="rviz_sim" default="False"/>
 
-    <xacro:arg name="use_fake_hardware" default="False"/>
-    <xacro:arg name="fake_sensor_commands" default="False"/>
-
     <xacro:arg name="personal_name" default=""/>
     <xacro:arg name="ground_truth_xyz_offset" default="0.0\ 0.0\ 0.0"/>
     <xacro:arg name="ground_truth_rpy_offset" default="0.0\ 0.0\ 0.0"/>
@@ -58,5 +55,10 @@
     <xacro:if value="$(arg gazebo_sim)">
       <xacro:include filename="$(find hsrb_description)/urdf/ros2_control.gazebo.xacro" />
       <xacro:ros2_contorl_gazebo/>
+    </xacro:if>
+
+    <xacro:if value="$(arg rviz_sim)">
+      <xacro:include filename="$(find hsrb_description)/urdf/ros2_control.rviz.xacro" />
+      <xacro:ros2_contorl_rviz/>
     </xacro:if>
 </robot>
