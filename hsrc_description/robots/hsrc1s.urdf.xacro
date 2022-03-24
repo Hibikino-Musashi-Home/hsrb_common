@@ -20,6 +20,9 @@
     <xacro:arg name="gazebo_sim" default="False"/>
     <xacro:arg name="rviz_sim" default="False"/>
 
+    <xacro:arg name="use_fake_hardware" default="False"/>
+    <xacro:arg name="fake_sensor_commands" default="False"/>
+
     <xacro:arg name="personal_name" default=""/>
     <xacro:arg name="ground_truth_xyz_offset" default="0.0\ 0.0\ 0.0"/>
     <xacro:arg name="ground_truth_rpy_offset" default="0.0\ 0.0\ 0.0"/>
