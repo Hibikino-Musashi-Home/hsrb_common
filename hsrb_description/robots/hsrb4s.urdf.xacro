@@ -56,4 +56,9 @@
       <xacro:include filename="$(find hsrb_description)/urdf/ros2_control.gazebo.xacro" />
       <xacro:ros2_contorl_gazebo/>
     </xacro:if>
+
+    <xacro:if value="$(arg rviz_sim)">
+      <xacro:include filename="$(find hsrb_description)/urdf/ros2_control.rviz.xacro" />
+      <xacro:ros2_contorl_rviz/>
+    </xacro:if>
 </robot>
