@@ -30,6 +30,13 @@
           <state_interface name="effort" />
         </joint>
       </xacro:macro>
+      <xacro:macro name="gazebo_read_only_joint" params="name">
+        <joint name="${name}">
+          <state_interface name="position" />
+          <state_interface name="velocity" />
+          <state_interface name="effort" />
+        </joint>
+      </xacro:macro>
       <xacro:gazebo_position_joint name="head_tilt_joint" />
       <xacro:gazebo_position_joint name="head_pan_joint" />
       <xacro:gazebo_position_joint name="arm_lift_joint" />
@@ -40,6 +47,9 @@
       <xacro:gazebo_position_joint name="base_roll_joint" />
       <xacro:gazebo_velocity_joint name="base_r_drive_wheel_joint" />
       <xacro:gazebo_velocity_joint name="base_l_drive_wheel_joint" />
+      <xacro:gazebo_read_only_joint name="hand_motor_joint" />
+      <xacro:gazebo_read_only_joint name="hand_l_spring_proximal_joint" />
+      <xacro:gazebo_read_only_joint name="hand_r_spring_proximal_joint" />
     </ros2_control>
   </xacro:macro>
 </robot>
