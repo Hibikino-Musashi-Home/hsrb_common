@@ -24,7 +24,7 @@
     <xacro:property name="robot_name" value="hsrb"/>
 
     <!-- create robot -->
-    <xacro:hsrb_base prefix="base" personal_name="${personal_name}" robot_namespace="${robot_name}" robot_name="${robot_name}"/>
+    <xacro:hsrb_base prefix="base" personal_name="${personal_name}" robot_namespace="${personal_name}" robot_name="${robot_name}"/>
 
     <xacro:hsrb_torso prefix="torso" parent="base_link" mimic_joint="arm_lift_joint">
         <origin xyz="0.0 0.0 0.752" rpy="0.0 0.0 0.0"/>
@@ -38,7 +38,7 @@
         <origin xyz="0.0 0.0 0.340" rpy="0.0 0.0 0.0"/>
     </xacro:hsrb_arm>
 
-    <xacro:hsrb_wrist prefix="wrist" parent="arm_roll_link" robot_namespace="${robot_name}">
+    <xacro:hsrb_wrist prefix="wrist" parent="arm_roll_link" robot_namespace="${personal_name}">
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
     </xacro:hsrb_wrist>
 
