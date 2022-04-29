@@ -15,6 +15,10 @@
     <xacro:property name="spring_proximal_joint_angle_range_max" value="0.698" />
     <xacro:property name="distal_joint_angle_offset" value="0.087" />
 
+    <!-- The weight of all hand links is set lightly.
+         The reason is to make it easy to adjust the hand control gain in gazebo.
+         TODO: Reset the weight parameter to the correct value -->
+
     <!-- dummy link -->
     <xacro:macro name="hsrb_gripper_dummy_link" params="name">
         <link name="${name}">
