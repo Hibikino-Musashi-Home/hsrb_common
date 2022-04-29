@@ -3,12 +3,31 @@
 
   <xacro:macro name="ros2_contorl_gazebo">
     <gazebo>
-      <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
         <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
         <parameters>$(find hsrb_gazebo_bringup)/config/gazebo_ros2_control.yaml</parameters>
         <robot_param_node>whole_body/robot_state_publisher</robot_param_node>
         <ros>
         </ros>
+      </plugin>
+      <plugin name="hrh_gripper_plugin" filename="libtmc_gazebo_ros_hrh_gripper.so">
+        <sensitiveness>0.05</sensitiveness>
+        <update_rate>1000.0</update_rate>
+        <max_torque>20.0</max_torque>
+        <error_tolerance>0.0872</error_tolerance>
+        <stall_timeout>2.0</stall_timeout>
+        <robot_namespace>${personal_name}/${robot_name}</robot_namespace>
+        <parameters>
+          <hand_motor_joint p="50.0" d="20.0"/>
+          <hand_l_proximal_joint p="50.0" d="20.0"/>
+          <hand_l_spring_proximal_joint p="50.0" d="20.0"/>
+          <hand_l_mimic_distal_joint p="20.0" d="8.0"/>
+          <hand_l_distal_joint p="1.0" d="0.0"/>
+          <hand_r_proximal_joint p="50.0" d="20.0"/>
+          <hand_r_spring_proximal_joint p="50.0" d="20.0"/>
+          <hand_r_mimic_distal_joint p="20.0" d="8.0"/>
+          <hand_r_distal_joint p="20.0" d="8.0"/>
+        </parameters>
       </plugin>
     </gazebo>
     <ros2_control name="GazeboSystem" type="system">
