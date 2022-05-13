@@ -92,7 +92,7 @@
 
         <xacro:minebea_ft_sensor
             prefix="${prefix}"
-            robot_namespace="${personal_name}"
+            robot_namespace="${robot_namespace}"
 	    parent="${prefix}_ft_sensor_mount_link">
 	  <origin xyz="0.0 0.0 0.1" rpy="${pi} 0.0 0.0"/>
         </xacro:minebea_ft_sensor>
