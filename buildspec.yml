@@ -1,0 +1,66 @@
+version: 0.2
+
+env:
+  shell: bash
+  variables:
+    BUCKET_NAME: "s3://d-pro-s3-codebuild"
+phases:
+  install:
+    commands:
+      - apt update
+      - aws s3 cp $BUCKET_NAME/common/tmc_lint_cpp.py /tmp/
+      - chmod +x /tmp/tmc_lint_cpp.py
+  pre_build:
+    commands:
+      - mkdir -p ../workspace/src/`basename $CODEBUILD_SRC_DIR`
+      - mkdir -p ../workspace/image
+      - |
+        rsync -a * ../workspace/src/`basename $CODEBUILD_SRC_DIR` \
+        --exclude "hsrb_common" \
+        --exclude "hsrb_common_config"
+      - cd ../workspace
+      - python3 /tmp/tmc_lint_cpp.py 2> cpplint_result.txt
+      - |
+        if [ -s cpplint_result.txt ]; then
+          cpplint_junit cpplint_result.txt cpplint_result.xml
+          cat cpplint_result.xml
+        fi
+      - |
+        flake8 \
+        --exclude thirdparty \
+        --exit-zero \
+        --max-line-length=120 \
+        --ignore D100,D101,D102,D103,D104,D105,D203,D400,H301,H104,I202,W503 \
+        --import-order-style=google \
+        --copyright-check --copyright-regexp="Copyright \([cC]\)\s+\d{4}([-,]\d{4})*\s+%(author)s" \
+        --copyright-author="Toyota Motor Corporation" \
+        --format junit-xml \
+        . >> pep8_result.xml
+      - cat pep8_result.xml
+  build:
+    commands:
+      - rsync -a /src/* .
+      - aws s3 cp $BUCKET_NAME/common/focal-unstable-amd64-base.tgz image/
+      - aws s3 cp $BUCKET_NAME/common/tmc-rosdistro/ tmc-rosdistro --recursive
+      - source /opt/ros/foxy/setup.bash
+      - make debuild
+  post_build:
+    commands:
+      - rosdep update
+      - rosdep install -y -i --as-root pip:false --from-paths .
+      - colcon build
+      - colcon test
+artifacts:
+  files:
+    - '../workspace/deb/*.deb'
+  discard-paths: yes
+reports:
+  lint:
+    files:
+      - '../workspace/cpplint_result.xml'
+      - '../workspace/pep8_result.xml'
+    file-format: JunitXml
+  test:
+    files:
+      - '../workspace/build/*/test_results/*/*.xml'
+    file-format: JunitXml
