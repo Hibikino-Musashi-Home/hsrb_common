@@ -60,7 +60,7 @@ reports:
       - '../workspace/cpplint_result.xml'
       - '../workspace/pep8_result.xml'
     file-format: JunitXml
-  test:
-    files:
-      - '../workspace/build/*/test_results/*/*.xml'
-    file-format: JunitXml
+  # test:
+  #   files:
+  #     - '../workspace/build/*/test_results/*/*.xml'
+  #   file-format: JunitXml
