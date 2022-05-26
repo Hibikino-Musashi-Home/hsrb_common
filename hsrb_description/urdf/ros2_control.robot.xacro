@@ -92,7 +92,7 @@
                         max_angle="3.67"
                         motor_id="25"
                         reduction="1.0"
-                        drive_mode="5"
+                        drive_mode="7"
                         velocity_limit="1.0"
                         gear_ratio="0.0035"
                         torque_constant="0.0184"/>
