@@ -58,7 +58,7 @@
     </xacro:if>
 
     <xacro:if value="$(arg gazebo_sim)">
-      <xacro:include filename="$(find hsrb_description)/urdf/ros2_control.gazebo.xacro" />
+      <xacro:include filename="$(find hsrc_description)/urdf/ros2_control.gazebo.xacro" />
       <xacro:ros2_contorl_gazebo/>
     </xacro:if>
 
