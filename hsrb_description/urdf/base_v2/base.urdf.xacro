@@ -257,6 +257,6 @@
                 rpy="0.0 0.0 ${pi}" />
         </xacro:hsrb_bumper>
 
-        <xacro:hsrb_base_gazebo personal_name="${personal_name}" prefix="${prefix}" robot_name="${robot_name}"/>
+        <xacro:hsrb_base_gazebo prefix="${prefix}" robot_namespace="${robot_namespace}"/>
     </xacro:macro>
 </robot>
