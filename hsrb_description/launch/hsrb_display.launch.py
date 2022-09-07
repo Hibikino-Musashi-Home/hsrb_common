@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Copyright (C) 2022 Toyota Motor Corporation
 from launch import LaunchDescription
 
 from launch.actions import DeclareLaunchArgument
