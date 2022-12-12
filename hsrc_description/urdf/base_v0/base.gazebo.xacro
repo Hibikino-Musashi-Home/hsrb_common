@@ -11,5 +11,14 @@
         <xacro:gazebo_link name="${prefix}_imu_frame" gravity="true" collide="false" friction="0.9"/>
         <xacro:gazebo_link_bumper name="${prefix}_f_bumper" robot_namespace="${robot_namespace}" gravity="true" collide="false" friction="0.9"/>
         <xacro:gazebo_link_bumper name="${prefix}_b_bumper" robot_namespace="${robot_namespace}" gravity="true" collide="false" friction="0.9"/>
+        <gazebo>
+            <plugin name="odom_ground_truth" filename="libgazebo_ros_p3d.so">
+                <body_name>${prefix}_footprint</body_name>
+                <ros>
+                    <namespace>${robot_namespace}</namespace>
+                    <remapping>odom:=odom_ground_truth</remapping>
+                </ros>
+            </plugin>
+        </gazebo>
     </xacro:macro>
 </robot>
