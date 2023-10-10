@@ -15,7 +15,7 @@
     <xacro:property name="passive_wheel_offset_x" value="0.1665" />
     <xacro:property name="passive_wheel_offset_y" value="0.055" />
 
-    <xacro:property name="drive_wheel_max_effort" value="11.067" />
+    <xacro:property name="drive_wheel_max_effort" value="28.0" />
     <xacro:property name="drive_wheel_max_velocity" value="20.8" />
 
     <xacro:property name="roll_joint_max_effort" value="34.46" />
