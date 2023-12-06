@@ -1,12 +1,12 @@
 # This package has no tests
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(hsrb_common_config)
 
-find_package(catkin REQUIRED)
+find_package(ament_cmake REQUIRED)
 
-catkin_package()
+ament_package()
 
 install(DIRECTORY params
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  DESTINATION share/${PROJECT_NAME}
   PATTERN ".svn" EXCLUDE
 )
