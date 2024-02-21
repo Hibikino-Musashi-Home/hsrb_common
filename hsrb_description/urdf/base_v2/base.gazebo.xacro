@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:arg name="ground_truth_xyz_offset" default="0.0\ 0.0\ 0.0"/>
+    <xacro:arg name="ground_truth_rpy_offset" default="0.0\ 0.0\ 0.0"/>
     <xacro:macro name="hsrb_base_gazebo" params="prefix robot_namespace">
         <xacro:gazebo_link name="${prefix}_link" gravity="true" collide="false" friction="0.9"/>
         <xacro:gazebo_link name="${prefix}_roll_link" gravity="true" collide="false" friction="0.9"/>
@@ -14,6 +16,10 @@
         <gazebo>
             <plugin name="odom_ground_truth" filename="libgazebo_ros_p3d.so">
                 <body_name>${prefix}_footprint</body_name>
+                <frame_name>map</frame_name>
+                <update_rate>30</update_rate>
+                <xyz_offset>$(arg ground_truth_xyz_offset)</xyz_offset>
+                <rpy_offset>$(arg ground_truth_rpy_offset)</rpy_offset>
                 <ros>
                     <namespace>${robot_namespace}</namespace>
                     <remapping>odom:=odom_ground_truth</remapping>
