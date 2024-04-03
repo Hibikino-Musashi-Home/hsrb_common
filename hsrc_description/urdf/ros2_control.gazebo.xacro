@@ -33,12 +33,16 @@
       <hardware>
          <plugin>gazebo_ros2_control/GazeboSystem</plugin>
       </hardware>
-      <xacro:macro name="gazebo_velocity_joint" params="name">
+      <xacro:macro name="gazebo_position_joint" params="name p_gain i_gain d_gain">
         <joint name="${name}">
-          <command_interface name="velocity" />
+          <command_interface name="position" />
           <state_interface name="position" />
           <state_interface name="velocity" />
           <state_interface name="effort" />
+          <param name="p_gain">${p_gain}</param>
+          <param name="i_gain">${i_gain}</param>
+          <param name="d_gain">${d_gain}</param>
+          <param name="i_max">200.0</param>
         </joint>
       </xacro:macro>
       <xacro:macro name="gazebo_position_joint" params="name p_gain i_gain d_gain">
@@ -68,8 +72,8 @@
       <xacro:gazebo_position_joint name="wrist_flex_joint" p_gain="900.0" i_gain="0.0" d_gain="0.0"/>
       <xacro:gazebo_position_joint name="wrist_roll_joint" p_gain="900.0" i_gain="0.0" d_gain="0.0"/>
       <xacro:gazebo_position_joint name="base_roll_joint" p_gain="1000.0" i_gain="1.0" d_gain="10.0"/>
-      <xacro:gazebo_velocity_joint name="base_r_drive_wheel_joint" />
-      <xacro:gazebo_velocity_joint name="base_l_drive_wheel_joint" />
+      <xacro:gazebo_velocity_joint name="base_r_drive_wheel_joint" p_gain="35.0" i_gain="0.5" d_gain="0.0"/>
+      <xacro:gazebo_velocity_joint name="base_l_drive_wheel_joint" p_gain="35.0" i_gain="0.5" d_gain="0.0"/>
       <xacro:gazebo_read_only_joint name="hand_motor_joint" />
       <xacro:gazebo_read_only_joint name="hand_l_spring_proximal_joint" />
       <xacro:gazebo_read_only_joint name="hand_r_spring_proximal_joint" />
