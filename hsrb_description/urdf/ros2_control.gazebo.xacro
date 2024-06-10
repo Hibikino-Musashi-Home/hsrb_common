@@ -29,6 +29,19 @@
           <hand_r_distal_joint p="20.0" d="8.0"/>
         </parameters>
       </plugin>
+      <plugin name="grasp_hack_plugin" filename="libtmc_gazebo_grasp_hack_hrh_gripper.so">
+        <grasp_check>
+          <attach_steps>1</attach_steps>
+          <detach_steps>2</detach_steps>
+          <min_contact_count>1</min_contact_count>
+          <max_attach_weight>1.2</max_attach_weight>
+        </grasp_check>
+        <gripper_link>hand_r_distal_link</gripper_link>
+        <gripper_link>hand_l_distal_link</gripper_link>
+        <gripper_link>hand_r_spring_proximal_link</gripper_link>
+        <gripper_link>hand_l_spring_proximal_link</gripper_link>
+        <palm_link>wrist_ft_sensor_frame</palm_link>
+      </plugin>
     </gazebo>
     <ros2_control name="GazeboSystem" type="system">
       <hardware>
