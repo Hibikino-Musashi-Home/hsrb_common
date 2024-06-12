@@ -39,8 +39,6 @@
                     <hack_baseline>0</hack_baseline>
                     <min_depth>0.5</min_depth>
                     <max_depth>9.2</max_depth>
-                    <cx>0.0</cx>
-                    <cy>0.0</cy>
                     <ros>
                       <namespace>${robot_namespace}</namespace>
                       <remapping>${sensor_name}/image_raw:=${sensor_name}/rgb/image_rect_color</remapping>
