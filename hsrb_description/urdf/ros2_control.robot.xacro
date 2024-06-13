@@ -10,12 +10,12 @@
       <xacro:macro name="hsrb_joint" params="name min_angle max_angle motor_id reduction drive_mode velocity_limit gear_ratio torque_constant control_type:=ActiveJoint">
         <joint name="${name}">
           <command_interface name="position">
-            <param name="min">"${min_angle}"</param>
-            <param name="max">"${max_angle}"</param>
+            <param name="min">${min_angle}</param>
+            <param name="max">${max_angle}</param>
           </command_interface>
           <command_interface name="velocity">
-            <param name="min">>${-velocity_limit}</param>
-            <param name="max">>${velocity_limit}</param>
+            <param name="min">${-velocity_limit}</param>
+            <param name="max">${velocity_limit}</param>
           </command_interface>
           <state_interface name="position"/>
           <state_interface name="velocity"/>
@@ -57,7 +57,7 @@
                         motor_id="21"
                         reduction="40.273862263"
                         drive_mode="5"
-                        velocity_limit="1.0"
+                        velocity_limit="6.05"
                         gear_ratio="0.002407705"
                         torque_constant="0.0174"/>
       <xacro:hsrb_joint name="arm_flex_joint"
@@ -120,7 +120,7 @@
                                   motor_id="41"
                                   reduction="1.0"
                                   drive_mode="0"
-                                  velocity_limit="1.0"
+                                  velocity_limit="3.0"
                                   gear_ratio="0.005090909"
                                   torque_constant="0.0184"
                                   left_spring_joint="hand_l_spring_proximal_joint"
