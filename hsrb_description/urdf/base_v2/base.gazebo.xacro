@@ -14,7 +14,7 @@
         <xacro:gazebo_link_bumper name="${prefix}_f_bumper" robot_namespace="${robot_namespace}" gravity="true" collide="false" friction="0.9"/>
         <xacro:gazebo_link_bumper name="${prefix}_b_bumper" robot_namespace="${robot_namespace}" gravity="true" collide="false" friction="0.9"/>
         <gazebo>
-            <plugin name="odom_ground_truth" filename="libgazebo_ros_p3d.so">
+            <plugin name="odom_ground_truth" filename="libtmc_gazebo_ros_p3d.so">
                 <body_name>${prefix}_footprint</body_name>
                 <frame_name>map</frame_name>
                 <update_rate>30</update_rate>
