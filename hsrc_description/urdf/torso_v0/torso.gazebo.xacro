@@ -7,7 +7,7 @@
         <gazebo>
             <plugin name="torso_mimic_plugin" filename="libtmc_gazebo_ros_mimic_joint.so">
                 <joint>${prefix}_lift_joint</joint>
-                <mimicJoint>${mimic_joint}</mimicJoint>
+                <mimic_joint>${mimic_joint}</mimic_joint>
                 <multiplier>0.5</multiplier>
             </plugin>
         </gazebo>
