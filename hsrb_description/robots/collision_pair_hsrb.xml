@@ -54,6 +54,11 @@
     <object name="hand_r_distal_link/collision/0"/>
   </group>
 
+  <group name= "attached_object">
+    <object name="hand_palm_link"/>
+    <object name="hand_l_finger_vacuum_frame"/>
+  </group>
+
   <group name= "OUTER">
   </group>
 
@@ -84,6 +89,7 @@
     <pair group1="arm_roll" group2="wrist_flex" />
     <pair group1="wrist_flex" group2="wrist_roll" />
     <pair group1="wrist_roll" group2="gripper" />
+    <pair group1="gripper" group2="attached_object" />
   </non-contact>
 
   <non-check-inner-distance>
