@@ -12,21 +12,11 @@
 
       <xacro:macro name="rviz_joint" params="name">
         <joint name="${name}">
-          <command_interface name="position"/>
           <command_interface name="velocity"/>
-          <command_interface name="command_drive_mode"/>
-          <state_interface name="command_drive_mode"/>
-          <state_interface name="command_position"/>
-          <state_interface name="command_velocity"/>
+          <command_interface name="position"/>
           <state_interface name="position"/>
           <state_interface name="velocity"/>
           <state_interface name="effort"/>
-          <state_interface name="current"/>
-          <state_interface name="temperature"/>
-          <state_interface name="MrPos"/>
-          <state_interface name="AvagoPos"/>
-          <state_interface name="current_drive_mode"/>
-          <state_interface name="error_status"/>
         </joint>
       </xacro:macro>
 
@@ -60,4 +50,3 @@
 
   </xacro:macro>
 </robot>
-
