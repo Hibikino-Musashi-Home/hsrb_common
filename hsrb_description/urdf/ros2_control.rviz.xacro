@@ -27,7 +27,6 @@
       <xacro:rviz_joint name="wrist_roll_joint"/>
       <xacro:rviz_joint name="head_pan_joint"/>
       <xacro:rviz_joint name="head_tilt_joint"/>
-      <xacro:rviz_joint name="hand_motor_joint"/>
       <xacro:rviz_joint name="base_l_drive_wheel_joint"/>
       <xacro:rviz_joint name="base_r_drive_wheel_joint"/>
       <xacro:rviz_joint name="base_roll_joint"/>
@@ -35,9 +34,9 @@
       <xacro:rviz_joint name="hand_r_spring_proximal_joint"/>
     </ros2_control>
 
-    <ros2_control name="HsrbSIMGripper" type="system">
+    <ros2_control name="ForwardCommandController" type="system">
       <hardware>
-        <plugin>hsrb_gripper_bridge/HsrbSIMGripperBridge</plugin>
+        <plugin>forward_command_controller/ForwardCommandController</plugin>
       </hardware>
 
       <xacro:macro name="rviz_joint" params="name">
@@ -45,7 +44,7 @@
         </joint>
       </xacro:macro>
 
-      <xacro:rviz_joint name="hand_motor_joint_bridge"/>
+      <xacro:rviz_joint name="hand_motor_joint"/>
     </ros2_control>
 
   </xacro:macro>
