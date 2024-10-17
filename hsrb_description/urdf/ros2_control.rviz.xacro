@@ -7,6 +7,7 @@
         <plugin>fake_components/GenericSystem</plugin>
         <param name="fake_sensor_commands">False</param>
         <param name="state_following_offset">0.0</param>
+        <param name="calculate_dynamics">True</param>
       </hardware>
 
       <xacro:macro name="rviz_joint" params="name">
