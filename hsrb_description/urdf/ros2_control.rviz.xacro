@@ -7,7 +7,6 @@
         <plugin>fake_components/GenericSystem</plugin>
         <param name="fake_sensor_commands">False</param>
         <param name="state_following_offset">0.0</param>
-        <param name="calculate_dynamics">True</param>
       </hardware>
 
       <xacro:macro name="rviz_joint" params="name">
@@ -34,17 +33,15 @@
       <xacro:rviz_joint name="hand_r_spring_proximal_joint"/>
     </ros2_control>
 
-    <ros2_control name="ForwardCommandController" type="system">
+    <ros2_control name="HsrbGripperFakeInterface" type="system">
       <hardware>
-        <plugin>forward_command_controller/ForwardCommandController</plugin>
+        <plugin>hsrb_gripper_fake_interface/HsrbGripperFakeInterface</plugin>
+        <!-- effortの閾値 -->
+        <param name="effort_min">0.011</param>
       </hardware>
 
-      <xacro:macro name="rviz_joint" params="name">
-        <joint name="${name}">
-        </joint>
-      </xacro:macro>
-
-      <xacro:rviz_joint name="hand_motor_joint"/>
+      <joint name="hand_motor_joint">
+      </joint>
     </ros2_control>
 
   </xacro:macro>
