@@ -84,7 +84,7 @@
       <xacro:gazebo_position_joint name="arm_roll_joint" p_gain="1000.0" i_gain="10.0" d_gain="1.0"/>
       <xacro:gazebo_position_joint name="wrist_flex_joint" p_gain="900.0" i_gain="0.0" d_gain="0.0"/>
       <xacro:gazebo_position_joint name="wrist_roll_joint" p_gain="900.0" i_gain="0.0" d_gain="0.0"/>
-      <xacro:gazebo_position_joint name="base_roll_joint" p_gain="1000.0" i_gain="1.0" d_gain="10.0"/>
+      <xacro:gazebo_velocity_joint name="base_roll_joint" p_gain="35.0" i_gain="0.5" d_gain="0.0"/>
       <xacro:gazebo_velocity_joint name="base_r_drive_wheel_joint" p_gain="35.0" i_gain="0.5" d_gain="0.0"/>
       <xacro:gazebo_velocity_joint name="base_l_drive_wheel_joint" p_gain="35.0" i_gain="0.5" d_gain="0.0"/>
       <xacro:gazebo_read_only_joint name="hand_motor_joint" />
