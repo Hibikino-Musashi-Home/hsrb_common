@@ -155,5 +155,24 @@
                         gear_ratio="0.003333333"
                         torque_constant="0.0368"/>
     </ros2_control>
+
+    <ros2_control name="hsrb_gpio" type="system">
+      <hardware>
+        <plugin>hsrb_cgos_driver/HsrbCgosHw</plugin>
+      </hardware>
+
+      <gpio name="pin0">
+        <state_interface name="state"/>
+        <param name="pin">0</param>
+        <param name="direction">in</param>
+      </gpio>
+
+      <gpio name="pin4">
+        <command_interface name="command"/>
+        <param name="pin">4</param>
+        <param name="direction">out</param>
+      </gpio>
+    </ros2_control>
+
   </xacro:macro>
 </robot>
