@@ -18,7 +18,6 @@
         <stall_timeout>2.0</stall_timeout>
         <robot_namespace>${personal_name}/${robot_name}</robot_namespace>
         <pid_params>
-          <hand_motor_joint p="50.0" d="20.0"/>
           <hand_l_proximal_joint p="50.0" d="20.0"/>
           <hand_l_spring_proximal_joint p="50.0" d="20.0"/>
           <hand_l_mimic_distal_joint p="20.0" d="8.0"/>

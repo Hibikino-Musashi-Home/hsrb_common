@@ -37,7 +37,7 @@
             </visual>
 
             <collision>
-                <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+                <origin xyz="0.0 0.0 0.025" rpy="0.0 0.0 0.0"/>
                 <geometry>
                     <cylinder radius="0.017" length="0.04" />
                 </geometry>
@@ -83,8 +83,15 @@
             </visual>
 
             <collision>
+                <origin xyz="-0.027 0.000 0.0945" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://hsrb_description/meshes/wrist_v0/wrist_roll.stl" />
+                    <box size="0.040 0.102 0.093"/>
+                </geometry>
+            </collision>
+            <collision>
+                <origin xyz="-0.0080 0.00 0.0805" rpy="0.0 0.0 0.0" />
+                <geometry>
+                    <box size="0.079 0.102 0.065"/>
                 </geometry>
             </collision>
         </link>

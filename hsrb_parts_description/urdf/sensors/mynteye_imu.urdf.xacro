@@ -5,15 +5,15 @@
         <gazebo reference="${frame_name}">
             <sensor type="imu" name="${sensor_name}">
                 <update_rate>10.0</update_rate>
-	        <plugin name="${sensor_name}_plugin" filename="libgazebo_ros_imu_sensor.so">
-		    <updateRateHZ>100.0</updateRateHZ>
-		    <bodyName>base_link</bodyName>
-		    <topicName>${sensor_name}/${topic_name}</topicName>
-		    <frameName>${personal_name}/${frame_name}</frameName>
-		    <gaussianNoise>0.0</gaussianNoise>
-		    <xyzOffset>0.0 0.0 0.0</xyzOffset>
-		    <rpyOffset>0.0 -0.0 0.0</rpyOffset>
-		</plugin>
+                <plugin name="${sensor_name}_plugin" filename="libgazebo_ros_imu_sensor.so">
+                    <updateRateHZ>100.0</updateRateHZ>
+                    <bodyName>base_link</bodyName>
+                    <topicName>${sensor_name}/${topic_name}</topicName>
+                    <frameName>${personal_name}/${frame_name}</frameName>
+                    <gaussianNoise>0.0</gaussianNoise>
+                    <xyzOffset>0.0 0.0 0.0</xyzOffset>
+                    <rpyOffset>0.0 -0.0 0.0</rpyOffset>
+                </plugin>
                 <imu>
                     <noise>
                         <type>gaussian</type>
