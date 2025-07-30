@@ -129,8 +129,8 @@
                 <origin xyz="0.0 0.0 0.0" />
                 <mass value="0.06"/>
                 <inertia
-                    ixx="0.001437"  ixy="0.0"  ixz="0.0"
-                    iyy="0.001437" iyz="0.0" izz="0.002875" />
+                    ixx="0.001537"  ixy="0.0"  ixz="0.0"
+                    iyy="0.001537" iyz="0.0" izz="0.002875" />
             </inertial>
             <visual>
                 <geometry>
