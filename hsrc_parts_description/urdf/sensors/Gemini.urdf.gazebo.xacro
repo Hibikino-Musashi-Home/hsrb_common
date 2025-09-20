@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="hsrb">
+  <xacro:macro name="gemini_gazebo" params="robot_namespace sensor_name parent_frame topic_frame_id color_h_fov depth_h_fov height">
+    <gazebo reference="${parent_frame}">
+      <sensor type="camera" name="${sensor_name}_camera_rgb">
+        <always_on>0</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <camera>
+          <horizontal_fov>${color_h_fov}</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>${height}</height>
+            <format>B8G8R8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <gz_frame_id>${topic_frame_id}</gz_frame_id>
+        <topic>${robot_namespace}/${sensor_name}/rgb/image_rect_color</topic>
+      </sensor>
+      <sensor type="depth_camera" name="${sensor_name}_camera_depth">
+          <always_on>0</always_on>
+          <update_rate>30</update_rate>
+          <visualize>true</visualize>
+          <camera>
+              <horizontal_fov>${depth_h_fov}</horizontal_fov>
+              <image>
+                  <width>640</width>
+                  <height>${height}</height>
+              </image>
+              <clip>
+                  <near>0.1</near>
+                  <far>100</far>
+              </clip>
+          </camera>
+          <gz_frame_id>${topic_frame_id}</gz_frame_id>
+          <topic>${robot_namespace}/${sensor_name}/depth_registered/image</topic>
+      </sensor>
+  </gazebo>
+  </xacro:macro>
+</robot>
