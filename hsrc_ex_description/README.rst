@@ -1,16 +1,16 @@
 Overview
 ++++++++
 
-本パッケージはHSR-Cのロボットモデルを管理する。
+本パッケージは魔改造HSR-Cのロボットモデルを管理する。
 Gazeboシミュレータ用設定も含む。
 
 
 推奨動作環境
 ++++++++++++
 
-- Ubuntu Linux 16.04 64bit
-- ROS Kinetic
-- Gazebo 7 以降
+- Ubuntu Linux 22.04 64bit
+- ROS Humble
+- Gazebo Sim (Ignition)
 
 
 フォルダ構成
