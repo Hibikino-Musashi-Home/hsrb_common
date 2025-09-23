@@ -161,7 +161,7 @@
                         acceleration_limit="5.0"/>
     </ros2_control>
 
-    <!-- <ros2_control name="hsrb_gpio" type="system">
+    <ros2_control name="hsrb_gpio" type="system">
       <hardware>
         <plugin>hsrb_cgos_driver/HsrbCgosHw</plugin>
       </hardware>
@@ -177,7 +177,7 @@
         <param name="pin">4</param>
         <param name="direction">out</param>
       </gpio>
-    </ros2_control> -->
+    </ros2_control>
 
   </xacro:macro>
 </robot>

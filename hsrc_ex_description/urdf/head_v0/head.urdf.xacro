@@ -4,7 +4,7 @@
     <xacro:include filename="$(find hsrc_ex_description)/urdf/head_v0/head.gazebo.xacro"/>
 
     <!-- <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/asus_xtion.urdf.xacro"/> -->
-    <xacro:include filename="$(find hsrc_parts_description)/urdf/sensors/Gemini336L.urdf.xacro"/>
+    <xacro:include filename="$(find hsrc_parts_description)/urdf/sensors/gemini_336l.urdf.xacro"/>
     <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/pointgrey_chameleon.urdf.xacro"/>
     <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/wide_camera.urdf.xacro"/>
 
@@ -79,9 +79,10 @@
             <origin xyz="-0.0786 0.022 0.248" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
         </xacro:asus_xtion> -->
         <xacro:gemini336l parent="${prefix}_tilt_link" robot_namespace="${personal_name}/${robot_name}" sensor_name="head_rgbd_sensor">
-            <origin xyz="-0.09542 0.06168 0.23299" rpy="-0.01742 0.05987 0.01117"/>
+            <origin xyz="-0.09542 0.0 0.23299" rpy="-0.01742 0.05987 0.01117"/>
         </xacro:gemini336l>
 
         <xacro:hsrb_head_gazebo prefix="${prefix}"/>
     </xacro:macro>
+
 </robot>

@@ -13,6 +13,6 @@ def generate_launch_description():
     hsrb_description_dir = get_package_share_directory('hsrb_description')
     view_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([hsrb_description_dir, '/launch/hsrb_display.launch.py']),
-        launch_arguments={'description_package': 'hsrc_description',
+        launch_arguments={'description_package': 'hsrc_ex_description',
                           'description_file': 'hsrc1s.urdf.xacro'}.items())
     return LaunchDescription([view_launch])
