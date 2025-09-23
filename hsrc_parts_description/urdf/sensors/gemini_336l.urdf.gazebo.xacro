@@ -44,11 +44,11 @@
                     <cy>0.0</cy>
                     <ros>
                         <namespace>${robot_namespace}</namespace>
-                        <remapping>${sensor_name}/image_raw:=${sensor_name}/rgb/image_rect_color</remapping>
-                        <remapping>${sensor_name}/camera_info:=${sensor_name}/rgb/camera_info</remapping>
-                        <remapping>${sensor_name}/depth/image_raw:=${sensor_name}/depth_registered/image_rect_raw</remapping>
-                        <remapping>${sensor_name}/depth/camera_info:=${sensor_name}/depth_registered/camera_info</remapping>
-                        <remapping>${sensor_name}/points:=${sensor_name}/depth_registered/rectified_points</remapping>
+                        <remapping>${sensor_name}/image_raw:=${sensor_name}/color/image_rect_color</remapping>
+                        <remapping>${sensor_name}/camera_info:=${sensor_name}/color/camera_info</remapping>
+                        <remapping>${sensor_name}/depth/image_raw:=${sensor_name}/depth/image_rect_raw</remapping>
+                        <remapping>${sensor_name}/depth/camera_info:=${sensor_name}/depth/camera_info</remapping>
+                        <remapping>${sensor_name}/points:=${sensor_name}/depth/points</remapping>
                     </ros>
                 </plugin>
             </sensor>
@@ -74,7 +74,7 @@
                     </clip>
                 </camera>
                 <gz_frame_id>${topic_frame_id}</gz_frame_id>
-                <topic>${robot_namespace}/${sensor_name}/rgb/image_rect_color</topic>
+                <topic>${robot_namespace}/${sensor_name}/color/image_image</topic>
             </sensor>
             <sensor type="depth_camera" name="${sensor_name}_camera_depth">
                 <always_on>0</always_on>
@@ -94,7 +94,7 @@
                     </clip>
                 </camera>
                 <gz_frame_id>${topic_frame_id}</gz_frame_id>
-                <topic>${robot_namespace}/${sensor_name}/depth_registered/image_raw</topic>
+                <topic>${robot_namespace}/${sensor_name}/depth/image_raw</topic>
             </sensor>
         </gazebo>
     </xacro:macro>
