@@ -10,7 +10,7 @@
     <xacro:property name="Gemini336LImageWidth" value="640"/>
     <xacro:property name="Gemini336LImageHeight" value="480"/>
     <xacro:property name="Gemini336LMinDistance" value="0.17"/>
-    <xacro:property name="Gemini336LMaxDistance" value="0.20"/>
+    <xacro:property name="Gemini336LMaxDistance" value="20.0"/>
     <xacro:property name="Gemini336LFrameRate" value="30"/>
     <xacro:property name="Gemini336LHorizontalFov" value="1.5708"/>
 
@@ -43,7 +43,7 @@
                     <cx>0.0</cx>
                     <cy>0.0</cy>
                     <ros>
-                        <namespace>${robot_namespace}</namespace>
+                        <!-- <namespace>${robot_namespace}</namespace> -->
                         <remapping>${sensor_name}/image_raw:=${sensor_name}/color/image_rect_color</remapping>
                         <remapping>${sensor_name}/camera_info:=${sensor_name}/color/camera_info</remapping>
                         <remapping>${sensor_name}/depth/image_raw:=${sensor_name}/depth/image_rect_raw</remapping>
@@ -74,7 +74,8 @@
                     </clip>
                 </camera>
                 <gz_frame_id>${topic_frame_id}</gz_frame_id>
-                <topic>${robot_namespace}/${sensor_name}/color/image_image</topic>
+                <topic>${sensor_name}/color/image_raw</topic>
+                <!-- <topic>${robot_namespace}/${sensor_name}/color/image_raw</topic> -->
             </sensor>
             <sensor type="depth_camera" name="${sensor_name}_camera_depth">
                 <always_on>0</always_on>
@@ -94,7 +95,8 @@
                     </clip>
                 </camera>
                 <gz_frame_id>${topic_frame_id}</gz_frame_id>
-                <topic>${robot_namespace}/${sensor_name}/depth/image_raw</topic>
+                <topic>${sensor_name}/depth/image_raw</topic>
+                <!-- <topic>${robot_namespace}/${sensor_name}/depth/image_raw</topic> -->
             </sensor>
         </gazebo>
     </xacro:macro>

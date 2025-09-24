@@ -94,7 +94,7 @@
         <!-- <xacro:wide_camera prefix="${prefix}" parent="${prefix}_palm_link" robot_namespace="${personal_name}" rpy="${pi/2.0} ${-pi/2.0} 0" >
             <origin xyz="0.026 0.0 0.0034" rpy="0.0 0.0 0.0"/>
         </xacro:wide_camera> -->
-        <xacro:d405 parent="${prefix}_palm_link" robot_namespace="${personal_name}/${robot_name}" sensor_name="${prefix}_camera">
+        <xacro:d405 parent="${prefix}_palm_link" robot_namespace="${personal_name}/${robot_name}" sensor_name="hand_camera">
             <!-- <origin xyz="0.06280 -0.00789 -0.00690" rpy="0.03170 -1.55148 0.03736"/> -->
             <origin xyz="0.05123 -0.00880 0.00109" rpy="-0.01478 -1.60225 -0.00722"/>
         </xacro:d405>

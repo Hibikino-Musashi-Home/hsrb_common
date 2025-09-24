@@ -21,7 +21,7 @@ This is the URDF model for the Intel RealSense 405 camera, in its
 aluminum peripherial evaluation case.
 -->
 
-<robot name="hsrc" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="d405" xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- Includes -->
   <xacro:include filename="$(find hsrc_parts_description)/urdf/sensors/realsense/_materials.urdf.xacro" />
   <xacro:include filename="$(find hsrc_parts_description)/urdf/sensors/realsense/_usb_plug.urdf.xacro" />
