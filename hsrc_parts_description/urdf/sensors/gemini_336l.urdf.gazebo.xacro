@@ -43,7 +43,7 @@
                     <cx>0.0</cx>
                     <cy>0.0</cy>
                     <ros>
-                        <!-- <namespace>${robot_namespace}</namespace> -->
+                        <namespace>${robot_namespace}</namespace>
                         <remapping>${sensor_name}/image_raw:=${sensor_name}/color/image_rect_color</remapping>
                         <remapping>${sensor_name}/camera_info:=${sensor_name}/color/camera_info</remapping>
                         <remapping>${sensor_name}/depth/image_raw:=${sensor_name}/depth/image_rect_raw</remapping>
@@ -69,17 +69,16 @@
                         <format>B8G8R8</format>
                     </image>
                     <clip>
-                        <near>${Gemini336LMinDistance}</near>
-                        <far>${Gemini336LMaxDistance}</far>
+                        <near>0.1</near>
+                        <far>100</far>
                     </clip>
                 </camera>
                 <gz_frame_id>${topic_frame_id}</gz_frame_id>
-                <topic>${sensor_name}/color/image_raw</topic>
-                <!-- <topic>${robot_namespace}/${sensor_name}/color/image_raw</topic> -->
+                <topic>${robot_namespace}/${sensor_name}/color/image_raw</topic>
             </sensor>
             <sensor type="depth_camera" name="${sensor_name}_camera_depth">
                 <always_on>0</always_on>
-                <update_rate>30</update_rate>
+                <update_rate>${Gemini336LFrameRate}</update_rate>
                 <visualize>true</visualize>
                 <camera>
                     <horizontal_fov>${Gemini336LHorizontalFov}</horizontal_fov>
@@ -95,8 +94,7 @@
                     </clip>
                 </camera>
                 <gz_frame_id>${topic_frame_id}</gz_frame_id>
-                <topic>${sensor_name}/depth/image_raw</topic>
-                <!-- <topic>${robot_namespace}/${sensor_name}/depth/image_raw</topic> -->
+                <topic>${robot_namespace}/${sensor_name}/depth/image</topic>
             </sensor>
         </gazebo>
     </xacro:macro>
