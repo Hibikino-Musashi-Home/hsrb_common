@@ -79,7 +79,7 @@
             <origin xyz="-0.0786 0.022 0.248" rpy="${-pi/2.0} 0.0 ${-pi/2.0}"/>
         </xacro:asus_xtion> -->
         <xacro:gemini336l parent="${prefix}_tilt_link" robot_namespace="${personal_name}" sensor_name="head_rgbd_sensor">
-            <origin xyz="-0.09542 0.0 0.23299" rpy="-0.01742 0.05987 0.01117"/>
+            <origin xyz="-0.09542 0.0 0.23299" rpy="0.0 0.0 0.0"/>
         </xacro:gemini336l>
 
         <xacro:hsrb_head_gazebo prefix="${prefix}"/>
