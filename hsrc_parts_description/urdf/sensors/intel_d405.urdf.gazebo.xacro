@@ -68,7 +68,7 @@
                         <format>B8G8R8</format>
                     </image>
                     <clip>
-                        <near>0.1</near>
+                        <near>0.01</near>
                         <far>100</far>
                     </clip>
                 </camera>
