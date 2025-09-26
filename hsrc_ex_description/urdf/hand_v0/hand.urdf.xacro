@@ -179,16 +179,16 @@
                     <mesh filename="package://hsrc_ex_description/meshes/hand_v0/l_proximal.dae" />
                 </geometry>
             </visual>
-
             <collision>
-                <origin xyz="0.0205 -0.0075 0.04" rpy="0.0 0.0 0.0" />
+                <origin xyz="0.0205 -0.0075 0.035" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <box size="0.032 0.015 0.05"/>
+                    <box size="0.032 0.015 0.050"/>
                 </geometry>
-                <geometry>
+                <!-- <geometry>
                     <mesh filename="package://hsrc_ex_description/meshes/hand_v0/l_proximal.stl" />
-                </geometry>
+                </geometry> -->
             </collision>
+
         </link>
 
         <xacro:hsrb_finger_distal_base prefix="${prefix}" suffix="${suffix}" parent="${prefix}_${suffix}_spring_proximal_link">
@@ -209,11 +209,10 @@
                     <mesh filename="package://hsrc_ex_description/meshes/hand_v0/l_distal.dae" />
                 </geometry>
             </visual>
-
             <collision>
-                <!-- <geometry>
+                <geometry>
                     <mesh filename="package://hsrc_ex_description/meshes/hand_v0/l_distal.stl" />
-                </geometry> -->
+                </geometry>
             </collision>
         </link>
 
@@ -270,12 +269,16 @@
                     <mesh filename="package://hsrc_ex_description/meshes/hand_v0/r_proximal.dae" />
                 </geometry>
             </visual>
-
             <collision>
+                <origin xyz="0.0205 0.0075 0.035" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://hsrc_ex_description/meshes/hand_v0/r_proximal.stl" />
+                    <box size="0.032 0.015 0.050"/>
                 </geometry>
+                <!-- <geometry>
+                    <mesh filename="package://hsrc_ex_description/meshes/hand_v0/r_proximal.stl" />
+                </geometry> -->
             </collision>
+
         </link>
 
         <xacro:hsrb_finger_distal_base prefix="${prefix}" suffix="${suffix}" parent="${prefix}_${suffix}_spring_proximal_link">
@@ -296,7 +299,6 @@
                     <mesh filename="package://hsrc_ex_description/meshes/hand_v0/r_distal.dae" />
                 </geometry>
             </visual>
-
             <collision>
                 <geometry>
                     <mesh filename="package://hsrc_ex_description/meshes/hand_v0/r_distal.stl" />
