@@ -1,0 +1,18 @@
+<package format="3">
+  <name>hsrc_parts_description</name>
+  <version>0.0.1</version>
+  <description>HSRのロボット定義共通ファイル</description>
+  <maintainer email="tomohiro_ono_aa@mail.toyota.co.jp">Tomohiro Ono</maintainer>
+
+  <license>TMC</license>
+
+  <url type="website">None</url>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>xacro</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <gazebo_ros gazebo_model_path="${prefix}/../" />
+  </export>
+</package>
