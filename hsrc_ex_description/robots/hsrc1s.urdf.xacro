@@ -64,7 +64,7 @@
     </xacro:if>
 
     <xacro:if value="$(arg ignition_gazebo_sim)">
-      <xacro:include filename="$(find hsrb_description)/urdf/ros2_control.ignition_gazebo.xacro" />
+      <xacro:include filename="$(find hsrc_ex_description)/urdf/ros2_control.ignition_gazebo.xacro" />
       <xacro:ros2_contorl_gazebo/>
     </xacro:if>
 

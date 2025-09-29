@@ -5,7 +5,7 @@
     <gazebo>
       <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
         <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
-        <parameters>$(find hsrb_gazebo_bringup)/config/gazebo_ros2_control.yaml</parameters>
+        <parameters>$(find hsrb_gazebo_bringup)/config/gazebo_ros2_control_ex.yaml</parameters>
         <robot_param_node>whole_body/robot_state_publisher</robot_param_node>
         <ros>
         </ros>
