@@ -96,7 +96,8 @@
         </xacro:wide_camera> -->
         <xacro:d405 parent="${prefix}_palm_link" robot_namespace="${personal_name}" sensor_name="hand_camera" use_nominal_extrinsics="true">
             <!-- <origin xyz="0.06280 -0.00789 -0.00690" rpy="0.03170 -1.55148 0.03736"/> -->
-            <origin xyz="0.05123 -0.00880 0.00109" rpy="-0.01478 -1.60225 -0.00722"/>
+            <!-- <origin xyz="0.05123 -0.00880 0.00109" rpy="-0.01478 -1.60225 -0.00722"/> -->
+            <origin xyz="0.03846 0.00629 -0.0469" rpy="0.0311676 -0.9649463 3.087223"/>
         </xacro:d405>
 
         <xacro:hsrb_hand_gazebo prefix="${prefix}"/>
