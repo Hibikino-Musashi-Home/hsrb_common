@@ -3,7 +3,7 @@
   <xacro:arg name="ground_truth_xyz_offset" default="0.0 0.0 0.0"/>
   <xacro:arg name="ground_truth_rpy_offset" default="0.0 0.0 0.0"/>
 
-  <xacro:macro name="ros2_contorl_gazebo">
+  <xacro:macro name="ros2_control_gazebo" params="robot_name">
     <gazebo>
       <self_collide>1</self_collide>
     </gazebo>
@@ -11,6 +11,8 @@
     <gazebo>
       <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="gz_ros2_control-system">
         <parameters>$(find hsrb_gazebo_bringup)/config/gazebo_ros2_control.yaml</parameters>
+        <!-- Parameters specified later override the earlier ones -->
+        <parameters>$(find hsrb_gazebo_bringup)/config/gazebo_ros2_control_${robot_name}.yaml</parameters>
         <robot_param_node>/whole_body/robot_state_publisher</robot_param_node>
       </plugin>
       <plugin filename="gz-sim-contact-system" name="gz::sim::systems::Contact"/>
