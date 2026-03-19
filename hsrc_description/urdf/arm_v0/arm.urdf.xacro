@@ -47,7 +47,7 @@
             <inertial>
                 <mass value="1.339295"/>
                 <origin xyz="0.000632 0.006404 0.118529"/>
-                <inertia ixx="7.528" ixy="-0.000020284207" ixz="-0.000022947194"
+                <inertia ixx="0.007528" ixy="-0.000020284207" ixz="-0.000022947194"
                     iyy="0.007102" iyz="-0.000091796075" izz="0.001552"/>
             </inertial>
             <visual>
@@ -58,7 +58,7 @@
 
             <collision>
                 <geometry>
-                    <mesh filename="package://hsrc_description/meshes/arm_v0/arm_flex.stl" />
+                    <mesh filename="package://hsrc_description/meshes/arm_v0/arm_flex.stl" scale="1000.0 1000.0 1000.0"/>
                 </geometry>
             </collision>
         </link>
@@ -89,6 +89,36 @@
                 <geometry>
                     <mesh filename="package://hsrc_description/meshes/arm_v0/arm_roll.stl" />
                 </geometry>
+            </collision>
+
+            <!-- for enhanced -->
+            <visual>
+                <origin xyz="-0.020 -0.0434 -0.067888" rpy="1.5707963267948966 0.0 0.0"/>
+                <geometry>
+                    <cylinder radius="0.013" length="0.0568" />
+                </geometry>
+                <material name="body_sub" />
+            </visual>
+            <visual>
+                <origin xyz="0.000 0.0484 -0.070588" rpy="-1.5707963267948966 0.0 0.0"/>
+                <geometry>
+                    <cylinder radius="0.013" length="0.0468" />
+                </geometry>
+                <material name="body_sub" />
+            </visual>
+            <collision>
+                <origin xyz="-0.020 -0.0444 -0.067888" rpy="1.5707963267948966 0.0 0.0"/>
+                <geometry>
+                    <cylinder radius="0.014" length="0.0568" />
+                </geometry>
+                <material name="body_sub" />
+            </collision>
+            <collision>
+                <origin xyz="0.0065 0.0494 -0.070588" rpy="-1.5707963267948966 0.0 0.0"/>
+                <geometry>
+                    <cylinder radius="0.014" length="0.0468" />
+                </geometry>
+                <material name="body_sub" />
             </collision>
         </link>
 

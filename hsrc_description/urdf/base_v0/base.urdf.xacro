@@ -6,20 +6,30 @@
 
     <!-- constant -->
     <xacro:property name="drive_wheel_width" value="0.03" />
-    <xacro:property name="drive_wheel_radius" value="0.0445" />
+    <!-- <xacro:property name="drive_wheel_radius" value="0.0445" /> -->
+    <xacro:property name="drive_wheel_radius" value="0.04725" />
 
-    <xacro:property name="drive_wheel_offset_x" value="0.110" />
-    <xacro:property name="drive_wheel_offset_y" value="0.133" />
+    <!-- <xacro:property name="drive_wheel_offset_x" value="0.110" />
+    <xacro:property name="drive_wheel_offset_y" value="0.133" /> -->
+    <xacro:property name="drive_wheel_offset_x" value="0.114" />
+    <xacro:property name="drive_wheel_offset_y" value="0.1245" />
 
-    <xacro:property name="passive_wheel_radius" value="0.0245" />
+    <!-- <xacro:property name="passive_wheel_radius" value="0.0245" />
     <xacro:property name="passive_wheel_offset_x" value="0.1665" />
+    <xacro:property name="passive_wheel_offset_y" value="0.055" /> -->
+    <xacro:property name="passive_wheel_radius" value="0.025" />
+    <xacro:property name="passive_wheel_offset_x" value="0.1495" />
     <xacro:property name="passive_wheel_offset_y" value="0.055" />
 
-    <xacro:property name="drive_wheel_max_effort" value="28.0" />
-    <xacro:property name="drive_wheel_max_velocity" value="20.8" />
+    <!-- <xacro:property name="drive_wheel_max_effort" value="28.0" />
+    <xacro:property name="drive_wheel_max_velocity" value="20.8" /> -->
+    <xacro:property name="drive_wheel_max_effort" value="20.0"/>
+    <xacro:property name="drive_wheel_max_velocity" value="35.0" />
 
-    <xacro:property name="roll_joint_max_effort" value="34.46" />
-    <xacro:property name="roll_joint_max_velocity" value="2.5" />
+    <!-- <xacro:property name="roll_joint_max_effort" value="34.46" />
+    <xacro:property name="roll_joint_max_velocity" value="2.5" /> -->
+    <xacro:property name="roll_joint_max_effort" value="50.0"/>
+    <xacro:property name="roll_joint_max_velocity" value="11.6" />
 
     <!-- drive wheel -->
     <xacro:macro name="hsrb_drive_wheel" params="prefix suffix parent *origin">
@@ -129,8 +139,8 @@
                 <origin xyz="0.0 0.0 0.0" />
                 <mass value="0.06"/>
                 <inertia
-                    ixx="0.001437"  ixy="0.0"  ixz="0.0"
-                    iyy="0.001437" iyz="0.0" izz="0.002875" />
+                    ixx="0.001537"  ixy="0.0"  ixz="0.0"
+                    iyy="0.001537" iyz="0.0" izz="0.002875" />
             </inertial>
             <visual>
                 <geometry>

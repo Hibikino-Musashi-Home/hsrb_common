@@ -2,7 +2,8 @@
 <robot name="hand" xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:include filename="$(find hsrc_description)/urdf/hand_v0/hand.gazebo.xacro"/>
 
-    <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/wide_camera.urdf.xacro"/>
+    <!-- <xacro:include filename="$(find hsrb_parts_description)/urdf/sensors/wide_camera.urdf.xacro"/> -->
+    <xacro:include filename="$(find hsrc_parts_description)/urdf/sensors/intel_d405.urdf.xacro"/>
 
     <xacro:property name="palm_to_proximal_x" value="-0.031" />
     <xacro:property name="palm_to_proximal_y" value="-0.0245" />
@@ -25,8 +26,8 @@
             <inertial>
                 <mass value="0.01"/>
                 <inertia
-                    ixx="0.0" ixy="0.0" ixz="0.0"
-                    iyy="0.0" iyz="0.0" izz="0.0"/>
+                    ixx="0.001" ixy="0.0" ixz="0.0"
+                    iyy="0.001" iyz="0.0" izz="0.001"/>
             </inertial>
         </link>
     </xacro:macro>
@@ -90,9 +91,14 @@
         </xacro:hsrb_finger_without_vacuum>
 
         <!-- camera -->
-        <xacro:wide_camera prefix="${prefix}" parent="${prefix}_palm_link" robot_namespace="${personal_name}" rpy="${pi/2.0} ${-pi/2.0} 0" >
+        <!-- <xacro:wide_camera prefix="${prefix}" parent="${prefix}_palm_link" robot_namespace="${personal_name}" rpy="${pi/2.0} ${-pi/2.0} 0" >
             <origin xyz="0.026 0.0 0.0034" rpy="0.0 0.0 0.0"/>
-        </xacro:wide_camera>
+        </xacro:wide_camera> -->
+        <xacro:d405 parent="${prefix}_palm_link" robot_namespace="${personal_name}/${robot_name}" sensor_name="${prefix}_camera">
+            <!-- <origin xyz="0.05846 0.00629 -0.00169" rpy="0.031 -0.964 3.087"/> -->
+	    <origin xyz="0.03846 0.01529 -0.0469" rpy="0.0311676 -0.9649463 3.087223"/>
+            <!-- <origin xyz="0.03846 0.00629 -0.0469" rpy="0.0311676 -0.9649463 3.087223"/> -->
+        </xacro:d405>
 
         <xacro:hsrb_hand_gazebo prefix="${prefix}"/>
     </xacro:macro>
@@ -166,8 +172,8 @@
                 <mass value="0.001"/>
                 <origin xyz="0.021418 0.00248 0.022688"/>
                 <inertia
-                    ixx="0.0" ixy="0.0" ixz="0.0"
-                    iyy="0.0" iyz="0.0" izz="0.0"/>
+                    ixx="0.001" ixy="0.0" ixz="0.0"
+                    iyy="0.001" iyz="0.0" izz="0.001"/>
             </inertial>
             <visual>
                 <geometry>
@@ -176,8 +182,9 @@
             </visual>
 
             <collision>
+                <origin xyz="0.0169 -0.004125 0.035" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://hsrc_description/meshes/hand_v0/l_proximal.stl" />
+                    <box size="0.0362 0.01575 0.04"/>
                 </geometry>
             </collision>
         </link>
@@ -192,8 +199,8 @@
                 <mass value="0.001"/>
                 <origin xyz="0.011116 0.005679 0.017532"/>
                 <inertia
-                    ixx="0.0" ixy="0.0" ixz="0.0"
-                    iyy="0.0" iyz="0.0" izz="0.0"/>
+                    ixx="0.001" ixy="0.0" ixz="0.0"
+                    iyy="0.001" iyz="0.0" izz="0.001"/>
             </inertial>
             <visual>
                 <geometry>
@@ -202,8 +209,9 @@
             </visual>
 
             <collision>
+                <origin xyz="0.02 0.014 0.025" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://hsrc_description/meshes/hand_v0/l_distal.stl" />
+                    <box size="0.04 0.01 0.032"/>
                 </geometry>
             </collision>
         </link>
@@ -253,8 +261,8 @@
                 <mass value="0.001"/>
                 <origin xyz="0.013203 0.002096 0.023311"/>
                 <inertia
-                    ixx="0.0" ixy="0.0" ixz="0.0"
-                    iyy="0.0" iyz="0.0" izz="0.0"/>
+                    ixx="0.001" ixy="0.0" ixz="0.0"
+                    iyy="0.001" iyz="0.0" izz="0.001"/>
             </inertial>
             <visual>
                 <geometry>
@@ -263,8 +271,9 @@
             </visual>
 
             <collision>
+                <origin xyz="0.0169 0.004125 0.035" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://hsrc_description/meshes/hand_v0/r_proximal.stl" />
+                    <box size="0.0362 0.01575 0.04"/>
                 </geometry>
             </collision>
         </link>
@@ -279,8 +288,8 @@
                 <mass value="0.001"/>
                 <origin xyz="0.014256 -0.008321 0.015591"/>
                 <inertia
-                    ixx="0.0" ixy="0.0" ixz="0.0"
-                    iyy="0.0" iyz="0.0" izz="0.0"/>
+                    ixx="0.001" ixy="0.0" ixz="0.0"
+                    iyy="0.001" iyz="0.0" izz="0.001"/>
             </inertial>
             <visual>
                 <geometry>
@@ -289,8 +298,9 @@
             </visual>
 
             <collision>
+                <origin xyz="0.02 -0.0015 0.02" rpy="0.0 0.0 0.0" />
                 <geometry>
-                    <mesh filename="package://hsrc_description/meshes/hand_v0/r_distal.stl" />
+                    <box size="0.04 0.023 0.04"/>
                 </geometry>
             </collision>
         </link>
