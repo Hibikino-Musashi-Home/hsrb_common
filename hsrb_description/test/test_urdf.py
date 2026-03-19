@@ -46,7 +46,7 @@ URDF_DIR = os.path.join(PACKAGE_DIR, "urdf")
 
 def test_generator_robot_urdf():
     def test_robot_urdf(path):
-        u"""A test to check if it can be read correctly as URDF after conversion with XACRO"""
+        u"""Test to verify if it can be correctly read as URDF after converting with XACRO"""
         with tempfile.NamedTemporaryFile() as f:
             args = ['rosrun', 'xacro', 'xacro', '--inorder', source]
             eq_(subprocess.call(args, stdout=f), 0)
